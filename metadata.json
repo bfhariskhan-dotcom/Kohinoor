@@ -1,0 +1,6 @@
+{
+  "name": "Kohinoor Audio Visual Education Business System",
+  "description": "Premier Audio Visual Equipment Supplier & Smart Classroom Technology Provider in Islamabad, Pakistan.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

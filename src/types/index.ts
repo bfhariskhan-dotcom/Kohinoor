@@ -12,6 +12,9 @@ export interface Product {
   specs: Record<string, string>;
   applications: string[];
   modelNumber?: string;
+  price?: string;
+  priceNumeric?: number;
+  stockStatus?: string;
 }
 
 export interface ProjectItem {

@@ -226,7 +226,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                   className="flex-1 py-3 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
                 >
                   <MessageSquare className="w-4 h-4 fill-current" />
-                  <span>Send via WhatsApp (+92 333 5163220)</span>
+                  <span>Send via WhatsApp</span>
                 </button>
 
                 <button

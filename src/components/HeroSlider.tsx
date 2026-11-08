@@ -210,7 +210,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onNavigate, onOpenQuoteM
                     className="cursor-pointer px-6 py-3.5 bg-blue-500 hover:bg-blue-400 active:scale-95 text-white text-xs sm:text-sm font-bold rounded-xl shadow-[0_10px_30px_rgba(59,130,246,0.45)] hover:shadow-blue-400/60 transition-all flex items-center gap-2.5"
                   >
                     <MessageSquare className="w-4 h-4 fill-current" />
-                    <span>Order on WhatsApp (+92 333 5163220)</span>
+                    <span>Order on WhatsApp</span>
                   </button>
 
                   <button

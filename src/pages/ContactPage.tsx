@@ -17,7 +17,7 @@ interface ContactPageProps {
   onNavigate: (page: PageId) => void;
 }
 
-export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
+export const ContactPage: React.FC<ContactPageProps> = () => {
   const [fullName, setFullName] = useState('');
   const [phone, setPhone] = useState('');
   const [email, setEmail] = useState('');
@@ -50,7 +50,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
     <div className="space-y-16 py-10 max-w-7xl mx-auto px-4 sm:px-8">
       {/* Header */}
       <div className="space-y-4 max-w-3xl">
-        <div className="text-xs font-bold text-blue-600 uppercase tracking-wider">
+        <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
           Connect With Our Engineering Team
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
@@ -73,8 +73,8 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
           </div>
 
           {submitted ? (
-            <div className="py-10 text-center space-y-4 bg-blue-50/50 rounded-2xl p-6 border border-blue-100">
-              <div className="w-14 h-14 bg-blue-100 text-blue-600 rounded-full flex items-center justify-center mx-auto">
+            <div className="py-10 text-center space-y-4 bg-emerald-50/50 rounded-2xl p-6 border border-emerald-100">
+              <div className="w-14 h-14 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center mx-auto">
                 <CheckCircle2 className="w-8 h-8" />
               </div>
               <h3 className="text-lg font-bold text-slate-900">Message Received Successfully</h3>
@@ -84,7 +84,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
               <div className="pt-2">
                 <button
                   onClick={() => setSubmitted(false)}
-                  className="px-5 py-2 text-xs font-bold text-blue-600 bg-white border border-blue-200 hover:bg-blue-50 rounded-xl transition-colors cursor-pointer"
+                  className="px-5 py-2 text-xs font-bold text-emerald-700 bg-white border border-emerald-200 hover:bg-emerald-50 rounded-xl transition-colors cursor-pointer"
                 >
                   Submit Another Inquiry
                 </button>
@@ -103,7 +103,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                     value={fullName}
                     onChange={(e) => setFullName(e.target.value)}
                     placeholder="e.g. Engr. Muhammad Tariq"
-                    className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
+                    className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600"
                   />
                 </div>
 
@@ -117,7 +117,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                     value={phone}
                     onChange={(e) => setPhone(e.target.value)}
                     placeholder="e.g. +92 333 5163220"
-                    className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
+                    className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600"
                   />
                 </div>
               </div>
@@ -133,7 +133,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="e.g. info@university.edu.pk"
-                    className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
+                    className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600"
                   />
                 </div>
 
@@ -147,7 +147,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                     value={organization}
                     onChange={(e) => setOrganization(e.target.value)}
                     placeholder="e.g. University / College / Ministry"
-                    className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
+                    className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600"
                   />
                 </div>
               </div>
@@ -160,7 +160,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                   <select
                     value={productInterested}
                     onChange={(e) => setProductInterested(e.target.value)}
-                    className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 bg-white"
+                    className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600 bg-white"
                   >
                     <optgroup label="Main Categories">
                       {CATEGORIES.map((cat) => (
@@ -186,7 +186,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                   <select
                     value={city}
                     onChange={(e) => setCity(e.target.value)}
-                    className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600 bg-white"
+                    className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600 bg-white"
                   >
                     {BUSINESS_INFO.coverageCities.map((c) => (
                       <option key={c} value={c}>
@@ -207,19 +207,18 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
                   value={message}
                   onChange={(e) => setMessage(e.target.value)}
                   placeholder="Please state quantities, room dimensions, required delivery date, or tender documentation requirements..."
-                  className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
+                  className="w-full px-3.5 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-600 focus:ring-1 focus:ring-emerald-600"
                 />
               </div>
 
-              {/* 100% Blue Theme for Buttons */}
               <div className="pt-2 flex flex-col sm:flex-row gap-3">
                 <button
                   type="button"
                   onClick={handleSendWhatsApp}
-                  className="flex-1 py-3 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
+                  className="flex-1 py-3 bg-emerald-700 hover:bg-emerald-800 active:scale-95 text-white text-xs font-bold rounded-xl transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md"
                 >
                   <MessageSquare className="w-4 h-4 fill-current" />
-                  <span>Send Direct on WhatsApp</span>
+                  <span>Send via WhatsApp</span>
                 </button>
 
                 <button
@@ -239,13 +238,13 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
           {/* Official Location Card */}
           <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 space-y-5 shadow-xs">
             <h3 className="text-base font-bold text-slate-900 flex items-center gap-2">
-              <Building className="w-5 h-5 text-blue-600" />
+              <Building className="w-5 h-5 text-emerald-700" />
               <span>Head Office Islamabad</span>
             </h3>
 
             <div className="space-y-4 text-xs text-slate-600">
               <div className="flex items-start gap-3">
-                <MapPin className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <MapPin className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-slate-900 block">Address:</span>
                   <span className="leading-relaxed block">
@@ -255,12 +254,12 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
               </div>
 
               <div className="flex items-start gap-3">
-                <Phone className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <Phone className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-slate-900 block">Phone / WhatsApp:</span>
                   <a
                     href={`tel:${BUSINESS_INFO.phoneClean}`}
-                    className="text-blue-600 hover:underline block font-bold"
+                    className="text-emerald-700 hover:underline block font-bold"
                   >
                     {BUSINESS_INFO.phone}
                   </a>
@@ -271,10 +270,10 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
               </div>
 
               <div className="flex items-start gap-3">
-                <Mail className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <Mail className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-slate-900 block">Email Inquiries:</span>
-                  <a href={`mailto:${BUSINESS_INFO.email}`} className="text-blue-600 hover:underline block font-semibold">
+                  <a href={`mailto:${BUSINESS_INFO.email}`} className="text-emerald-700 hover:underline block font-semibold">
                     {BUSINESS_INFO.email}
                   </a>
                   <a href={`mailto:${BUSINESS_INFO.emailAlt}`} className="text-slate-500 hover:underline text-[11px] block">
@@ -284,7 +283,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
               </div>
 
               <div className="flex items-start gap-3">
-                <Clock className="w-5 h-5 text-blue-600 shrink-0 mt-0.5" />
+                <Clock className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
                 <div>
                   <span className="font-bold text-slate-900 block">Business Hours:</span>
                   <span>{BUSINESS_INFO.workingHours}</span>
@@ -340,7 +339,7 @@ export const ContactPage: React.FC<ContactPageProps> = ({ onNavigate }) => {
             href={BUSINESS_INFO.googleMapsUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-xs font-bold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1"
+            className="text-xs font-bold text-emerald-700 hover:text-emerald-800 inline-flex items-center gap-1"
           >
             <span>Open in Full Screen Google Maps</span>
             <ExternalLink className="w-3.5 h-3.5" />

@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { PageId, Product } from '../types';
+import { PageId, Product, GalleryItem } from '../types';
 import { BUSINESS_INFO, CATEGORIES, PRODUCTS } from '../data/products';
 import { FAQS } from '../data/faqs';
-import { PROJECTS } from '../data/projects';
+import { GALLERY_ITEMS } from '../data/gallery';
 import { ProductCard } from '../components/ProductCard';
 import { HeroSlider } from '../components/HeroSlider';
+import { StatsSlider } from '../components/StatsSlider';
 import { AvSystemEstimator } from '../components/AvSystemEstimator';
 import { ScreenSizeVisualizer } from '../components/ScreenSizeVisualizer';
 import {
@@ -18,20 +19,15 @@ import {
   Wrench,
   CheckCircle2,
   ChevronDown,
-  Award,
   Users,
-  Tv,
-  Mic2,
-  Video,
-  Projector,
-  Sparkles,
+  ChevronLeft,
+  ChevronRight,
+  Images,
   MapPin,
-  Check,
-  PhoneCall,
-  Sliders,
-  BadgeCheck
+  Maximize2,
+  X
 } from 'lucide-react';
-import { motion } from 'motion/react';
+import { motion, AnimatePresence } from 'motion/react';
 
 interface HomePageProps {
   onNavigate: (page: PageId) => void;
@@ -45,223 +41,217 @@ export const HomePage: React.FC<HomePageProps> = ({
   onOpenQuoteModal
 }) => {
   const [openFaq, setOpenFaq] = useState<number | null>(0);
+  const [activeProjectSlide, setActiveProjectSlide] = useState(0);
+  const [selectedGalleryItem, setSelectedGalleryItem] = useState<GalleryItem | null>(null);
 
   const toggleFaq = (index: number) => {
     setOpenFaq(openFaq === index ? null : index);
   };
 
+  const clientProjects = [
+    {
+      title: 'Multinational Council Conference Chamber',
+      client: 'Diplomatic & Government Assembly',
+      location: 'Islamabad, Pakistan',
+      image: '/images/client-uploads/upload_2.jpg',
+      equipment: 'Chairman & Delegate Priority Microphones, Central DSP, Wall Audio',
+      summary: 'Complete executive council assembly setup featuring Chairman priority override, feedback-free gooseneck mics, and multi-channel audio integration.'
+    },
+    {
+      title: 'Beterva Digital Rostrum University Lecture Hall',
+      client: 'Higher Education Lecture Hall',
+      location: 'Rawalpindi / Islamabad',
+      image: '/images/client-uploads/upload_3.jpg',
+      equipment: 'Digital Rostrum with Touchscreen, Built-in PC Tray, Gooseneck Mics',
+      summary: 'Steel commercial digital teaching rostrum installed with integrated touch screen, centralized AV control box, and microphone speech interface.'
+    },
+    {
+      title: 'National Centre of Artificial Intelligence (NCAI)',
+      client: 'NUST Islamabad',
+      location: 'Sector H-12, Islamabad',
+      image: '/images/products/product_8.jpg',
+      equipment: '43" Commercial 4K Touch Podium with Institutional Crest',
+      summary: 'Landmark reference installation deployed for national AI symposiums, diplomatic delegations, and advanced research presentations.'
+    },
+    {
+      title: 'Auditorium Stage Speech Acoustics & Podiums',
+      client: 'University Convocation Hall',
+      location: 'Lahore, Punjab',
+      image: '/images/client-uploads/upload_5.jpg',
+      equipment: 'Digital Smart Rostrum, Line Array Stage Audio, Wireless UHF Mics',
+      summary: 'Turnkey auditorium presentation solution with digital smart rostrum, teleprompter monitor interface, and wide-dispersion sound reinforcement.'
+    }
+  ];
+
+  const featuredGallery = GALLERY_ITEMS.slice(0, 6);
+
   return (
-    <div className="space-y-24 pb-20 overflow-hidden">
-      {/* 1. HERO BANNER SLIDER - Autoplay, Vibrant Sapphire Lighting, Framer Motion transitions */}
+    <div className="space-y-16 sm:space-y-24 pb-20 overflow-hidden">
+      {/* 1. HERO BANNER SLIDER - Emerald Green Theme with Real Client Uploads */}
       <HeroSlider onNavigate={onNavigate} onOpenQuoteModal={onOpenQuoteModal} />
 
-      {/* 2. STATS & CREDIBILITY STRIP - Floating Luminous Glass Card */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8 -mt-12 sm:-mt-16 relative z-20">
-        <motion.div
-          initial={{ opacity: 0, y: 30, scale: 0.98 }}
-          whileInView={{ opacity: 1, y: 0, scale: 1 }}
-          viewport={{ once: true, margin: '-40px' }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          className="bg-white rounded-3xl shadow-[0_20px_50px_rgba(30,58,138,0.12)] border border-blue-100 p-6 sm:p-8 grid grid-cols-2 md:grid-cols-4 gap-6 divide-y md:divide-y-0 md:divide-x divide-slate-100"
-        >
-          <div className="pt-2 md:pt-0">
-            <div className="text-2xl sm:text-3xl font-extrabold text-blue-600 tabular-nums">15+ Years</div>
-            <div className="text-xs text-slate-500 font-medium mt-1">Audio-Visual Industry Experience</div>
-          </div>
-          <div className="pt-4 md:pt-0 md:pl-6">
-            <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 tabular-nums">500+</div>
-            <div className="text-xs text-slate-500 font-medium mt-1">Classrooms &amp; Auditoriums Equipped</div>
-          </div>
-          <div className="pt-4 md:pt-0 md:pl-6">
-            <div className="text-2xl sm:text-3xl font-extrabold text-blue-600 tabular-nums">6 Major Cities</div>
-            <div className="text-xs text-slate-500 font-medium mt-1">Islamabad, LHE, KHI, PEW, MUX, RWP</div>
-          </div>
-          <div className="pt-4 md:pt-0 md:pl-6">
-            <div className="text-2xl sm:text-3xl font-extrabold text-slate-900 tabular-nums">100% Genuine</div>
-            <div className="text-xs text-slate-500 font-medium mt-1">Hardware with Official Warranty</div>
-          </div>
-        </motion.div>
+      {/* 2. STATS & CREDIBILITY STRIP - Interactive Auto-Playing Widget */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 -mt-10 sm:-mt-14 relative z-20">
+        <StatsSlider />
       </section>
 
-      {/* 3. ABOUT SECTION - Staggered Left & Right Entrance */}
+      {/* 3. ABOUT SECTION - Clean, Concise with Client Photos */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-          {/* Left Text Column - Enters from Left */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 items-center">
+          {/* Left Text Column */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.65, ease: 'easeOut' }}
-            className="lg:col-span-7 space-y-5"
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-7 space-y-4 sm:space-y-5"
           >
-            <div className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-600 uppercase tracking-wider">
-              <BadgeCheck className="w-4 h-4 text-blue-600" />
-              <span>About Kohinoor Audio Visual</span>
+            <div className="text-xs font-bold text-emerald-800 uppercase tracking-wider">
+              Premier AV Integration Since 2009
             </div>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-snug">
-              Empowering Education &amp; Corporate Communication with World-Class AV Technology
+            <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              Direct AV Hardware Supplier &amp; Solutions Provider in Islamabad
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Kohinoor Audio Visual Education Business System is an established supplier of professional audio-visual and educational technology solutions based at United Plaza, Fazlehaq Road, Blue Area, Islamabad.
+              Based in the prestigious commercial center of <strong>United Plaza, Blue Area, Islamabad</strong>, Kohinoor Audio Visual Education Business System specializes in supplying heavy-duty educational technology, smart interactive classrooms, digital rostrums, conference microphone systems, and 4K optical equipment across Pakistan.
             </p>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              We specialize in engineering, supplying, and deploying smart classroom technologies, interactive touch LED flat panels, multi-feature digital rostrums, high-lumen multimedia projectors, conference discussion microphone systems, and 4K robotic PTZ cameras.
-            </p>
-            <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-              Serving leading universities, colleges, schools, government ministries, public sector bodies, and corporate headquarters nationwide, our mission is to deliver dependable equipment, flawless acoustics, and responsive technical support.
+              We eliminate technical risks for universities and corporate boards. Our Islamabad-based engineering team provides comprehensive turnkey site surveys, equipment installation, structural ceiling mounting, audio acoustic calibration, and ongoing warranty support.
             </p>
 
-            <div className="pt-3 flex flex-wrap items-center gap-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2">
+              <div className="p-3.5 bg-slate-100/80 rounded-2xl border border-slate-200">
+                <ShieldCheck className="w-5 h-5 text-emerald-700 mb-1" />
+                <span className="font-bold text-xs text-slate-900 block">100% Genuine</span>
+                <span className="text-[11px] text-slate-500">Official Warranty</span>
+              </div>
+              <div className="p-3.5 bg-slate-100/80 rounded-2xl border border-slate-200">
+                <Wrench className="w-5 h-5 text-emerald-700 mb-1" />
+                <span className="font-bold text-xs text-slate-900 block">On-Site Setup</span>
+                <span className="text-[11px] text-slate-500">Engineering Crew</span>
+              </div>
+              <div className="p-3.5 bg-slate-100/80 rounded-2xl border border-slate-200 col-span-2 sm:col-span-1">
+                <Building2 className="w-5 h-5 text-emerald-700 mb-1" />
+                <span className="font-bold text-xs text-slate-900 block">Nationwide</span>
+                <span className="text-[11px] text-slate-500">Insured Delivery</span>
+              </div>
+            </div>
+
+            <div className="pt-2 flex flex-wrap items-center gap-3">
               <button
                 onClick={() => onNavigate('about')}
-                className="cursor-pointer px-5 py-3 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white text-xs font-bold rounded-xl shadow-md transition-all inline-flex items-center gap-2"
+                className="cursor-pointer px-6 py-3 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs rounded-xl shadow-md transition-colors flex items-center gap-2"
               >
-                <span>Read Full Company Profile</span>
+                <span>Discover Our Company</span>
                 <ArrowRight className="w-4 h-4" />
               </button>
-
-              <a
-                href={BUSINESS_INFO.whatsappUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="cursor-pointer px-5 py-3 bg-slate-100 hover:bg-slate-200 text-slate-800 text-xs font-semibold rounded-xl transition-colors inline-flex items-center gap-2"
+              <button
+                onClick={() => onNavigate('gallery')}
+                className="cursor-pointer px-5 py-3 bg-white hover:bg-slate-100 text-slate-800 font-semibold text-xs rounded-xl border border-slate-200 transition-colors flex items-center gap-1.5"
               >
-                <MessageSquare className="w-4 h-4 text-blue-600" />
-                <span>Direct WhatsApp Consultation</span>
-              </a>
+                <Images className="w-4 h-4 text-emerald-700" />
+                <span>View Real Installations</span>
+              </button>
             </div>
           </motion.div>
 
-          {/* Right Visual Stage - Enters from Right */}
+          {/* Right Image Split (Real Client Installation Photo) */}
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
+            initial={{ opacity: 0, x: 40 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, margin: '-60px' }}
-            transition={{ duration: 0.65, ease: 'easeOut', delay: 0.15 }}
-            className="lg:col-span-5"
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-5 relative"
           >
-            <div className="grid grid-cols-2 gap-4">
-              <div className="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 shadow-md group hover:border-blue-400 transition-colors">
-                <div className="overflow-hidden h-48 bg-slate-100">
-                  <img
-                    src="/images/products/product_8.jpg"
-                    alt="NUST NCAI Presentation Rostrum Installation"
-                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
-                  />
+            <div className="rounded-3xl overflow-hidden shadow-xl border border-slate-200 bg-slate-900">
+              <img
+                src="/images/client-uploads/upload_3.jpg"
+                alt="Digital Teaching Rostrum in Modern University Lecture Hall"
+                className="w-full h-auto object-cover"
+              />
+              <div className="p-4 bg-slate-900/90 text-white flex items-center justify-between border-t border-slate-800">
+                <div>
+                  <div className="text-xs font-bold">University Amphitheater Deployment</div>
+                  <div className="text-[11px] text-emerald-400">Digital Rostrum with Touchscreen &amp; PC</div>
                 </div>
-                <div className="p-3.5 bg-white text-xs">
-                  <p className="font-bold text-slate-900">National AI Center (NCAI)</p>
-                  <p className="text-[11px] text-blue-600 font-medium">NUST Islamabad Deployment</p>
-                </div>
-              </div>
-
-              <div className="rounded-2xl overflow-hidden border border-slate-200 bg-slate-50 shadow-md group hover:border-blue-400 transition-colors">
-                <div className="overflow-hidden h-48 bg-slate-100">
-                  <img
-                    src="/images/products/product_14.jpg"
-                    alt="Auditorium Digital Rostrum on Dais"
-                    className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500"
-                  />
-                </div>
-                <div className="p-3.5 bg-white text-xs">
-                  <p className="font-bold text-slate-900">Digital Rostrum with PC</p>
-                  <p className="text-[11px] text-blue-600 font-medium">Dais Sound &amp; Touch System</p>
-                </div>
+                <button
+                  onClick={() => onNavigate('projects')}
+                  className="cursor-pointer text-[11px] font-bold text-white hover:underline"
+                >
+                  View Detail &rarr;
+                </button>
               </div>
             </div>
           </motion.div>
         </div>
       </section>
 
-      {/* 4. INTERACTIVE TURNKEY AV SYSTEM ESTIMATOR (Breaks AI Website feel completely) */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.6 }}
-        >
-          <AvSystemEstimator />
-        </motion.div>
-      </section>
-
-      {/* 5. OUR PRODUCTS SECTION (6 Main Categories in Clean 3-Column Grid) - Staggered Fade Up */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-60px' }}
-          transition={{ duration: 0.55 }}
-          className="text-center max-w-3xl mx-auto mb-12 space-y-3"
-        >
-          <div className="text-xs font-bold text-blue-600 uppercase tracking-wider">
-            Comprehensive Product Catalog
+      {/* 4. PRODUCT CATEGORIES GRID - Clean 6-Card Overview */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+          <div>
+            <div className="text-xs font-bold text-emerald-800 uppercase tracking-wider">
+              Core Equipment Portfolio
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+              Explore Our Six Dedicated Product Categories
+            </h2>
           </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Six Dedicated AV &amp; Educational Technology Categories
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            From single meeting rooms to campus-wide university rollouts, explore our verified equipment categories engineered for heavy institutional use.
-          </p>
-        </motion.div>
+          <button
+            onClick={() => onNavigate('products')}
+            className="cursor-pointer text-xs font-bold text-emerald-800 hover:text-emerald-900 inline-flex items-center gap-1.5 self-start md:self-auto"
+          >
+            <span>View Complete Catalog with Prices</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {CATEGORIES.map((cat, idx) => (
             <motion.div
               key={cat.id}
-              initial={{ opacity: 0, y: 35, scale: 0.96 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
+              initial={{ opacity: 0, y: 25 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.5, delay: idx * 0.08 }}
+              transition={{ duration: 0.45, delay: idx * 0.08 }}
+              className="group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xs hover:border-emerald-500/80 hover:shadow-xl transition-all duration-300 flex flex-col justify-between cursor-pointer"
               onClick={() => onNavigate(cat.id as PageId)}
-              className="group bg-white rounded-3xl border border-slate-200/90 overflow-hidden hover:border-blue-500 hover:shadow-[0_20px_40px_rgba(37,99,235,0.15)] transition-all duration-300 flex flex-col cursor-pointer hover:-translate-y-1.5"
             >
-              <div className="aspect-16/10 bg-slate-900 overflow-hidden relative border-b border-slate-100 flex items-center justify-center p-3">
+              <div className="aspect-16/10 overflow-hidden bg-slate-900 relative">
                 <img
                   src={cat.heroImage}
                   alt={cat.name}
-                  className="w-full h-full object-cover rounded-2xl group-hover:scale-106 transition-transform duration-500"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent pointer-events-none" />
-                <div className="absolute bottom-4 left-5 right-5 text-white">
-                  <span className="text-[11px] font-bold text-blue-400 uppercase tracking-wider">
-                    Category Overview
-                  </span>
-                  <h3 className="text-base font-extrabold text-white leading-snug">
-                    {cat.name}
-                  </h3>
+                <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
+                <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full bg-emerald-900/90 text-white text-[10px] font-bold backdrop-blur-xs border border-emerald-500/30">
+                  {PRODUCTS.filter((p) => p.category === cat.id).length || 3} Models
                 </div>
               </div>
 
-              <div className="p-6 sm:p-7 flex-1 flex flex-col justify-between space-y-4">
-                <div className="space-y-3">
-                  <p className="text-xs text-slate-600 leading-relaxed">
+              <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
+                <div>
+                  <h3 className="text-base font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                    {cat.name}
+                  </h3>
+                  <p className="text-xs text-slate-600 line-clamp-2 mt-1 leading-relaxed">
                     {cat.description}
                   </p>
-
-                  <ul className="space-y-2 pt-1">
-                    {cat.features.slice(0, 3).map((feat, i) => (
-                      <li key={i} className="flex items-center gap-2 text-xs text-slate-700">
-                        <CheckCircle2 className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                        <span>{feat}</span>
-                      </li>
-                    ))}
-                  </ul>
                 </div>
 
-                <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
-                  <span className="text-xs font-bold text-blue-600 group-hover:text-blue-700 inline-flex items-center gap-1">
-                    <span>Explore {cat.name}</span>
-                    <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1.5 transition-transform" />
+                <div className="pt-2 border-t border-slate-100 flex items-center justify-between">
+                  <span className="text-xs font-bold text-emerald-800 group-hover:translate-x-1 transition-transform inline-flex items-center gap-1">
+                    <span>Explore Products</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                   <a
                     href={BUSINESS_INFO.whatsappUrl}
                     target="_blank"
                     rel="noopener noreferrer"
                     onClick={(e) => e.stopPropagation()}
-                    className="text-xs font-bold text-blue-600 hover:text-blue-700 hover:bg-blue-50 px-2.5 py-1.5 rounded-lg transition-colors flex items-center gap-1"
+                    className="text-xs font-bold text-emerald-800 hover:text-emerald-900 hover:bg-emerald-50 px-2.5 py-1 rounded-lg transition-colors flex items-center gap-1"
                   >
-                    <MessageSquare className="w-3.5 h-3.5" />
+                    <MessageSquare className="w-3.5 h-3.5 fill-current" />
                     <span>WhatsApp</span>
                   </a>
                 </div>
@@ -271,7 +261,140 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 6. INTERACTIVE SCREEN SIZE VISUALIZER TOOL (Dimensional Explorer) */}
+      {/* 5. DEDICATED REAL INSTALLATION GALLERY SECTION (User Explicit Request) */}
+      <section className="bg-gradient-to-b from-slate-100/70 via-emerald-50/20 to-white py-16 border-y border-slate-200">
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+            <div>
+              <div className="text-xs font-bold text-emerald-800 uppercase tracking-wider flex items-center gap-1.5">
+                <Images className="w-4 h-4 text-emerald-700" />
+                <span>Verified Field Installations</span>
+              </div>
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+                Project &amp; Installation Gallery
+              </h2>
+              <p className="text-xs sm:text-sm text-slate-600 mt-1 max-w-2xl">
+                Explore real council chambers, smart auditoriums, and university lecture halls engineered and supplied by Kohinoor Audio Visual.
+              </p>
+            </div>
+            <button
+              onClick={() => onNavigate('gallery')}
+              className="cursor-pointer px-5 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs rounded-xl shadow-md transition-all inline-flex items-center gap-2 self-start md:self-auto shrink-0"
+            >
+              <Images className="w-3.5 h-3.5" />
+              <span>View All 12 Gallery Projects</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+
+          {/* 6-Photo Responsive Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {featuredGallery.map((item, idx) => (
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.35, delay: idx * 0.05 }}
+                className="group bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xs hover:border-emerald-400 hover:shadow-xl transition-all duration-300 flex flex-col cursor-pointer"
+                onClick={() => setSelectedGalleryItem(item)}
+              >
+                <div className="relative aspect-4/3 w-full bg-slate-950 overflow-hidden">
+                  <img
+                    src={item.image}
+                    alt={item.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-black/20 opacity-75 group-hover:opacity-90 transition-opacity" />
+
+                  <div className="absolute top-3 left-3 right-3 flex items-center justify-between">
+                    <span className="px-2.5 py-1 rounded-full bg-emerald-900/90 text-white text-[10px] font-bold backdrop-blur-xs border border-emerald-500/30 flex items-center gap-1">
+                      <MapPin className="w-3 h-3 text-emerald-400" />
+                      <span>{item.location}</span>
+                    </span>
+                    <span className="p-1.5 rounded-full bg-white/20 text-white backdrop-blur-xs">
+                      <Maximize2 className="w-3.5 h-3.5" />
+                    </span>
+                  </div>
+
+                  <div className="absolute bottom-3 left-3 right-3">
+                    <span className="text-[10px] uppercase font-bold text-emerald-300 block">
+                      {item.categoryLabel}
+                    </span>
+                    <h3 className="text-sm font-bold text-white line-clamp-1 leading-snug">
+                      {item.title}
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
+                  <p className="text-xs text-slate-600 line-clamp-2 leading-relaxed">
+                    {item.description}
+                  </p>
+                  <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-emerald-700 group-hover:text-emerald-800">
+                    <span>Click to view full photo &amp; specs</span>
+                    <span>&rarr;</span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 6. FEATURED HARDWARE SPOTLIGHT (Clean 2-Column Grid with Prices) */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-50px' }}
+          transition={{ duration: 0.5 }}
+          className="flex flex-col md:flex-row md:items-end justify-between gap-4"
+        >
+          <div>
+            <div className="text-xs font-bold text-emerald-800 uppercase tracking-wider">
+              Transparent Pricing &amp; Stock
+            </div>
+            <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
+              Featured Product Highlights
+            </h2>
+          </div>
+          <button
+            onClick={() => onNavigate('products')}
+            className="cursor-pointer text-xs font-bold text-emerald-800 hover:text-emerald-900 inline-flex items-center gap-1.5 self-start md:self-auto"
+          >
+            <span>View All Products with Prices</span>
+            <ArrowRight className="w-3.5 h-3.5" />
+          </button>
+        </motion.div>
+
+        {/* Clean 2-Column Grid as specifically requested */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {PRODUCTS.slice(0, 4).map((prod, idx) => (
+            <ProductCard
+              key={prod.id}
+              product={prod}
+              onSelect={onSelectProduct}
+              onOpenQuote={onOpenQuoteModal}
+              index={idx}
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* 7. INTERACTIVE TURNKEY AV SYSTEM ESTIMATOR */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8">
+        <motion.div
+          initial={{ opacity: 0, y: 35 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+        >
+          <AvSystemEstimator />
+        </motion.div>
+      </section>
+
+      {/* 8. INTERACTIVE SCREEN SIZE VISUALIZER TOOL */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <motion.div
           initial={{ opacity: 0, y: 35 }}
@@ -283,261 +406,96 @@ export const HomePage: React.FC<HomePageProps> = ({
         </motion.div>
       </section>
 
-      {/* 7. FEATURED HARDWARE SPOTLIGHT (Divided into 2-Column Clean Grid to Avoid Overcrowding) */}
-      <section className="bg-gradient-to-b from-slate-100/80 to-blue-50/30 py-18 border-y border-slate-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-10">
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.5 }}
-            className="flex flex-col md:flex-row md:items-end justify-between gap-4"
-          >
-            <div>
-              <div className="text-xs font-bold text-blue-600 uppercase tracking-wider">
-                In-Stock &amp; Ready for Delivery
-              </div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-                Featured Product Highlights
-              </h2>
-            </div>
-            <button
-              onClick={() => onNavigate('products')}
-              className="cursor-pointer text-xs font-bold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1.5 self-start md:self-auto"
-            >
-              <span>View All 18 Hardware Models in Catalog</span>
-              <ArrowRight className="w-3.5 h-3.5" />
-            </button>
-          </motion.div>
-
-          {/* 2-Column Grid as specifically requested by user to prevent cramping */}
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {PRODUCTS.slice(0, 4).map((prod, idx) => (
-              <ProductCard
-                key={prod.id}
-                product={prod}
-                onSelect={onSelectProduct}
-                onOpenQuote={onOpenQuoteModal}
-                index={idx}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 8. WHY CHOOSE US SECTION - Staggered Card Entrance */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.55 }}
-          className="text-center max-w-2xl mx-auto mb-14 space-y-3"
-        >
-          <div className="text-xs font-bold text-blue-600 uppercase tracking-wider">
-            Proven Reliability
-          </div>
-          <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-            Why Educational &amp; Government Institutions Choose Kohinoor AV
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-            We combine authentic international equipment supply with local engineering presence in Blue Area Islamabad, delivering dependability across every installation.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[
-            {
-              icon: ShieldCheck,
-              title: 'Professional AV Equipment Solutions',
-              desc: 'Every rostrum, display, camera, and microphone is selected for durability, high duty cycles, and crystal-clear presentation performance.'
-            },
-            {
-              icon: GraduationCap,
-              title: 'Educational Technology Expertise',
-              desc: 'Deep understanding of classroom ergonomics, teacher-friendly interactive software, stylus handwriting accuracy, and student engagement tools.'
-            },
-            {
-              icon: Layers,
-              title: 'Multiple Product Categories',
-              desc: 'One-stop sourcing for digital podiums, LED touch panels (55"–110"), high-lumen projectors, conference delegate mics, and PTZ robotic cameras.'
-            },
-            {
-              icon: Building2,
-              title: 'Nationwide Supply Network',
-              desc: 'Direct delivery and technical logistics covering Islamabad, Rawalpindi, Lahore, Karachi, Peshawar, Multan, Faisalabad, and regional cities.'
-            },
-            {
-              icon: Wrench,
-              title: 'Installation & Technical Support',
-              desc: 'Our trained field engineers manage complete physical mounting, cable raceways, audio tuning, and hands-on staff orientation.'
-            },
-            {
-              icon: Users,
-              title: 'Customized Institutional Solutions',
-              desc: 'Tailored AV packages accommodating custom university logos, specific room dimensions, tender specifications, and budgetary frameworks.'
-            }
-          ].map((item, idx) => {
-            const Icon = item.icon;
-            return (
-              <motion.div
-                key={idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: '-40px' }}
-                transition={{ duration: 0.45, delay: idx * 0.08 }}
-                className="p-6 sm:p-7 rounded-3xl bg-white border border-slate-200/90 space-y-3 hover:border-blue-400 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
-              >
-                <div className="w-11 h-11 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center">
-                  <Icon className="w-5 h-5" />
-                </div>
-                <h3 className="text-sm sm:text-base font-bold text-slate-900">{item.title}</h3>
-                <p className="text-xs text-slate-600 leading-relaxed">
-                  {item.desc}
-                </p>
-              </motion.div>
-            );
-          })}
-        </div>
-      </section>
-
-      {/* 9. INDUSTRIES WE SERVE - Dynamic Entrance */}
-      <section className="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white py-18 relative overflow-hidden">
-        <div className="absolute top-0 right-1/4 w-96 h-96 bg-blue-600/15 rounded-full blur-3xl pointer-events-none" />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-12 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 25 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: '-50px' }}
-            transition={{ duration: 0.55 }}
-            className="text-center max-w-2xl mx-auto space-y-3"
-          >
-            <div className="text-xs font-bold text-blue-400 uppercase tracking-wider">
-              Client Sectors
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-              Industries We Serve Across Pakistan
-            </h2>
-            <p className="text-xs sm:text-sm text-blue-200/80 leading-relaxed">
-              Providing specialized audio-visual infrastructure tailored to unique organizational requirements.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-            {[
-              { icon: GraduationCap, title: 'Schools', desc: 'Interactive learning displays & portable PA' },
-              { icon: GraduationCap, title: 'Colleges', desc: 'Multimedia projectors & smart classrooms' },
-              { icon: Landmark, title: 'Universities', desc: 'Digital rostrums & lecture recording' },
-              { icon: Building2, title: 'Government Depts', desc: 'Secure conference discussion systems' },
-              { icon: Building2, title: 'Corporate Offices', desc: 'Boardroom displays & video conferencing' },
-              { icon: Layers, title: 'Conference Centers', desc: 'Auditorium teleprompters & staging' }
-            ].map((item, idx) => {
-              const Icon = item.icon;
-              return (
-                <motion.div
-                  key={idx}
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  whileInView={{ opacity: 1, scale: 1 }}
-                  viewport={{ once: true, margin: '-30px' }}
-                  transition={{ duration: 0.4, delay: idx * 0.06 }}
-                  className="p-5 rounded-2xl bg-white/5 border border-white/10 hover:border-blue-400 hover:bg-white/10 text-center space-y-2.5 transition-all duration-300"
-                >
-                  <Icon className="w-6 h-6 text-blue-400 mx-auto" />
-                  <h3 className="text-xs font-bold text-white">{item.title}</h3>
-                  <p className="text-[11px] text-blue-200/70">{item.desc}</p>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* 10. PROVEN INSTALLATIONS / CASE STUDIES PREVIEW (Clean 3-Column) */}
+      {/* 9. REAL INSTALLATIONS / CLIENT PROJECTS - Slide/Carousel Format */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-8">
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-col md:flex-row md:items-end justify-between gap-4"
-        >
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
-            <div className="text-xs font-bold text-blue-600 uppercase tracking-wider">
+            <div className="text-xs font-bold text-emerald-800 uppercase tracking-wider">
               Proven Track Record
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
               Real Installations &amp; Client Projects
             </h2>
           </div>
-          <button
-            onClick={() => onNavigate('projects')}
-            className="cursor-pointer text-xs font-bold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1.5"
-          >
-            <span>View Full Project Case Studies</span>
-            <ArrowRight className="w-3.5 h-3.5" />
-          </button>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {PROJECTS.slice(0, 3).map((item, idx) => (
-            <motion.div
-              key={item.id}
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.45, delay: idx * 0.1 }}
-              onClick={() => onNavigate('projects')}
-              className="group bg-white rounded-3xl border border-slate-200/90 overflow-hidden hover:border-blue-500 hover:shadow-xl transition-all duration-300 cursor-pointer flex flex-col hover:-translate-y-1"
+          <div className="flex items-center gap-2 self-start md:self-auto">
+            <button
+              onClick={() => setActiveProjectSlide((prev) => (prev === 0 ? clientProjects.length - 1 : prev - 1))}
+              className="p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 transition-colors cursor-pointer"
+              aria-label="Previous project slide"
             >
-              <div className="aspect-16/10 bg-slate-100 overflow-hidden border-b border-slate-100">
-                <img
-                  src={item.image}
-                  alt={item.title}
-                  className="w-full h-full object-cover group-hover:scale-106 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-6 flex-1 flex flex-col justify-between space-y-3">
-                <div>
-                  <div className="text-[11px] font-bold text-blue-600 uppercase tracking-wide">{item.client}</div>
-                  <h3 className="text-base font-bold text-slate-900 group-hover:text-blue-600 transition-colors mt-1">
-                    {item.title}
-                  </h3>
-                  <p className="text-xs text-slate-600 mt-2 line-clamp-2 leading-relaxed">
-                    {item.description}
-                  </p>
-                </div>
-                <div className="text-[11px] text-slate-400 font-medium pt-2 border-t border-slate-100">
-                  Location: {item.location}
-                </div>
-              </div>
-            </motion.div>
-          ))}
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <button
+              onClick={() => setActiveProjectSlide((prev) => (prev + 1) % clientProjects.length)}
+              className="p-2.5 rounded-xl border border-slate-200 bg-white hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 transition-colors cursor-pointer"
+              aria-label="Next project slide"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+            <button
+              onClick={() => onNavigate('projects')}
+              className="ml-2 cursor-pointer text-xs font-bold text-emerald-800 hover:text-emerald-900 inline-flex items-center gap-1.5"
+            >
+              <span>View All Projects</span>
+              <ArrowRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        </div>
+
+        {/* Dynamic Project Slide Card */}
+        <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-lg grid grid-cols-1 lg:grid-cols-12 items-center">
+          <div className="lg:col-span-7 aspect-16/10 lg:aspect-auto lg:h-[380px] bg-slate-950 overflow-hidden">
+            <img
+              src={clientProjects[activeProjectSlide].image}
+              alt={clientProjects[activeProjectSlide].title}
+              className="w-full h-full object-cover"
+            />
+          </div>
+          <div className="lg:col-span-5 p-6 sm:p-8 space-y-3.5">
+            <span className="text-[11px] font-bold text-emerald-700 uppercase tracking-wider">
+              {clientProjects[activeProjectSlide].client}
+            </span>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 leading-snug">
+              {clientProjects[activeProjectSlide].title}
+            </h3>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              {clientProjects[activeProjectSlide].summary}
+            </p>
+            <div className="p-3 bg-emerald-50/70 rounded-xl border border-emerald-100 text-xs text-emerald-900">
+              <span className="font-bold">Equipment Supplied: </span>
+              {clientProjects[activeProjectSlide].equipment}
+            </div>
+            <div className="pt-2 flex items-center justify-between">
+              <span className="text-xs text-slate-400 font-medium">
+                {clientProjects[activeProjectSlide].location}
+              </span>
+              <a
+                href={BUSINESS_INFO.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer px-4 py-2 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold rounded-xl transition-all shadow-sm flex items-center gap-1.5"
+              >
+                <MessageSquare className="w-3.5 h-3.5 fill-current" />
+                <span>Inquire on WhatsApp</span>
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* 11. VISIBLE FAQ SECTION */}
+      {/* 10. VISIBLE FAQ SECTION */}
       <section className="max-w-4xl mx-auto px-4 sm:px-8 space-y-6">
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.5 }}
-          className="text-center space-y-2"
-        >
-          <div className="text-xs font-bold text-blue-600 uppercase tracking-wider">
+        <div className="text-center space-y-2">
+          <div className="text-xs font-bold text-emerald-800 uppercase tracking-wider">
             Frequently Asked Questions
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
             Procurement, Pricing &amp; Technical Inquiries
           </h2>
-          <p className="text-xs text-slate-500">
-            Everything you need to know about purchasing AV equipment in Islamabad and across Pakistan.
-          </p>
-        </motion.div>
+        </div>
 
-        <div className="space-y-3 pt-4">
-          {FAQS.slice(0, 5).map((faq, index) => (
+        <div className="space-y-3 pt-2">
+          {FAQS.slice(0, 4).map((faq, index) => (
             <div
               key={index}
               className="bg-white rounded-2xl border border-slate-200 overflow-hidden transition-colors"
@@ -551,7 +509,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 </span>
                 <ChevronDown
                   className={`w-4 h-4 text-slate-400 shrink-0 transition-transform duration-200 ${
-                    openFaq === index ? 'rotate-180 text-blue-600' : ''
+                    openFaq === index ? 'rotate-180 text-emerald-700' : ''
                   }`}
                 />
               </button>
@@ -566,38 +524,38 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 12. CALL TO ACTION SECTION (100% Blue & Sapphire Theme) */}
+      {/* 11. CALL TO ACTION SECTION (Emerald Green Theme) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <motion.div
-          initial={{ opacity: 0, scale: 0.96 }}
+          initial={{ opacity: 0, scale: 0.97 }}
           whileInView={{ opacity: 1, scale: 1 }}
           viewport={{ once: true, margin: '-50px' }}
           transition={{ duration: 0.6 }}
-          className="bg-gradient-to-br from-blue-600 via-blue-700 to-slate-950 rounded-3xl p-8 sm:p-14 text-white text-center sm:text-left relative overflow-hidden shadow-2xl"
+          className="bg-gradient-to-br from-[#072115] via-[#0d3420] to-[#05180f] rounded-3xl p-8 sm:p-14 text-white text-center sm:text-left relative overflow-hidden shadow-2xl border border-emerald-900/60"
         >
-          <div className="absolute top-0 right-0 w-96 h-96 bg-cyan-400/20 rounded-full blur-3xl pointer-events-none" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
 
           <div className="max-w-3xl relative z-10 space-y-4">
             <h2 className="text-2xl sm:text-4xl font-extrabold tracking-tight text-white leading-tight">
               Looking for Professional Audio Visual Solutions?
             </h2>
-            <p className="text-xs sm:text-sm text-blue-100 leading-relaxed max-w-2xl">
-              Contact our team for product details, quotations, demonstrations and customized AV solutions. We cater to universities, schools, government bodies, and commercial clients throughout Pakistan.
+            <p className="text-xs sm:text-sm text-emerald-100/90 leading-relaxed max-w-2xl">
+              Contact our team for product details, quotations, demonstrations, and customized AV solutions. We cater to universities, schools, government bodies, and commercial clients throughout Pakistan.
             </p>
-            <div className="pt-3 flex flex-wrap items-center gap-4">
+            <div className="pt-2 flex flex-wrap items-center gap-4">
               <a
                 href={BUSINESS_INFO.whatsappUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="cursor-pointer px-7 py-3.5 bg-white text-blue-900 hover:bg-blue-50 active:scale-95 text-xs sm:text-sm font-bold rounded-xl shadow-lg transition-all flex items-center gap-2"
+                className="cursor-pointer px-7 py-3.5 bg-white text-emerald-900 hover:bg-emerald-50 active:scale-95 text-xs sm:text-sm font-bold rounded-xl shadow-lg transition-all flex items-center gap-2"
               >
-                <MessageSquare className="w-4 h-4 fill-current text-blue-700" />
-                <span>Contact Us on WhatsApp (+92 333 5163220)</span>
+                <MessageSquare className="w-4 h-4 fill-current text-emerald-700" />
+                <span>Contact on WhatsApp</span>
               </a>
 
               <button
                 onClick={() => onOpenQuoteModal()}
-                className="cursor-pointer px-7 py-3.5 bg-blue-950/80 hover:bg-slate-900 text-white active:scale-95 text-xs sm:text-sm font-semibold rounded-xl border border-blue-400/40 backdrop-blur-sm transition-all"
+                className="cursor-pointer px-7 py-3.5 bg-emerald-950/80 hover:bg-slate-900 text-white active:scale-95 text-xs sm:text-sm font-semibold rounded-xl border border-emerald-400/40 backdrop-blur-sm transition-all"
               >
                 Get a Free Quotation
               </button>
@@ -605,6 +563,111 @@ export const HomePage: React.FC<HomePageProps> = ({
           </div>
         </motion.div>
       </section>
+
+      {/* Lightbox Modal on Home Page */}
+      <AnimatePresence>
+        {selectedGalleryItem && (
+          <div
+            className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/85 backdrop-blur-sm flex items-center justify-center p-3 sm:p-6"
+            onClick={() => setSelectedGalleryItem(null)}
+          >
+            <motion.div
+              initial={{ opacity: 0, scale: 0.94 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.94 }}
+              transition={{ duration: 0.2 }}
+              className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden my-6"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                onClick={() => setSelectedGalleryItem(null)}
+                className="absolute top-4 right-4 z-20 p-2 text-white bg-slate-900/70 hover:bg-slate-900 rounded-full backdrop-blur-xs transition-colors cursor-pointer"
+                aria-label="Close dialog"
+              >
+                <X className="w-5 h-5" />
+              </button>
+
+              <div className="grid grid-cols-1 lg:grid-cols-12 max-h-[85vh] overflow-y-auto">
+                <div className="lg:col-span-7 bg-slate-950 flex items-center justify-center relative min-h-[300px] lg:min-h-[440px]">
+                  <img
+                    src={selectedGalleryItem.image}
+                    alt={selectedGalleryItem.title}
+                    className="w-full h-full object-contain max-h-[480px]"
+                  />
+                  {selectedGalleryItem.highlightBadge && (
+                    <div className="absolute top-4 left-4 px-3 py-1 rounded-full bg-emerald-700 text-white text-[10px] font-bold shadow-md">
+                      {selectedGalleryItem.highlightBadge}
+                    </div>
+                  )}
+                </div>
+
+                <div className="lg:col-span-5 p-6 sm:p-8 flex flex-col justify-between space-y-6 bg-slate-50">
+                  <div className="space-y-4">
+                    <div>
+                      <div className="text-[10px] font-bold text-emerald-700 uppercase tracking-wider">
+                        {selectedGalleryItem.categoryLabel}
+                      </div>
+                      <h2 className="text-lg sm:text-xl font-extrabold text-slate-900 mt-0.5 leading-snug">
+                        {selectedGalleryItem.title}
+                      </h2>
+                    </div>
+
+                    <div className="space-y-2 text-xs">
+                      <div className="flex items-center gap-2 text-slate-700">
+                        <MapPin className="w-4 h-4 text-emerald-700 shrink-0" />
+                        <span className="font-semibold">{selectedGalleryItem.location}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-slate-700">
+                        <Building2 className="w-4 h-4 text-emerald-700 shrink-0" />
+                        <span>{selectedGalleryItem.clientType}</span>
+                      </div>
+                    </div>
+
+                    <p className="text-xs text-slate-600 leading-relaxed pt-2 border-t border-slate-200">
+                      {selectedGalleryItem.description}
+                    </p>
+
+                    <div className="pt-2 space-y-1.5">
+                      <span className="text-xs font-bold text-slate-900 block">
+                        Hardware &amp; Systems Deployed:
+                      </span>
+                      <ul className="space-y-1 text-xs text-slate-700">
+                        {selectedGalleryItem.equipmentDeployed.map((eq, i) => (
+                          <li key={i} className="flex items-start gap-2">
+                            <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                            <span>{eq}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+
+                  <div className="pt-4 border-t border-slate-200 space-y-2">
+                    <a
+                      href={`${BUSINESS_INFO.whatsappUrl}?text=${encodeURIComponent(`Hello Kohinoor AV, I am inquiring about the *${selectedGalleryItem.title}* shown in your gallery.`)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="cursor-pointer w-full py-3 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold rounded-xl shadow-md transition-colors flex items-center justify-center gap-2"
+                    >
+                      <MessageSquare className="w-4 h-4 fill-current" />
+                      <span>Order on WhatsApp</span>
+                    </a>
+                    <button
+                      onClick={() => {
+                        setSelectedGalleryItem(null);
+                        onNavigate('gallery');
+                      }}
+                      className="cursor-pointer w-full py-2.5 bg-white hover:bg-slate-100 text-slate-800 text-xs font-semibold rounded-xl border border-slate-200 transition-colors"
+                    >
+                      Open Full Project Gallery
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
     </div>
   );
 };

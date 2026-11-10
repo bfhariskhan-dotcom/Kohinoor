@@ -39,7 +39,7 @@ export const CursorGlow: React.FC = () => {
         height: 300
       }}
     >
-      <div className="w-full h-full rounded-full bg-blue-500/8 blur-3xl" />
+      <div className="w-full h-full rounded-full bg-emerald-500/10 blur-3xl" />
     </div>
   );
 };

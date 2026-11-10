@@ -20,17 +20,17 @@ export const WhatsAppFloatingButton: React.FC = () => {
 
   return (
     <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-      {/* Quick message options popover in cohesive Royal Blue */}
+      {/* Quick message options popover in cohesive Emerald Green */}
       {isOpen && (
-        <div className="mb-3 w-80 bg-white rounded-2xl shadow-2xl border border-slate-200 p-4 transition-all duration-200 animate-in fade-in slide-in-from-bottom-3">
+        <div className="mb-3 w-80 bg-white rounded-2xl shadow-2xl border border-emerald-100 p-4 transition-all duration-200 animate-in fade-in slide-in-from-bottom-3">
           <div className="flex items-center justify-between pb-3 border-b border-slate-100">
             <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-blue-600 text-white flex items-center justify-center font-bold text-xs shadow-xs">
+              <div className="w-8 h-8 rounded-xl bg-emerald-700 text-white flex items-center justify-center font-bold text-xs shadow-xs">
                 KAV
               </div>
               <div>
                 <h4 className="text-xs font-bold text-slate-900">Kohinoor Audio Visual</h4>
-                <p className="text-[11px] text-blue-600 font-semibold">Direct WhatsApp Sales &middot; Online</p>
+                <p className="text-[11px] text-emerald-700 font-semibold">Direct WhatsApp Sales &middot; Online</p>
               </div>
             </div>
             <button
@@ -50,7 +50,7 @@ export const WhatsAppFloatingButton: React.FC = () => {
               <button
                 key={i}
                 onClick={() => handleSendQuick(msg)}
-                className="w-full text-left text-xs p-2.5 rounded-xl bg-slate-50 hover:bg-blue-50 hover:text-blue-800 text-slate-700 transition-colors border border-slate-100 hover:border-blue-200 block font-medium"
+                className="w-full text-left text-xs p-2.5 rounded-xl bg-slate-50 hover:bg-emerald-50 hover:text-emerald-900 text-slate-700 transition-colors border border-slate-100 hover:border-emerald-200 block font-medium"
               >
                 {msg}
               </button>
@@ -62,7 +62,7 @@ export const WhatsAppFloatingButton: React.FC = () => {
               href={BUSINESS_INFO.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-full py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl text-center flex items-center justify-center gap-2 transition-colors shadow-sm"
+              className="w-full py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold rounded-xl text-center flex items-center justify-center gap-2 transition-colors shadow-sm"
             >
               <MessageSquare className="w-4 h-4" />
               <span>Open Direct WhatsApp Chat</span>
@@ -71,11 +71,11 @@ export const WhatsAppFloatingButton: React.FC = () => {
         </div>
       )}
 
-      {/* Floating Action Button in Royal Blue Theme */}
+      {/* Floating Action Button in Emerald Green (No Phone Number in Label) */}
       <button
         onClick={() => setIsOpen(!isOpen)}
         aria-label="Contact Kohinoor Audio Visual on WhatsApp"
-        className="cursor-pointer group flex items-center gap-2.5 px-4 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full shadow-xl hover:shadow-blue-600/30 active:scale-95 transition-all duration-200 border-2 border-white/20"
+        className="cursor-pointer group flex items-center gap-2.5 px-4 py-3 bg-emerald-700 hover:bg-emerald-800 text-white rounded-full shadow-xl hover:shadow-emerald-700/30 active:scale-95 transition-all duration-200 border-2 border-white/20"
       >
         <MessageSquare className="w-5 h-5 fill-current" />
         <span className="text-xs font-extrabold tracking-wide hidden sm:inline">

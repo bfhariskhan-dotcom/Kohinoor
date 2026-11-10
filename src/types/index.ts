@@ -28,6 +28,19 @@ export interface ProjectItem {
   equipmentSupplied: string[];
 }
 
+export interface GalleryItem {
+  id: string;
+  title: string;
+  category: 'all' | 'podiums' | 'smart-classrooms' | 'conference' | 'auditorium' | 'led-displays';
+  categoryLabel: string;
+  image: string;
+  location: string;
+  clientType: string;
+  description: string;
+  equipmentDeployed: string[];
+  highlightBadge?: string;
+}
+
 export interface FAQItem {
   question: string;
   answer: string;
@@ -38,6 +51,7 @@ export type PageId =
   | 'home'
   | 'about'
   | 'products'
+  | 'gallery'
   | 'digital-podiums'
   | 'multimedia-projectors'
   | 'interactive-led-displays'

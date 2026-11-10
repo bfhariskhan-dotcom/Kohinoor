@@ -16,6 +16,7 @@ import { ConferenceSystemsPage } from './pages/ConferenceSystemsPage';
 import { PtzCamerasPage } from './pages/PtzCamerasPage';
 import { SmartClassroomPage } from './pages/SmartClassroomPage';
 import { ProjectsPage } from './pages/ProjectsPage';
+import { GalleryPage } from './pages/GalleryPage';
 import { ContactPage } from './pages/ContactPage';
 
 export default function App() {
@@ -39,6 +40,7 @@ export default function App() {
         'ptz-robotic-cameras',
         'smart-classroom-solutions',
         'projects',
+        'gallery',
         'contact'
       ];
       if (validPages.includes(hash)) {
@@ -145,6 +147,13 @@ export default function App() {
             onOpenQuoteModal={handleOpenQuoteModal}
           />
         );
+      case 'gallery':
+        return (
+          <GalleryPage
+            onNavigate={handleNavigate}
+            onOpenQuoteModal={handleOpenQuoteModal}
+          />
+        );
       case 'contact':
         return <ContactPage onNavigate={handleNavigate} />;
       default:
@@ -159,7 +168,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800 selection:bg-blue-600 selection:text-white relative">
+    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800 selection:bg-emerald-700 selection:text-white relative">
       {/* Subtle Ambient Cursor Glow Effect */}
       <CursorGlow />
 

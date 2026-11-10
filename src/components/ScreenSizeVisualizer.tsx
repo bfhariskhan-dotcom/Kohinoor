@@ -105,7 +105,7 @@ export const ScreenSizeVisualizer: React.FC = () => {
       {/* Header */}
       <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
         <div>
-          <div className="text-xs font-bold text-blue-600 uppercase tracking-wider">
+          <div className="text-xs font-bold text-emerald-800 uppercase tracking-wider">
             Interactive LED Dimensional Selector
           </div>
           <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
@@ -116,7 +116,7 @@ export const ScreenSizeVisualizer: React.FC = () => {
           </p>
         </div>
 
-        <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200 self-start md:self-auto">
+        <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 self-start md:self-auto">
           Stock in Islamabad Warehouse
         </span>
       </div>
@@ -129,7 +129,7 @@ export const ScreenSizeVisualizer: React.FC = () => {
             onClick={() => setSelectedIdx(index)}
             className={`cursor-pointer px-4 py-2 rounded-xl text-xs sm:text-sm font-bold transition-all ${
               selectedIdx === index
-                ? 'bg-blue-600 text-white shadow-md shadow-blue-600/30'
+                ? 'bg-emerald-700 text-white shadow-md shadow-emerald-700/20'
                 : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
             }`}
           >
@@ -141,8 +141,8 @@ export const ScreenSizeVisualizer: React.FC = () => {
       {/* Visual Comparison Stage */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         {/* Left Visual Representation */}
-        <div className="lg:col-span-6 bg-slate-950 rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center min-h-[300px] relative overflow-hidden border border-slate-800">
-          <div className="absolute inset-0 bg-[radial-gradient(#1e40af_1px,transparent_1px)] [background-size:16px_16px] opacity-25" />
+        <div className="lg:col-span-6 bg-[#072115] rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center min-h-[300px] relative overflow-hidden border border-emerald-900/60">
+          <div className="absolute inset-0 bg-[radial-gradient(#15803d_1px,transparent_1px)] [background-size:16px_16px] opacity-25" />
 
           {/* Scaled Bezel Preview */}
           <motion.div
@@ -150,17 +150,17 @@ export const ScreenSizeVisualizer: React.FC = () => {
             initial={{ scale: 0.85, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.4 }}
-            className="relative z-10 w-full max-w-md bg-slate-900 border-2 border-blue-500 rounded-xl p-3 shadow-[0_0_40px_rgba(37,99,235,0.35)] flex flex-col items-center text-center space-y-2"
+            className="relative z-10 w-full max-w-md bg-slate-950 border-2 border-emerald-500 rounded-xl p-3 shadow-[0_0_40px_rgba(21,128,61,0.35)] flex flex-col items-center text-center space-y-2"
           >
-            <div className="w-full aspect-16/9 bg-gradient-to-br from-blue-950 via-slate-900 to-blue-900 rounded-lg flex flex-col items-center justify-center p-4 border border-blue-400/30">
-              <Tv className="w-10 h-10 text-blue-400 mb-1" />
+            <div className="w-full aspect-16/9 bg-gradient-to-br from-[#0c3120] via-slate-950 to-[#072115] rounded-lg flex flex-col items-center justify-center p-4 border border-emerald-400/30">
+              <Tv className="w-10 h-10 text-emerald-400 mb-1" />
               <div className="text-xl sm:text-2xl font-extrabold text-white">
                 {active.size}
               </div>
-              <div className="text-[11px] text-blue-300 font-mono">
+              <div className="text-[11px] text-emerald-300 font-mono">
                 {active.widthCm} cm × {active.heightCm} cm
               </div>
-              <div className="text-[10px] text-slate-300 mt-2 bg-black/40 px-2.5 py-0.5 rounded-full">
+              <div className="text-[10px] text-emerald-200/90 mt-2 bg-black/40 px-2.5 py-0.5 rounded-full border border-emerald-500/30">
                 4K Ultra-HD · 20-Point Multi-Touch
               </div>
             </div>
@@ -169,7 +169,7 @@ export const ScreenSizeVisualizer: React.FC = () => {
             <div className="w-24 h-2 bg-slate-700 rounded-full" />
           </motion.div>
 
-          <div className="mt-4 text-[11px] text-slate-400 z-10">
+          <div className="mt-4 text-[11px] text-emerald-200/80 z-10">
             Available on Fixed Wall Bracket or Heavy-Duty Mobile Trolley Cart
           </div>
         </div>
@@ -177,7 +177,7 @@ export const ScreenSizeVisualizer: React.FC = () => {
         {/* Right Dimension & Fit Breakdown */}
         <div className="lg:col-span-6 space-y-5">
           <div className="space-y-1">
-            <span className="text-[11px] font-bold text-blue-600 uppercase tracking-wider">
+            <span className="text-[11px] font-bold text-emerald-700 uppercase tracking-wider">
               {active.popularity}
             </span>
             <h4 className="text-xl font-extrabold text-slate-900">
@@ -188,7 +188,7 @@ export const ScreenSizeVisualizer: React.FC = () => {
           <div className="grid grid-cols-2 gap-3">
             <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
               <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                <Users className="w-3.5 h-3.5 text-blue-600" />
+                <Users className="w-3.5 h-3.5 text-emerald-600" />
                 <span>Audience</span>
               </div>
               <div className="text-xs sm:text-sm font-bold text-slate-900 mt-1">
@@ -198,7 +198,7 @@ export const ScreenSizeVisualizer: React.FC = () => {
 
             <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
               <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                <Eye className="w-3.5 h-3.5 text-blue-600" />
+                <Eye className="w-3.5 h-3.5 text-emerald-600" />
                 <span>Viewing Distance</span>
               </div>
               <div className="text-xs sm:text-sm font-bold text-slate-900 mt-1">
@@ -208,7 +208,7 @@ export const ScreenSizeVisualizer: React.FC = () => {
 
             <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
               <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                <Maximize2 className="w-3.5 h-3.5 text-blue-600" />
+                <Maximize2 className="w-3.5 h-3.5 text-emerald-600" />
                 <span>Width × Height</span>
               </div>
               <div className="text-xs sm:text-sm font-bold text-slate-900 mt-1">
@@ -218,7 +218,7 @@ export const ScreenSizeVisualizer: React.FC = () => {
 
             <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200">
               <div className="flex items-center gap-1.5 text-xs text-slate-500">
-                <Check className="w-3.5 h-3.5 text-blue-600" />
+                <Check className="w-3.5 h-3.5 text-emerald-600" />
                 <span>Multi-Touch</span>
               </div>
               <div className="text-xs sm:text-sm font-bold text-slate-900 mt-1">
@@ -227,7 +227,7 @@ export const ScreenSizeVisualizer: React.FC = () => {
             </div>
           </div>
 
-          <div className="p-4 rounded-xl bg-blue-50/70 border border-blue-200 text-xs text-blue-900 space-y-1">
+          <div className="p-4 rounded-xl bg-emerald-50/70 border border-emerald-200 text-xs text-emerald-900 space-y-1">
             <div className="font-bold">Ideal Deployment Setting:</div>
             <div>{active.idealRoomType}</div>
           </div>
@@ -235,10 +235,10 @@ export const ScreenSizeVisualizer: React.FC = () => {
           <div className="pt-2">
             <button
               onClick={handleWhatsApp}
-              className="w-full sm:w-auto cursor-pointer px-6 py-3 bg-blue-600 hover:bg-blue-700 active:scale-95 text-white text-xs font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
+              className="w-full sm:w-auto cursor-pointer px-6 py-3 bg-emerald-700 hover:bg-emerald-800 active:scale-95 text-white text-xs font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
             >
               <MessageSquare className="w-4 h-4 fill-current" />
-              <span>Inquire {active.size} on WhatsApp</span>
+              <span>Inquire on WhatsApp</span>
             </button>
           </div>
         </div>

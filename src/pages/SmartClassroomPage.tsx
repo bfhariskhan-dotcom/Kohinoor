@@ -9,7 +9,8 @@ import {
   Volume2,
   CheckCircle2,
   MessageSquare,
-  Sparkles
+  Sparkles,
+  Camera
 } from 'lucide-react';
 
 interface SmartClassroomPageProps {
@@ -29,7 +30,7 @@ export const SmartClassroomPage: React.FC<SmartClassroomPageProps> = ({
     <div className="space-y-16 py-10 max-w-7xl mx-auto px-4 sm:px-8">
       {/* Category Header */}
       <div className="space-y-4 max-w-3xl">
-        <div className="text-xs font-bold text-blue-600 uppercase tracking-wider">
+        <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
           Product Category 06 · Turnkey Integration
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
@@ -43,7 +44,7 @@ export const SmartClassroomPage: React.FC<SmartClassroomPageProps> = ({
       {/* 4 Pillars of a Kohinoor Smart Classroom */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
         <div className="p-5 bg-white rounded-3xl border border-slate-200 space-y-2.5 shadow-xs">
-          <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
             <GraduationCap className="w-5 h-5" />
           </div>
           <h3 className="text-xs font-bold text-slate-900">Digital Teaching Podiums</h3>
@@ -53,7 +54,7 @@ export const SmartClassroomPage: React.FC<SmartClassroomPageProps> = ({
         </div>
 
         <div className="p-5 bg-white rounded-3xl border border-slate-200 space-y-2.5 shadow-xs">
-          <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
             <BookOpen className="w-5 h-5" />
           </div>
           <h3 className="text-xs font-bold text-slate-900">Interactive 4K LED Displays</h3>
@@ -63,7 +64,7 @@ export const SmartClassroomPage: React.FC<SmartClassroomPageProps> = ({
         </div>
 
         <div className="p-5 bg-white rounded-3xl border border-slate-200 space-y-2.5 shadow-xs">
-          <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
             <Volume2 className="w-5 h-5" />
           </div>
           <h3 className="text-xs font-bold text-slate-900">Acoustic Audio Systems</h3>
@@ -73,7 +74,7 @@ export const SmartClassroomPage: React.FC<SmartClassroomPageProps> = ({
         </div>
 
         <div className="p-5 bg-white rounded-3xl border border-slate-200 space-y-2.5 shadow-xs">
-          <div className="w-10 h-10 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+          <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
             <Wrench className="w-5 h-5" />
           </div>
           <h3 className="text-xs font-bold text-slate-900">Installation &amp; Faculty Training</h3>
@@ -84,34 +85,34 @@ export const SmartClassroomPage: React.FC<SmartClassroomPageProps> = ({
       </div>
 
       {/* Turnkey Solution Banner */}
-      <div className="bg-slate-950 text-white rounded-3xl p-8 sm:p-12 border border-slate-800 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-2xl">
+      <div className="bg-gradient-to-br from-[#072115] via-[#0d3420] to-[#05180f] text-white rounded-3xl p-8 sm:p-12 border border-emerald-900/60 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-2xl">
         <div className="lg:col-span-7 space-y-5">
-          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-blue-900/60 text-blue-300 text-xs font-bold">
+          <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-emerald-900/80 border border-emerald-700/50 text-emerald-300 text-xs font-bold">
             <Sparkles className="w-3.5 h-3.5" />
             <span>Turnkey Institutional Package</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white leading-snug">
             All-In-One Modern Classroom Deployment
           </h2>
-          <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          <p className="text-xs sm:text-sm text-emerald-100/80 leading-relaxed">
             Eliminate vendor fragmentation. Kohinoor Audio Visual designs, delivers, cables, and commissions the entire classroom technology suite. When our engineers hand over the keys, teachers can step up to the podium and start teaching immediately.
           </p>
 
-          <div className="space-y-2 pt-1 text-xs text-slate-300">
+          <div className="space-y-2 pt-1 text-xs text-emerald-100/90">
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
               <span>Includes 75" or 86" 4K Interactive Flat Panel with Android + Windows</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
               <span>Includes Kohinoor Cold-Rolled Steel Digital Rostrum with built-in sound</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
               <span>Includes 4K PTZ auto-tracking camera for hybrid lectures &amp; Zoom</span>
             </div>
             <div className="flex items-center gap-2">
-              <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
+              <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
               <span>Comprehensive on-site commissioning &amp; official manufacturer warranty</span>
             </div>
           </div>
@@ -121,14 +122,14 @@ export const SmartClassroomPage: React.FC<SmartClassroomPageProps> = ({
               href={`${BUSINESS_INFO.whatsappUrl}?text=${encodeURIComponent('Hello Kohinoor AV, I would like to order / discuss the Turnkey Smart Classroom Package for our institution.')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="cursor-pointer px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold rounded-xl transition-all shadow-md flex items-center gap-2"
+              className="cursor-pointer px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl transition-all shadow-md flex items-center gap-2"
             >
               <MessageSquare className="w-4 h-4 fill-current" />
-              <span>Order Turnkey Package on WhatsApp</span>
+              <span>Order on WhatsApp</span>
             </a>
             <button
               onClick={() => onOpenQuoteModal('Turnkey Smart Classroom Package')}
-              className="cursor-pointer px-5 py-3 bg-slate-900 hover:bg-slate-800 text-slate-200 text-xs font-semibold rounded-xl border border-slate-700 transition-colors"
+              className="cursor-pointer px-5 py-3 bg-emerald-950/80 hover:bg-emerald-900 text-emerald-200 text-xs font-semibold rounded-xl border border-emerald-800 transition-colors"
             >
               Request Bill of Materials
             </button>
@@ -136,17 +137,73 @@ export const SmartClassroomPage: React.FC<SmartClassroomPageProps> = ({
         </div>
 
         <div className="lg:col-span-5">
-          <div className="rounded-2xl overflow-hidden border border-slate-700 bg-slate-900 shadow-2xl">
+          <div className="rounded-2xl overflow-hidden border border-emerald-800/80 bg-slate-900 shadow-2xl">
             <img
-              src="/images/hero_av_solutions_1793992811053.jpg"
-              alt="Complete Smart Classroom Integration in Pakistan"
+              src="/images/client-uploads/upload_5.jpg"
+              alt="Complete Smart Classroom Integration by Kohinoor AV in Pakistan"
               className="w-full h-auto object-cover"
             />
           </div>
         </div>
       </div>
 
-      {/* Associated Products: Clean 2-Column or 3-Column Grid */}
+      {/* Real Classroom & Auditorium Deployments Gallery */}
+      <div className="space-y-6">
+        <div>
+          <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
+            Verified University Installations
+          </div>
+          <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 mt-1">
+            Real Smart Classrooms Powered by Kohinoor AV
+          </h2>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:border-emerald-300 transition-all">
+            <div className="h-52 overflow-hidden bg-slate-950">
+              <img
+                src="/images/client-uploads/upload_3.jpg"
+                alt="Digital Podium with Interactive Touch Display in University Hall"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="p-4 space-y-1">
+              <h3 className="text-xs font-bold text-slate-900">Tiered Lecture Amphitheater</h3>
+              <p className="text-[11px] text-slate-600">Digital rostrum with dual monitors, gooseneck microphone, and high-lumen laser projector projection.</p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:border-emerald-300 transition-all">
+            <div className="h-52 overflow-hidden bg-slate-950">
+              <img
+                src="/images/client-uploads/upload_4.jpg"
+                alt="Smart Rostrum and Faculty Lectern Deployment"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="p-4 space-y-1">
+              <h3 className="text-xs font-bold text-slate-900">Modern Smart Classroom</h3>
+              <p className="text-[11px] text-slate-600">Heavy-duty steel lectern integrated with central PC, acoustic amplification, and HDMI switcher.</p>
+            </div>
+          </div>
+
+          <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:border-emerald-300 transition-all">
+            <div className="h-52 overflow-hidden bg-slate-950">
+              <img
+                src="/images/client-uploads/upload_5.jpg"
+                alt="Auditorium Main Stage Setup with Beterva Digital Podium"
+                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+              />
+            </div>
+            <div className="p-4 space-y-1">
+              <h3 className="text-xs font-bold text-slate-900">Executive Auditorium Stage</h3>
+              <p className="text-[11px] text-slate-600">Beterva digital rostrum with high-lumen motorized drop screen and dual PTZ robotic tracking cameras.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Associated Products */}
       <div className="space-y-6">
         <div className="max-w-2xl">
           <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900">

@@ -6,12 +6,8 @@ import {
   Video,
   Projector,
   Volume2,
-  Layers,
   Sparkles,
-  CheckCircle2,
   MessageSquare,
-  ArrowRight,
-  ShieldCheck,
   Building,
   GraduationCap,
   Landmark,
@@ -108,28 +104,28 @@ export const AvSystemEstimator: React.FC = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-slate-900 via-blue-950 to-slate-900 text-white rounded-3xl p-6 sm:p-10 border border-blue-800/40 shadow-2xl relative overflow-hidden">
+    <div className="bg-gradient-to-br from-[#072115] via-[#0d3420] to-[#05180f] text-white rounded-3xl p-6 sm:p-10 border border-emerald-900/60 shadow-2xl relative overflow-hidden">
       {/* Decorative Ambient Radial Spotlights */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-blue-500/20 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
 
-      <div className="relative z-10 space-y-8">
+      <div className="relative z-10 space-y-6 sm:space-y-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-500/20 border border-blue-400/30 text-blue-300 text-xs font-bold tracking-wide">
-              <Sparkles className="w-3.5 h-3.5 text-blue-400" />
+            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-bold tracking-wide">
+              <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
               <span>Interactive System Configurator</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
               Design Your Institutional AV Package
             </h2>
-            <p className="text-xs sm:text-sm text-blue-100/80 max-w-2xl">
+            <p className="text-xs sm:text-sm text-emerald-100/80 max-w-2xl">
               Select your institution space type to get an engineer-curated hardware combination. Send directly to our Islamabad team via WhatsApp for instant pricing.
             </p>
           </div>
 
-          <div className="text-xs text-blue-300 font-mono bg-blue-900/40 px-3 py-1.5 rounded-xl border border-blue-700/40 self-start md:self-auto">
+          <div className="text-xs text-emerald-300 font-mono bg-emerald-900/40 px-3 py-1.5 rounded-xl border border-emerald-700/40 self-start md:self-auto">
             Direct Blue Area Supply
           </div>
         </div>
@@ -145,15 +141,15 @@ export const AvSystemEstimator: React.FC = () => {
                 onClick={() => setSelectedSpaceId(space.id)}
                 className={`cursor-pointer p-4 rounded-2xl text-left transition-all border flex flex-col justify-between gap-3 ${
                   isSelected
-                    ? 'bg-blue-600 border-blue-400 shadow-[0_10px_25px_rgba(37,99,235,0.4)] scale-102'
+                    ? 'bg-emerald-700 border-emerald-400 shadow-[0_10px_25px_rgba(16,185,129,0.3)] scale-102'
                     : 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20'
                 }`}
               >
                 <div className="flex items-center justify-between">
-                  <div className={`p-2.5 rounded-xl ${isSelected ? 'bg-white/20 text-white' : 'bg-blue-500/10 text-blue-300'}`}>
+                  <div className={`p-2.5 rounded-xl ${isSelected ? 'bg-white/20 text-white' : 'bg-emerald-500/10 text-emerald-300'}`}>
                     <Icon className="w-5 h-5" />
                   </div>
-                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20 text-blue-100">
+                  <span className="text-[10px] font-mono px-2 py-0.5 rounded bg-black/20 text-emerald-100">
                     {space.capacity}
                   </span>
                 </div>
@@ -161,7 +157,7 @@ export const AvSystemEstimator: React.FC = () => {
                   <h3 className="text-xs sm:text-sm font-bold text-white leading-snug">
                     {space.name}
                   </h3>
-                  <p className={`text-[11px] mt-0.5 ${isSelected ? 'text-blue-100' : 'text-slate-400'}`}>
+                  <p className={`text-[11px] mt-0.5 ${isSelected ? 'text-emerald-100' : 'text-slate-400'}`}>
                     {space.type}
                   </p>
                 </div>
@@ -176,11 +172,11 @@ export const AvSystemEstimator: React.FC = () => {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.35 }}
-          className="bg-slate-950/70 border border-blue-700/40 rounded-2xl p-6 sm:p-8 space-y-6 backdrop-blur-md"
+          className="bg-slate-950/70 border border-emerald-700/40 rounded-2xl p-6 sm:p-8 space-y-6 backdrop-blur-md"
         >
           <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-white/10 pb-4">
             <div>
-              <span className="text-xs text-blue-400 font-bold uppercase tracking-wider">
+              <span className="text-xs text-emerald-400 font-bold uppercase tracking-wider">
                 Recommended Hardware Setup
               </span>
               <h4 className="text-lg font-bold text-white mt-0.5">
@@ -195,11 +191,11 @@ export const AvSystemEstimator: React.FC = () => {
           {/* 4 Key Hardware Modules */}
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
             <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-3.5">
-              <div className="p-2.5 rounded-lg bg-blue-600/30 text-blue-300 shrink-0">
+              <div className="p-2.5 rounded-lg bg-emerald-600/30 text-emerald-300 shrink-0">
                 <Tv className="w-5 h-5" />
               </div>
               <div className="space-y-1">
-                <div className="text-[11px] text-blue-300 font-bold uppercase tracking-wide">
+                <div className="text-[11px] text-emerald-300 font-bold uppercase tracking-wide">
                   Display System
                 </div>
                 <div className="text-xs sm:text-sm font-bold text-white">
@@ -209,11 +205,11 @@ export const AvSystemEstimator: React.FC = () => {
             </div>
 
             <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-3.5">
-              <div className="p-2.5 rounded-lg bg-blue-600/30 text-blue-300 shrink-0">
+              <div className="p-2.5 rounded-lg bg-emerald-600/30 text-emerald-300 shrink-0">
                 <Monitor className="w-5 h-5" />
               </div>
               <div className="space-y-1">
-                <div className="text-[11px] text-blue-300 font-bold uppercase tracking-wide">
+                <div className="text-[11px] text-emerald-300 font-bold uppercase tracking-wide">
                   Digital Podium / Rostrum
                 </div>
                 <div className="text-xs sm:text-sm font-bold text-white">
@@ -223,11 +219,11 @@ export const AvSystemEstimator: React.FC = () => {
             </div>
 
             <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-3.5">
-              <div className="p-2.5 rounded-lg bg-blue-600/30 text-blue-300 shrink-0">
+              <div className="p-2.5 rounded-lg bg-emerald-600/30 text-emerald-300 shrink-0">
                 <Mic2 className="w-5 h-5" />
               </div>
               <div className="space-y-1">
-                <div className="text-[11px] text-blue-300 font-bold uppercase tracking-wide">
+                <div className="text-[11px] text-emerald-300 font-bold uppercase tracking-wide">
                   Acoustic &amp; Microphones
                 </div>
                 <div className="text-xs sm:text-sm font-bold text-white">
@@ -237,11 +233,11 @@ export const AvSystemEstimator: React.FC = () => {
             </div>
 
             <div className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-start gap-3.5">
-              <div className="p-2.5 rounded-lg bg-blue-600/30 text-blue-300 shrink-0">
+              <div className="p-2.5 rounded-lg bg-emerald-600/30 text-emerald-300 shrink-0">
                 <Video className="w-5 h-5" />
               </div>
               <div className="space-y-1">
-                <div className="text-[11px] text-blue-300 font-bold uppercase tracking-wide">
+                <div className="text-[11px] text-emerald-300 font-bold uppercase tracking-wide">
                   Robotic Video Tracking
                 </div>
                 <div className="text-xs sm:text-sm font-bold text-white">
@@ -253,7 +249,7 @@ export const AvSystemEstimator: React.FC = () => {
 
           {/* Solution Description & Toggle */}
           <div className="pt-2 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-white/10">
-            <p className="text-xs text-blue-100/80 max-w-xl">
+            <p className="text-xs text-emerald-100/80 max-w-xl">
               {currentSpace.summary}
             </p>
 
@@ -262,20 +258,20 @@ export const AvSystemEstimator: React.FC = () => {
                 type="checkbox"
                 checked={includeInstallation}
                 onChange={(e) => setIncludeInstallation(e.target.checked)}
-                className="w-4 h-4 rounded text-blue-600 accent-blue-600 focus:ring-0 cursor-pointer"
+                className="w-4 h-4 rounded text-emerald-600 accent-emerald-600 focus:ring-0 cursor-pointer"
               />
-              <span>Include Nationwide Physical Installation &amp; Cabling</span>
+              <span>Include Nationwide Installation &amp; Cabling</span>
             </label>
           </div>
 
-          {/* Action Row */}
+          {/* Action Row - Clean WhatsApp (No Phone in Label) */}
           <div className="pt-2 flex flex-col sm:flex-row items-center gap-4">
             <button
               onClick={handleSendToWhatsApp}
-              className="w-full sm:w-auto cursor-pointer px-6 py-3.5 bg-blue-600 hover:bg-blue-500 active:scale-95 text-white text-xs sm:text-sm font-bold rounded-xl shadow-[0_8px_25px_rgba(37,99,235,0.4)] transition-all flex items-center justify-center gap-2.5"
+              className="w-full sm:w-auto cursor-pointer px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white text-xs sm:text-sm font-bold rounded-xl shadow-[0_8px_25px_rgba(16,185,129,0.3)] transition-all flex items-center justify-center gap-2.5"
             >
               <MessageSquare className="w-4 h-4 fill-current" />
-              <span>Send Config to WhatsApp (+92 333 5163220)</span>
+              <span>Send via WhatsApp</span>
             </button>
 
             <span className="text-xs text-slate-400">

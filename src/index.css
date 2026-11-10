@@ -6,20 +6,20 @@
     scroll-behavior: smooth;
   }
 
-  /* Custom Professional Blue Scrollbar */
+  /* Custom Professional Emerald/Forest Green Scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #0f172a;
+    background: #0f1f17;
   }
   ::-webkit-scrollbar-thumb {
-    background: #2563eb;
+    background: #15803d;
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #1d4ed8;
+    background: #16a34a;
   }
 }
 
@@ -44,6 +44,6 @@
 }
 
 /* Smooth Image Glow on Hover */
-.hover-glow-blue:hover {
-  box-shadow: 0 10px 30px -10px rgba(37, 99, 235, 0.25);
+.hover-glow-green:hover {
+  box-shadow: 0 10px 30px -10px rgba(22, 101, 52, 0.3);
 }

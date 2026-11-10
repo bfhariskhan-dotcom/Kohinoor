@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { PageId, Product } from '../types';
-import { CATEGORIES, PRODUCTS, BUSINESS_INFO } from '../data/products';
+import { PRODUCTS, CATEGORIES, BUSINESS_INFO } from '../data/products';
 import { ProductCard } from '../components/ProductCard';
-import { Search, MessageSquare } from 'lucide-react';
+import { Search, SlidersHorizontal, Tag, MessageSquare, CheckCircle2, ArrowRight } from 'lucide-react';
+import { motion } from 'motion/react';
 
 interface ProductsPageProps {
   onNavigate: (page: PageId) => void;
@@ -17,130 +18,139 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
+  const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc'>('featured');
 
-  const filteredProducts = PRODUCTS.filter((p) => {
+  // Filter products by category and search
+  const filtered = PRODUCTS.filter((p) => {
     const matchesCategory = selectedCategory === 'all' || p.category === selectedCategory;
-    const matchesQuery =
+    const matchesSearch =
       searchQuery.trim() === '' ||
       p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       p.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (p.modelNumber && p.modelNumber.toLowerCase().includes(searchQuery.toLowerCase())) ||
-      p.keyFeatures.some((f) => f.toLowerCase().includes(searchQuery.toLowerCase()));
+      (p.modelNumber && p.modelNumber.toLowerCase().includes(searchQuery.toLowerCase()));
+    return matchesCategory && matchesSearch;
+  });
 
-    return matchesCategory && matchesQuery;
+  // Sort products
+  const sortedProducts = [...filtered].sort((a, b) => {
+    if (sortBy === 'price-asc') return (a.priceNumeric || 0) - (b.priceNumeric || 0);
+    if (sortBy === 'price-desc') return (b.priceNumeric || 0) - (a.priceNumeric || 0);
+    return 0;
   });
 
   return (
     <div className="space-y-12 py-10 max-w-7xl mx-auto px-4 sm:px-8">
-      {/* Header */}
-      <div className="space-y-3">
-        <div className="text-xs font-bold text-blue-600 uppercase tracking-wider">
-          Commercial Audio-Visual Catalog
+      {/* Page Header */}
+      <div className="space-y-3 max-w-3xl">
+        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider">
+          <Tag className="w-3.5 h-3.5" />
+          <span>Hardware Catalog &amp; Transparent Pricing</span>
         </div>
-        <h1 className="text-3xl sm:text-4xl font-extrabold text-slate-900 tracking-tight">
-          Professional AV Equipment &amp; Solutions
+        <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          Complete AV Equipment Catalog
         </h1>
-        <p className="text-xs sm:text-sm text-slate-600 max-w-3xl leading-relaxed">
-          Browse our complete range of digital rostrums, interactive flat panel LEDs, 5000-lumen projectors, conference discussion microphone systems, and PTZ robotic cameras in Pakistan. Order directly on WhatsApp for prompt dispatch.
+        <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+          Explore genuine prices, technical specifications, and official warranties for all our digital podiums, 4K interactive flat panels, multimedia projectors, and conference microphone systems.
         </p>
       </div>
 
-      {/* Filter and Search Bar */}
-      <div className="bg-white rounded-3xl border border-slate-200 p-5 space-y-4 shadow-xs">
-        <div className="flex flex-col md:flex-row items-center justify-between gap-4">
-          {/* Search Input */}
-          <div className="relative w-full md:w-96">
+      {/* Filter & Search Toolbar */}
+      <div className="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200/90 shadow-sm space-y-4">
+        {/* Search Input & Sort Dropdown */}
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
+          <div className="relative flex-1 max-w-md">
             <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
             <input
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search by equipment, model (e.g. 86 inch, podium, MA4617)..."
-              className="w-full pl-10 pr-4 py-2.5 text-xs rounded-xl border border-slate-200 focus:outline-none focus:border-blue-600 focus:ring-1 focus:ring-blue-600"
+              placeholder="Search by model, display size, or keyword..."
+              className="w-full pl-10 pr-4 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-none focus:border-emerald-600 transition-colors"
             />
           </div>
 
-          <div className="text-xs text-slate-500 font-medium">
-            Showing <span className="font-bold text-blue-600">{filteredProducts.length}</span> verified equipment items
+          <div className="flex items-center gap-3">
+            <span className="text-xs text-slate-500 font-medium whitespace-nowrap">Sort by:</span>
+            <select
+              value={sortBy}
+              onChange={(e) => setSortBy(e.target.value as any)}
+              className="px-3.5 py-2.5 text-xs font-semibold rounded-xl border border-slate-200 bg-white text-slate-700 focus:outline-none focus:border-emerald-600 cursor-pointer"
+            >
+              <option value="featured">Featured Order</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+            </select>
           </div>
         </div>
 
-        {/* Category Filter Tabs (Segmented buttons) */}
-        <div className="flex items-center gap-1.5 overflow-x-auto pb-1 text-xs">
+        {/* Category Filter Pills (Emerald Theme) */}
+        <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-1 scrollbar-none">
           <button
             onClick={() => setSelectedCategory('all')}
-            className={`cursor-pointer px-4 py-2 rounded-xl whitespace-nowrap transition-colors font-bold ${
+            className={`cursor-pointer px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap shrink-0 ${
               selectedCategory === 'all'
-                ? 'bg-blue-600 text-white shadow-xs'
+                ? 'bg-emerald-700 text-white shadow-md shadow-emerald-700/20'
                 : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
             }`}
           >
-            All Categories ({PRODUCTS.length})
+            All Hardware ({PRODUCTS.length})
           </button>
-
-          {CATEGORIES.map((cat) => {
-            const count = PRODUCTS.filter((p) => p.category === cat.id).length;
-            return (
-              <button
-                key={cat.id}
-                onClick={() => setSelectedCategory(cat.id)}
-                className={`cursor-pointer px-4 py-2 rounded-xl whitespace-nowrap transition-colors font-bold ${
-                  selectedCategory === cat.id
-                    ? 'bg-blue-600 text-white shadow-xs'
-                    : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
-                }`}
-              >
-                {cat.name} ({count})
-              </button>
-            );
-          })}
+          {CATEGORIES.map((cat) => (
+            <button
+              key={cat.id}
+              onClick={() => setSelectedCategory(cat.id)}
+              className={`cursor-pointer px-4 py-2 rounded-xl text-xs font-bold transition-all whitespace-nowrap shrink-0 ${
+                selectedCategory === cat.id
+                  ? 'bg-emerald-700 text-white shadow-md shadow-emerald-700/20'
+                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+              }`}
+            >
+              {cat.name}
+            </button>
+          ))}
         </div>
       </div>
 
-      {/* Product Grid: CLEAN 2-COLUMN GRID (Per user feedback to avoid cramped columns) */}
-      {filteredProducts.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {filteredProducts.map((prod) => (
-            <ProductCard
-              key={prod.id}
-              product={prod}
-              onSelect={onSelectProduct}
-              onOpenQuote={onOpenQuoteModal}
-            />
-          ))}
-        </div>
-      ) : (
-        <div className="py-16 text-center bg-white rounded-3xl border border-slate-200 space-y-3">
-          <p className="text-sm font-semibold text-slate-800">No equipment matches your search query.</p>
-          <p className="text-xs text-slate-500">Try searching for keywords like "podium", "interactive", "projector", or reset your filters.</p>
-          <button
-            onClick={() => {
-              setSelectedCategory('all');
-              setSearchQuery('');
-            }}
-            className="px-5 py-2.5 bg-blue-600 text-white text-xs font-bold rounded-xl hover:bg-blue-700 transition-colors"
-          >
-            Reset Filters
-          </button>
-        </div>
-      )}
+      {/* Product Results Counter */}
+      <div className="flex items-center justify-between text-xs text-slate-500 font-medium">
+        <span>Showing {sortedProducts.length} of {PRODUCTS.length} hardware models</span>
+        <span className="text-emerald-700 font-bold">Official Warranty &amp; On-Site Setup Available</span>
+      </div>
 
-      {/* Bulk Procurement Banner in Navy & Blue */}
-      <div className="bg-slate-950 text-white rounded-3xl p-6 sm:p-10 flex flex-col md:flex-row items-center justify-between gap-6 border border-slate-800 shadow-xl max-w-5xl mx-auto">
-        <div className="space-y-1 text-center md:text-left">
-          <h3 className="text-base sm:text-lg font-bold text-white">Need an Itemized Tender Quotation or Bulk Pricing?</h3>
-          <p className="text-xs text-slate-400">
-            We provide official tender-compliant technical compliance sheets and formal GST invoices for universities and government ministries.
+      {/* Clean 2-Column Product Grid with Real Pricing */}
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        {sortedProducts.map((product, idx) => (
+          <ProductCard
+            key={product.id}
+            product={product}
+            onSelect={onSelectProduct}
+            onOpenQuote={onOpenQuoteModal}
+            index={idx}
+          />
+        ))}
+      </div>
+
+      {/* Instant Procurement Banner in Emerald Theme */}
+      <div className="bg-gradient-to-br from-[#072115] via-[#0d3420] to-[#05180f] text-white rounded-3xl p-8 sm:p-12 border border-emerald-900/60 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl max-w-5xl mx-auto">
+        <div className="space-y-1.5 text-center md:text-left">
+          <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">
+            Custom Procurement &amp; Tenders
+          </span>
+          <h3 className="text-xl font-bold text-white">
+            Need a Formal Institutional Bid Sheet or GST Quotation?
+          </h3>
+          <p className="text-xs text-emerald-100/80 max-w-xl">
+            Our Islamabad technical sales team provides official NTN/GST invoices, delivery schedules, and tender compliance documents.
           </p>
         </div>
         <a
-          href={`${BUSINESS_INFO.whatsappUrl}?text=${encodeURIComponent('Hello Kohinoor AV, I would like to request an itemized bulk quotation for institutional equipment.')}`}
+          href={BUSINESS_INFO.whatsappUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="cursor-pointer px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold rounded-xl whitespace-nowrap transition-colors flex items-center gap-2 shadow-md"
+          className="cursor-pointer px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl whitespace-nowrap transition-colors flex items-center gap-2 shadow-md shrink-0"
         >
           <MessageSquare className="w-4 h-4 fill-current" />
-          <span>Chat on WhatsApp</span>
+          <span>Order on WhatsApp</span>
         </a>
       </div>
     </div>

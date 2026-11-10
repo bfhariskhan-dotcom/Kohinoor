@@ -65,7 +65,7 @@ export const InteractiveLedPage: React.FC<InteractiveLedPageProps> = ({
     <div className="space-y-16 py-10 max-w-7xl mx-auto px-4 sm:px-8">
       {/* Category Header */}
       <div className="space-y-4 max-w-3xl">
-        <div className="text-xs font-bold text-blue-600 uppercase tracking-wider">
+        <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
           Product Category 03 · Collaborative Displays
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
@@ -76,36 +76,36 @@ export const InteractiveLedPage: React.FC<InteractiveLedPageProps> = ({
         </p>
       </div>
 
-      {/* Warehouse Supply Lineup Banner (Image 6) */}
-      <div className="bg-slate-950 rounded-3xl overflow-hidden border border-slate-800 shadow-2xl">
+      {/* Warehouse Supply Lineup Banner */}
+      <div className="bg-gradient-to-br from-[#072115] via-[#0d3420] to-[#05180f] rounded-3xl overflow-hidden border border-emerald-900/60 shadow-2xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 sm:p-12">
           <div className="lg:col-span-6 space-y-5 text-white">
-            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-blue-900/60 text-blue-300 text-xs font-bold">
+            <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-emerald-900/80 border border-emerald-700/50 text-emerald-300 text-xs font-bold">
               <Layers className="w-3.5 h-3.5" />
               <span>Full Scale In-Stock Inventory</span>
             </div>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white leading-snug">
               Complete Interactive LED Series (55" to 110") in Pakistan
             </h2>
-            <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">
+            <p className="text-xs sm:text-sm text-emerald-100/80 leading-relaxed">
               Kohinoor Audio Visual imports and stocks the complete diagonal lineup ready for dispatch from Islamabad: <strong>55", 65", 75", 85", 86", 98", and 110"</strong> interactive touch flat panels. Every unit is tested with high-precision optical touch sensors and commercial 4K panels.
             </p>
 
-            <div className="grid grid-cols-2 gap-3 text-xs text-slate-300 pt-2">
+            <div className="grid grid-cols-2 gap-3 text-xs text-emerald-100/90 pt-2">
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>Dual OS: Android 13 + Windows OPS</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>4mm Anti-Glare Toughened Glass</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>20-Point Multi-Touch with Dual Pen</span>
               </div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-4 h-4 text-blue-400 shrink-0" />
+                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                 <span>4-Way Wireless Screen Mirroring</span>
               </div>
             </div>
@@ -113,14 +113,14 @@ export const InteractiveLedPage: React.FC<InteractiveLedPageProps> = ({
             <div className="pt-2 flex flex-wrap gap-3">
               <button
                 onClick={() => handleWhatsAppSizeInquiry(activeSize)}
-                className="cursor-pointer px-6 py-3 bg-blue-600 hover:bg-blue-500 text-white text-xs font-bold rounded-xl transition-all shadow-md flex items-center gap-2"
+                className="cursor-pointer px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl transition-all shadow-md flex items-center gap-2"
               >
                 <MessageSquare className="w-4 h-4 fill-current" />
-                <span>Order {activeSize}" on WhatsApp</span>
+                <span>Order on WhatsApp</span>
               </button>
               <button
                 onClick={() => onOpenQuoteModal(`Interactive Flat Panel ${activeSize} Inch`)}
-                className="cursor-pointer px-5 py-3 bg-slate-900 hover:bg-slate-800 text-slate-200 text-xs font-semibold rounded-xl border border-slate-700 transition-colors"
+                className="cursor-pointer px-5 py-3 bg-emerald-950/80 hover:bg-emerald-900 text-emerald-200 text-xs font-semibold rounded-xl border border-emerald-800 transition-colors"
               >
                 Request Itemized Bid Sheet
               </button>
@@ -128,15 +128,15 @@ export const InteractiveLedPage: React.FC<InteractiveLedPageProps> = ({
           </div>
 
           <div className="lg:col-span-6">
-            <div className="rounded-2xl overflow-hidden border border-slate-700 bg-slate-900 shadow-2xl">
+            <div className="rounded-2xl overflow-hidden border border-emerald-800/80 bg-slate-900 shadow-2xl">
               <img
                 src="/images/products/product_6.jpg"
                 alt="Interactive Flat Panel LED Displays Lineup 55 to 110 inch in Kohinoor AV Warehouse"
                 className="w-full h-auto object-cover"
               />
-              <div className="p-3 bg-slate-950 text-[11px] text-slate-300 flex items-center justify-between">
+              <div className="p-3 bg-[#05180f] text-[11px] text-emerald-200/90 flex items-center justify-between border-t border-emerald-900">
                 <span>Warehouse Stock in Pakistan</span>
-                <span className="font-bold text-blue-400">55" · 65" · 75" · 85" · 86" · 98" · 110"</span>
+                <span className="font-bold text-emerald-400">55" · 65" · 75" · 85" · 86" · 98" · 110"</span>
               </div>
             </div>
           </div>
@@ -146,7 +146,7 @@ export const InteractiveLedPage: React.FC<InteractiveLedPageProps> = ({
       {/* Interactive Size Explorer */}
       <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-8 space-y-6 shadow-xs max-w-5xl mx-auto">
         <div>
-          <div className="text-xs font-bold text-blue-600 uppercase tracking-wider">
+          <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
             Interactive Size Selector
           </div>
           <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 mt-1">
@@ -154,7 +154,7 @@ export const InteractiveLedPage: React.FC<InteractiveLedPageProps> = ({
           </h2>
         </div>
 
-        {/* Size Tabs in Royal Blue */}
+        {/* Size Tabs in Emerald Green */}
         <div className="flex items-center gap-2 overflow-x-auto pb-1">
           {Object.keys(sizeMatrix).map((sizeKey) => (
             <button
@@ -162,8 +162,8 @@ export const InteractiveLedPage: React.FC<InteractiveLedPageProps> = ({
               onClick={() => setActiveSize(sizeKey)}
               className={`cursor-pointer px-5 py-2.5 rounded-xl font-bold text-xs transition-all whitespace-nowrap ${
                 activeSize === sizeKey
-                  ? 'bg-blue-600 text-white shadow-md'
-                  : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
+                  ? 'bg-emerald-700 text-white shadow-md'
+                  : 'bg-slate-100 text-slate-700 hover:bg-emerald-50 hover:text-emerald-800'
               }`}
             >
               {sizeKey}-Inch 4K LED
@@ -172,10 +172,10 @@ export const InteractiveLedPage: React.FC<InteractiveLedPageProps> = ({
         </div>
 
         {/* Selected Size Details Card */}
-        <div className="p-6 bg-slate-50 rounded-2xl border border-slate-200 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
+        <div className="p-6 bg-emerald-50/50 rounded-2xl border border-emerald-100 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
           <div className="md:col-span-2 space-y-2">
-            <div className="flex items-center gap-2 text-blue-700 font-bold text-xs">
-              <Sparkles className="w-4 h-4" />
+            <div className="flex items-center gap-2 text-emerald-800 font-bold text-xs">
+              <Sparkles className="w-4 h-4 text-emerald-600" />
               <span>Recommended Room Scope</span>
             </div>
             <h3 className="text-lg font-bold text-slate-900">
@@ -194,7 +194,7 @@ export const InteractiveLedPage: React.FC<InteractiveLedPageProps> = ({
           <div className="flex flex-col gap-2">
             <button
               onClick={() => handleWhatsAppSizeInquiry(activeSize)}
-              className="cursor-pointer w-full py-3 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl text-center transition-colors shadow-sm flex items-center justify-center gap-2"
+              className="cursor-pointer w-full py-3 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold rounded-xl text-center transition-colors shadow-sm flex items-center justify-center gap-2"
             >
               <MessageSquare className="w-4 h-4 fill-current" />
               <span>Get WhatsApp Price</span>
@@ -209,7 +209,7 @@ export const InteractiveLedPage: React.FC<InteractiveLedPageProps> = ({
         </div>
       </div>
 
-      {/* Mobile Trolley Integration (Image 7) */}
+      {/* Mobile Trolley Integration */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-slate-100/80 rounded-3xl p-6 sm:p-10 border border-slate-200 max-w-5xl mx-auto">
         <div className="lg:col-span-5">
           <div className="rounded-2xl overflow-hidden border border-slate-200 bg-white p-2 shadow-md">
@@ -221,7 +221,7 @@ export const InteractiveLedPage: React.FC<InteractiveLedPageProps> = ({
           </div>
         </div>
         <div className="lg:col-span-7 space-y-4">
-          <div className="text-xs font-bold text-blue-600 uppercase tracking-wider">
+          <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
             Mobility &amp; Versatility
           </div>
           <h2 className="text-2xl font-extrabold text-slate-900">
@@ -235,16 +235,16 @@ export const InteractiveLedPage: React.FC<InteractiveLedPageProps> = ({
               href={`${BUSINESS_INFO.whatsappUrl}?text=${encodeURIComponent('Hello Kohinoor AV, I would like to order the Heavy-Duty Mobile Trolley Stand for Interactive Flat Panels.')}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="cursor-pointer inline-flex items-center gap-2 px-5 py-2.5 bg-blue-600 hover:bg-blue-700 text-white text-xs font-bold rounded-xl transition-colors shadow-sm"
+              className="cursor-pointer inline-flex items-center gap-2 px-5 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold rounded-xl transition-colors shadow-sm"
             >
               <MessageSquare className="w-4 h-4 fill-current" />
-              <span>Inquire Trolley on WhatsApp</span>
+              <span>Order on WhatsApp</span>
             </a>
           </div>
         </div>
       </div>
 
-      {/* Catalog Grid: CLEAN 2-COLUMN GRID (Per user feedback) */}
+      {/* Catalog Grid */}
       <div className="space-y-6">
         <div className="max-w-2xl">
           <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900">

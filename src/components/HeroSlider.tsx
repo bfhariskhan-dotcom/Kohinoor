@@ -7,14 +7,11 @@ import {
   ChevronLeft,
   ChevronRight,
   Award,
-  ShieldCheck,
   CheckCircle2,
   Tv,
   Mic2,
   Video,
-  Monitor,
-  Sparkles,
-  ArrowUpRight
+  Monitor
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
@@ -42,8 +39,8 @@ const SLIDES: Slide[] = [
     tag: 'Turnkey AV Engineering · Islamabad',
     title: 'Professional Audio Visual & Smart Classroom Solutions in Pakistan',
     subtitle: 'Your trusted supply & engineering partner for Digital Podiums, 4K Interactive LED Panels, Multimedia Projectors, and Boardroom Conference Systems.',
-    image: '/images/hero_av_solutions_1793992811053.jpg',
-    alt: 'Modern State-of-the-Art Auditorium with Digital Podium and Interactive Display',
+    image: '/images/client-uploads/upload_5.jpg',
+    alt: 'Beterva Digital Smart Podiums in University Auditorium',
     targetPage: 'smart-classroom-solutions',
     productName: 'Turnkey Smart Classroom',
     badge: '15+ Years Industry Experience',
@@ -53,9 +50,9 @@ const SLIDES: Slide[] = [
     id: 2,
     tag: 'National Institution Reference',
     title: 'Smart Digital Rostrums with Integrated Touch & 60W Audio',
-    subtitle: 'Commercial steel presentation rostrums in 21.5", 32", and 43" sizes. Officially deployed at the National Centre of Artificial Intelligence (NCAI) / NUST Islamabad.',
-    image: '/images/products/product_8.jpg',
-    alt: 'Digital Podium at National Centre of Artificial Intelligence NUST Islamabad',
+    subtitle: 'Commercial steel presentation rostrums in 21.5", 32", and 43" sizes. Officially deployed at NUST Islamabad, university lecture halls, and government chambers.',
+    image: '/images/client-uploads/upload_3.jpg',
+    alt: 'Digital Rostrum with Built-in Touch & AV Controller Interface',
     targetPage: 'digital-podiums',
     productName: 'Digital Podiums (21.5" - 43")',
     badge: 'Deployed at NUST Islamabad',
@@ -75,11 +72,11 @@ const SLIDES: Slide[] = [
   },
   {
     id: 4,
-    tag: 'Chamber & Council Standard',
+    tag: 'Diplomatic & Chamber Standard',
     title: 'Council Conference Microphone Systems with Chairman Priority',
-    subtitle: 'MA4617A Chairman units with priority mute override, Beterva BE-2400C discussion consoles, and Sennheiser audio acoustics for government and boardroom assemblies.',
-    image: '/images/products/product_11.jpg',
-    alt: 'MA4617 Conference Microphone System with Chairman Priority',
+    subtitle: 'MA4617A Chairman units with priority mute override, Beterva BE-2400C discussion consoles, and acoustic speech solutions deployed in multinational council rooms.',
+    image: '/images/client-uploads/upload_2.jpg',
+    alt: 'Multinational Conference Room Installation with Conference Microphones',
     targetPage: 'conference-systems',
     productName: 'MA4617 Conference System',
     badge: 'Chairman Priority Speech Control',
@@ -140,29 +137,29 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onNavigate, onOpenQuoteM
 
   return (
     <section
-      className="relative text-white overflow-hidden bg-gradient-to-br from-[#0c224a] via-[#0f2d6b] to-[#091a38] border-b border-blue-900/50"
+      className="relative text-white overflow-hidden bg-gradient-to-br from-[#072115] via-[#0d3420] to-[#05180f] border-b border-emerald-900/60"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Dynamic Luminous Lighting Gradients - Vibrant, Not Gloomy Dark */}
-      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-blue-500/25 rounded-full blur-[140px] pointer-events-none" />
-      <div className="absolute bottom-0 right-10 w-[500px] h-[500px] bg-blue-600/30 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute -top-24 right-1/3 w-[350px] h-[350px] bg-cyan-500/15 rounded-full blur-[100px] pointer-events-none" />
+      {/* Dynamic Emerald Lighting Gradients */}
+      <div className="absolute top-0 left-1/4 w-[600px] h-[600px] bg-emerald-500/20 rounded-full blur-[140px] pointer-events-none" />
+      <div className="absolute bottom-0 right-10 w-[500px] h-[500px] bg-emerald-600/25 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute -top-24 right-1/3 w-[350px] h-[350px] bg-teal-500/15 rounded-full blur-[100px] pointer-events-none" />
 
-      {/* Subtle Architectural Grid Lines */}
+      {/* Subtle Grid Lines */}
       <div
         className="absolute inset-0 opacity-[0.12] pointer-events-none"
         style={{
           backgroundImage: `
-            linear-gradient(to right, rgba(255, 255, 255, 0.2) 1px, transparent 1px),
-            linear-gradient(to bottom, rgba(255, 255, 255, 0.2) 1px, transparent 1px)
+            linear-gradient(to right, rgba(255, 255, 255, 0.15) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(255, 255, 255, 0.15) 1px, transparent 1px)
           `,
           backgroundSize: '48px 48px'
         }}
       />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-14 sm:py-20 lg:py-24 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center min-h-[500px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-12 sm:py-16 lg:py-20 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[480px]">
           {/* Left Text Carrier (7 columns) with Smooth Staggered Entrance */}
           <div className="lg:col-span-7 space-y-6">
             <AnimatePresence mode="wait">
@@ -174,19 +171,19 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onNavigate, onOpenQuoteM
                 transition={{ duration: 0.55, ease: [0.16, 1, 0.3, 1] }}
                 className="space-y-6"
               >
-                {/* Luminous Tag Badge in Royal Blue */}
-                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-500/20 border border-blue-400/40 text-blue-200 text-xs font-bold tracking-wide backdrop-blur-md shadow-sm">
-                  <Award className="w-3.5 h-3.5 text-blue-300" />
+                {/* Luminous Tag Badge in Emerald Green */}
+                <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-emerald-500/20 border border-emerald-400/40 text-emerald-200 text-xs font-bold tracking-wide backdrop-blur-md shadow-sm">
+                  <Award className="w-3.5 h-3.5 text-emerald-300" />
                   <span>{slide.tag}</span>
                 </div>
 
-                {/* Hero Headline - High Contrast, Luminous & Impactful */}
-                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.15] drop-shadow-sm">
+                {/* Hero Headline */}
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-white leading-[1.18] drop-shadow-sm">
                   {slide.title}
                 </h1>
 
                 {/* Subtitle */}
-                <p className="text-sm sm:text-base text-blue-100/90 leading-relaxed max-w-2xl font-normal">
+                <p className="text-sm sm:text-base text-emerald-100/90 leading-relaxed max-w-2xl font-normal">
                   {slide.subtitle}
                 </p>
 
@@ -197,17 +194,17 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onNavigate, onOpenQuoteM
                       key={i}
                       className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-white/10 backdrop-blur-sm border border-white/15 text-xs text-white font-medium"
                     >
-                      <CheckCircle2 className="w-3.5 h-3.5 text-blue-300" />
+                      <CheckCircle2 className="w-3.5 h-3.5 text-emerald-300" />
                       <span>{spec}</span>
                     </span>
                   ))}
                 </div>
 
-                {/* Action Buttons - 100% Blue Theme */}
+                {/* Action Buttons - Clean WhatsApp (No Phone in Label) */}
                 <div className="flex flex-wrap items-center gap-4 pt-3">
                   <button
                     onClick={handleWhatsAppSlideInquiry}
-                    className="cursor-pointer px-6 py-3.5 bg-blue-500 hover:bg-blue-400 active:scale-95 text-white text-xs sm:text-sm font-bold rounded-xl shadow-[0_10px_30px_rgba(59,130,246,0.45)] hover:shadow-blue-400/60 transition-all flex items-center gap-2.5"
+                    className="cursor-pointer px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white text-xs sm:text-sm font-bold rounded-xl shadow-[0_10px_30px_rgba(16,185,129,0.35)] hover:shadow-emerald-500/50 transition-all flex items-center gap-2.5"
                   >
                     <MessageSquare className="w-4 h-4 fill-current" />
                     <span>Order on WhatsApp</span>
@@ -218,23 +215,23 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onNavigate, onOpenQuoteM
                     className="cursor-pointer px-6 py-3.5 bg-white/10 hover:bg-white/20 text-white active:scale-95 text-xs sm:text-sm font-semibold rounded-xl border border-white/25 backdrop-blur-md transition-all flex items-center gap-2"
                   >
                     <span>View Specifications</span>
-                    <ArrowRight className="w-4 h-4 text-blue-300" />
+                    <ArrowRight className="w-4 h-4 text-emerald-300" />
                   </button>
                 </div>
 
                 {/* Trust Signals */}
-                <div className="pt-2 flex flex-wrap items-center gap-6 text-xs text-blue-200/90 border-t border-white/10 pt-4">
+                <div className="pt-2 flex flex-wrap items-center gap-6 text-xs text-emerald-200/90 border-t border-white/10 pt-4">
                   <span className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-4 h-4 text-blue-300" />
-                    <span>Islamabad Warehouse Stock</span>
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <span>Islamabad Stock</span>
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-4 h-4 text-blue-300" />
-                    <span>Nationwide Engineer Dispatch</span>
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <span>Nationwide Installation</span>
                   </span>
                   <span className="flex items-center gap-1.5">
-                    <CheckCircle2 className="w-4 h-4 text-blue-300" />
-                    <span>Direct Invoice & Warranty</span>
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    <span>Official Warranty</span>
                   </span>
                 </div>
               </motion.div>
@@ -253,10 +250,10 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onNavigate, onOpenQuoteM
                 className="relative"
               >
                 {/* Luminous Glow Behind Image Container */}
-                <div className="absolute -inset-1.5 bg-gradient-to-r from-blue-400 to-cyan-400 rounded-3xl opacity-35 blur-xl group-hover:opacity-60 transition duration-700" />
+                <div className="absolute -inset-1.5 bg-gradient-to-r from-emerald-500 to-teal-400 rounded-3xl opacity-35 blur-xl group-hover:opacity-60 transition duration-700" />
 
                 <div className="relative rounded-3xl overflow-hidden border border-white/20 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.6)] bg-slate-900/90 backdrop-blur-md">
-                  <div className="aspect-16/10 sm:aspect-4/3 w-full overflow-hidden bg-slate-900 flex items-center justify-center p-2.5">
+                  <div className="aspect-16/10 sm:aspect-4/3 w-full overflow-hidden bg-slate-950 flex items-center justify-center p-2.5">
                     <img
                       src={slide.image}
                       alt={slide.alt}
@@ -265,9 +262,9 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onNavigate, onOpenQuoteM
                   </div>
 
                   {/* Floating Specs Pill on Image */}
-                  <div className="absolute bottom-4 left-4 right-4 bg-slate-950/85 backdrop-blur-md p-3.5 rounded-2xl border border-white/15 flex items-center justify-between text-xs shadow-xl">
+                  <div className="absolute bottom-4 left-4 right-4 bg-slate-950/90 backdrop-blur-md p-3.5 rounded-2xl border border-white/15 flex items-center justify-between text-xs shadow-xl">
                     <div className="min-w-0 pr-3">
-                      <div className="text-[10px] text-blue-300 font-bold uppercase tracking-wider">
+                      <div className="text-[10px] text-emerald-400 font-bold uppercase tracking-wider">
                         {slide.badge}
                       </div>
                       <div className="font-extrabold text-white text-xs sm:text-sm mt-0.5 truncate">
@@ -276,7 +273,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onNavigate, onOpenQuoteM
                     </div>
                     <button
                       onClick={handleWhatsAppSlideInquiry}
-                      className="px-3.5 py-1.5 bg-blue-600 hover:bg-blue-500 text-white rounded-lg text-xs font-bold transition-all shrink-0 flex items-center gap-1.5 shadow-md"
+                      className="px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-500 text-white rounded-lg text-xs font-bold transition-all shrink-0 flex items-center gap-1.5 shadow-md"
                     >
                       <MessageSquare className="w-3.5 h-3.5" />
                       <span>WhatsApp</span>
@@ -289,7 +286,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onNavigate, onOpenQuoteM
         </div>
 
         {/* Slider Controls: Dynamic Progress Bars & Arrows */}
-        <div className="mt-10 pt-6 border-t border-white/15 flex items-center justify-between">
+        <div className="mt-8 pt-6 border-t border-white/15 flex items-center justify-between">
           {/* Slide Indicators with Progress Bar */}
           <div className="flex items-center gap-2 sm:gap-3">
             {SLIDES.map((_, idx) => (
@@ -301,13 +298,13 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onNavigate, onOpenQuoteM
                 }}
                 className={`cursor-pointer h-2 rounded-full transition-all duration-400 ${
                   currentSlide === idx
-                    ? 'w-10 sm:w-14 bg-blue-400 shadow-[0_0_12px_rgba(96,165,250,0.8)]'
+                    ? 'w-10 sm:w-14 bg-emerald-400 shadow-[0_0_12px_rgba(52,211,153,0.8)]'
                     : 'w-2.5 bg-white/20 hover:bg-white/40'
                 }`}
                 aria-label={`Go to slide ${idx + 1}`}
               />
             ))}
-            <span className="text-xs text-blue-200/80 ml-2 font-mono">
+            <span className="text-xs text-emerald-200/80 ml-2 font-mono">
               0{currentSlide + 1} / 0{slideCount}
             </span>
           </div>
@@ -316,14 +313,14 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({ onNavigate, onOpenQuoteM
           <div className="flex items-center gap-2">
             <button
               onClick={handlePrev}
-              className="p-2.5 rounded-xl bg-white/10 hover:bg-blue-600 text-white border border-white/15 backdrop-blur-md transition-colors cursor-pointer"
+              className="p-2.5 rounded-xl bg-white/10 hover:bg-emerald-700 text-white border border-white/15 backdrop-blur-md transition-colors cursor-pointer"
               aria-label="Previous Slide"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={handleNext}
-              className="p-2.5 rounded-xl bg-white/10 hover:bg-blue-600 text-white border border-white/15 backdrop-blur-md transition-colors cursor-pointer"
+              className="p-2.5 rounded-xl bg-white/10 hover:bg-emerald-700 text-white border border-white/15 backdrop-blur-md transition-colors cursor-pointer"
               aria-label="Next Slide"
             >
               <ChevronRight className="w-4 h-4" />

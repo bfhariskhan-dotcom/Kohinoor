@@ -29,57 +29,55 @@ export const Navbar: React.FC<NavbarProps> = ({
 
   const marqueeText = [
     'Kohinoor Audio Visual Education Business System',
-    'United Plaza, 2nd Floor, Fazlehaq Road, Blue Area, Islamabad',
-    'Nationwide Supply & Installation across Pakistan',
+    'United Plaza, 2nd Floor, Blue Area, Islamabad',
+    'Nationwide AV Supply & Installation',
     'Smart Digital Podiums (21.5", 32", 43")',
-    '4K Interactive Flat Panels (55" to 110")',
-    'Conference Microphone Systems with Chairman Priority (MA4617)',
-    '4K AI Auto-Tracking PTZ Robotic Cameras',
-    'Official Warranty & Nationwide Logistics'
+    '4K Interactive Flat Panels (55"–110")',
+    'Conference Microphones & PTZ Cameras'
   ];
 
   return (
-    <header className="sticky top-0 z-40 bg-white/98 backdrop-blur-md border-b border-slate-200/90 shadow-xs transition-colors">
-      {/* 1. TOP ANNOUNCEMENT BAR: Visible on Both Mobile & Desktop in Deep Forest Green */}
-      <div className="bg-[#0b2416] text-emerald-100/90 text-[11px] py-1.5 border-b border-emerald-950 overflow-hidden">
+    <header className="sticky top-0 z-40 bg-white/98 backdrop-blur-md border-b border-slate-200/90 shadow-xs">
+      {/* 1. TOP BAR: Green Background + All Pure White Text */}
+      <div className="bg-emerald-700 text-white text-[11px] py-1.5 border-b border-emerald-800 overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between gap-4">
           {/* Continuous Auto-Scrolling Marquee Track */}
           <div className="flex-1 overflow-hidden relative">
-            <div className="animate-marquee-smooth flex items-center gap-6 whitespace-nowrap text-[11px] text-emerald-200/90 font-medium">
+            <div className="animate-marquee-smooth flex items-center gap-6 whitespace-nowrap text-[11px] text-white font-medium">
               {marqueeText.concat(marqueeText).map((item, idx) => (
-                <div key={idx} className="flex items-center gap-3 inline-flex">
-                  <span>{item}</span>
-                  <span className="text-emerald-400 font-bold" aria-hidden="true">◆</span>
+                <div key={idx} className="flex items-center gap-3 inline-flex text-white">
+                  <span className="text-white">{item}</span>
+                  <span className="text-white font-bold" aria-hidden="true">◆</span>
                 </div>
               ))}
             </div>
           </div>
 
-          {/* Direct Quick Contact on Desktop */}
-          <div className="hidden sm:flex shrink-0 items-center gap-4 text-[11px] font-semibold pl-3 border-l border-emerald-800/50">
+          {/* Direct Quick Contact on Desktop - Pure White Text */}
+          <div className="hidden sm:flex shrink-0 items-center gap-4 text-[11px] font-semibold pl-3 border-l border-white/25 text-white">
             <a
               href={`tel:${BUSINESS_INFO.phoneClean}`}
-              className="text-emerald-200 hover:text-white transition-colors flex items-center gap-1.5"
+              className="text-white hover:opacity-85 transition-opacity flex items-center gap-1.5"
             >
-              <Phone className="w-3 h-3 text-emerald-400" />
-              <span>{BUSINESS_INFO.phone}</span>
+              <Phone className="w-3 h-3 text-white" />
+              <span className="text-white">{BUSINESS_INFO.phone}</span>
             </a>
             <a
               href={BUSINESS_INFO.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-emerald-300 hover:text-white flex items-center gap-1 transition-colors"
+              className="text-white hover:opacity-85 flex items-center gap-1 transition-opacity"
             >
-              <MessageSquare className="w-3 h-3 text-emerald-400" />
-              <span>WhatsApp</span>
+              <MessageSquare className="w-3 h-3 text-white" />
+              <span className="text-white">WhatsApp</span>
             </a>
           </div>
         </div>
       </div>
 
-      {/* 2. MAIN NAVIGATION BAR */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 h-20 sm:h-22 flex items-center justify-between gap-3 sm:gap-8">
-        {/* Zone 1: Official Enlarged Logo */}
+      {/* 2. MAIN NAVIGATION BAR: Strictly No Buttons in Header */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 h-20 flex items-center justify-between gap-4 sm:gap-8">
+        {/* Zone 1: Official Logo */}
         <button
           onClick={() => handleNavClick('home')}
           className="text-left cursor-pointer focus:outline-none shrink-0"
@@ -88,7 +86,7 @@ export const Navbar: React.FC<NavbarProps> = ({
           <Logo size="md" />
         </button>
 
-        {/* Zone 2: Desktop Nav Links */}
+        {/* Zone 2: Clean Desktop Text Nav Links */}
         <nav className="hidden lg:flex items-center gap-6 text-sm font-medium text-slate-700">
           <button
             onClick={() => handleNavClick('home')}
@@ -113,26 +111,26 @@ export const Navbar: React.FC<NavbarProps> = ({
                   : 'text-slate-700'
               }`}
             >
-              <span>Products &amp; Pricing</span>
+              <span>Products</span>
               <ChevronDown className="w-4 h-4 text-slate-400" />
             </button>
 
             {productsDropdownOpen && (
-              <div className="absolute top-full -left-4 w-72 bg-white rounded-2xl shadow-2xl border border-emerald-100 py-3 px-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
+              <div className="absolute top-full -left-4 w-64 bg-white rounded-2xl shadow-2xl border border-emerald-100 py-2.5 px-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
                 <button
                   onClick={() => handleNavClick('products')}
                   className="w-full text-left px-3 py-2 text-xs font-bold text-emerald-700 uppercase tracking-wider hover:bg-emerald-50 rounded-xl transition-colors"
                 >
-                  View All Products Catalog &rarr;
+                  All Products &amp; Prices &rarr;
                 </button>
                 <div className="h-px bg-slate-100 my-1" />
                 {CATEGORIES.map((cat) => (
                   <button
                     key={cat.id}
                     onClick={() => handleNavClick(cat.id as PageId)}
-                    className="w-full text-left px-3 py-2.5 text-xs font-semibold text-slate-700 hover:text-emerald-700 hover:bg-emerald-50/80 rounded-xl transition-colors flex items-center justify-between"
+                    className="w-full text-left px-3 py-2 text-xs font-semibold text-slate-700 hover:text-emerald-700 hover:bg-emerald-50/80 rounded-xl transition-colors"
                   >
-                    <span>{cat.name}</span>
+                    {cat.name}
                   </button>
                 ))}
               </div>
@@ -173,7 +171,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               currentPage === 'about' ? 'text-emerald-700 font-bold border-b-2 border-emerald-600' : 'text-slate-700'
             }`}
           >
-            About Us
+            About
           </button>
 
           <button
@@ -186,36 +184,11 @@ export const Navbar: React.FC<NavbarProps> = ({
           </button>
         </nav>
 
-        {/* Zone 3: Desktop Primary Action (No Phone Number in Label!) */}
-        <div className="hidden lg:flex items-center gap-3 shrink-0">
-          <a
-            href={BUSINESS_INFO.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="cursor-pointer px-5 py-2.5 text-xs font-bold text-white bg-emerald-700 hover:bg-emerald-800 active:scale-95 rounded-xl shadow-md hover:shadow-emerald-700/20 transition-all flex items-center gap-2 whitespace-nowrap shrink-0"
-          >
-            <MessageSquare className="w-4 h-4 fill-current" />
-            <span>Order on WhatsApp</span>
-          </a>
-        </div>
-
-        {/* Mobile Action & Three-Lines Hamburger Menu Button */}
-        <div className="flex items-center gap-2 lg:hidden">
-          {/* Quick Mobile WhatsApp Button (No Number in Label) */}
-          <a
-            href={BUSINESS_INFO.whatsappUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="px-3 py-2 text-xs font-bold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl transition-colors flex items-center gap-1.5 shadow-sm"
-          >
-            <MessageSquare className="w-3.5 h-3.5 fill-current" />
-            <span>WhatsApp</span>
-          </a>
-
-          {/* Prominent Three-Lines Hamburger Button */}
+        {/* Mobile Three-Lines Hamburger Menu Icon ONLY (No CTA Button in Header) */}
+        <div className="flex items-center lg:hidden">
           <button
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="p-2.5 rounded-xl border border-slate-300 bg-slate-100 hover:bg-emerald-50 hover:border-emerald-400 text-slate-800 hover:text-emerald-700 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500"
+            className="p-2.5 rounded-xl border border-slate-300 bg-slate-50 hover:bg-emerald-50 hover:border-emerald-400 text-slate-800 hover:text-emerald-700 transition-colors cursor-pointer focus:outline-none focus:ring-2 focus:ring-emerald-500"
             aria-label="Toggle Navigation Menu"
           >
             {mobileMenuOpen ? (
@@ -227,9 +200,9 @@ export const Navbar: React.FC<NavbarProps> = ({
         </div>
       </div>
 
-      {/* 3. MOBILE DRAWER MENU: Dropdown closed by default, clicks open it! */}
+      {/* 3. MOBILE DRAWER MENU: Dropdown closed by default */}
       {mobileMenuOpen && (
-        <div className="lg:hidden border-t border-slate-200 bg-white px-5 pt-3 pb-8 space-y-2 shadow-2xl animate-in slide-in-from-top-2 duration-200 max-h-[85vh] overflow-y-auto">
+        <div className="lg:hidden border-t border-slate-200 bg-white px-5 pt-3 pb-6 space-y-2 shadow-2xl animate-in slide-in-from-top-2 duration-200 max-h-[82vh] overflow-y-auto">
           <div className="grid grid-cols-1 gap-1">
             <button
               onClick={() => handleNavClick('home')}
@@ -240,16 +213,13 @@ export const Navbar: React.FC<NavbarProps> = ({
               Home
             </button>
 
-            {/* Accordion Item: Products (CLOSED BY DEFAULT, user clicks to open) */}
+            {/* Accordion Item: Products (CLOSED BY DEFAULT) */}
             <div className="border border-slate-200 rounded-xl overflow-hidden bg-slate-50/50">
               <button
                 onClick={() => setMobileProductsOpen(!mobileProductsOpen)}
                 className="w-full text-left px-3.5 py-2.5 text-sm font-semibold text-slate-800 flex items-center justify-between hover:bg-slate-100 transition-colors cursor-pointer"
               >
-                <div className="flex items-center gap-2">
-                  <span>Products &amp; Pricing</span>
-                  <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-emerald-100 text-emerald-800">Catalog</span>
-                </div>
+                <span>Products &amp; Pricing</span>
                 <ChevronDown
                   className={`w-4 h-4 text-slate-500 transition-transform duration-200 ${
                     mobileProductsOpen ? 'rotate-180 text-emerald-700' : ''
@@ -263,38 +233,38 @@ export const Navbar: React.FC<NavbarProps> = ({
                     onClick={() => handleNavClick('products')}
                     className="w-full text-left px-3 py-2 text-xs font-bold text-emerald-700 uppercase tracking-wide hover:bg-emerald-50 rounded-lg transition-colors flex items-center justify-between"
                   >
-                    <span>View All Products &amp; Prices</span>
+                    <span>All Products &amp; Prices</span>
                     <ChevronRight className="w-3.5 h-3.5" />
                   </button>
                   <button
                     onClick={() => handleNavClick('digital-podiums')}
                     className="w-full text-left px-3 py-1.5 text-xs text-slate-700 hover:text-emerald-700 hover:bg-slate-50 rounded-lg transition-colors"
                   >
-                    • Digital Podiums (21.5", 32", 43")
+                    • Digital Podiums
                   </button>
                   <button
                     onClick={() => handleNavClick('interactive-led-displays')}
                     className="w-full text-left px-3 py-1.5 text-xs text-slate-700 hover:text-emerald-700 hover:bg-slate-50 rounded-lg transition-colors"
                   >
-                    • Interactive Flat Panels (55"–110")
+                    • Interactive Flat Panels
                   </button>
                   <button
                     onClick={() => handleNavClick('multimedia-projectors')}
                     className="w-full text-left px-3 py-1.5 text-xs text-slate-700 hover:text-emerald-700 hover:bg-slate-50 rounded-lg transition-colors"
                   >
-                    • Multimedia Projectors &amp; Screens
+                    • Multimedia Projectors
                   </button>
                   <button
                     onClick={() => handleNavClick('conference-systems')}
                     className="w-full text-left px-3 py-1.5 text-xs text-slate-700 hover:text-emerald-700 hover:bg-slate-50 rounded-lg transition-colors"
                   >
-                    • Conference Microphone Systems
+                    • Conference Systems
                   </button>
                   <button
                     onClick={() => handleNavClick('ptz-robotic-cameras')}
                     className="w-full text-left px-3 py-1.5 text-xs text-slate-700 hover:text-emerald-700 hover:bg-slate-50 rounded-lg transition-colors"
                   >
-                    • 4K PTZ Robotic Cameras
+                    • PTZ Robotic Cameras
                   </button>
                 </div>
               )}
@@ -307,7 +277,7 @@ export const Navbar: React.FC<NavbarProps> = ({
               }`}
             >
               <Images className="w-4 h-4 text-emerald-700" />
-              <span>Project &amp; Installation Gallery</span>
+              <span>Gallery</span>
             </button>
 
             <button
@@ -325,7 +295,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 currentPage === 'projects' ? 'bg-emerald-50 text-emerald-800 font-bold' : 'text-slate-800 hover:bg-slate-50'
               }`}
             >
-              Our Projects &amp; Work
+              Projects
             </button>
 
             <button
@@ -334,7 +304,7 @@ export const Navbar: React.FC<NavbarProps> = ({
                 currentPage === 'about' ? 'bg-emerald-50 text-emerald-800 font-bold' : 'text-slate-800 hover:bg-slate-50'
               }`}
             >
-              About Kohinoor AV
+              About Us
             </button>
 
             <button
@@ -343,29 +313,20 @@ export const Navbar: React.FC<NavbarProps> = ({
                 currentPage === 'contact' ? 'bg-emerald-50 text-emerald-800 font-bold' : 'text-slate-800 hover:bg-slate-50'
               }`}
             >
-              Contact Us &amp; Map
+              Contact
             </button>
           </div>
 
-          {/* Action Row - Clean (No Phone Number in Labels) */}
-          <div className="pt-4 border-t border-slate-100 flex flex-col gap-2">
-            <a
-              href={BUSINESS_INFO.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full text-center py-3 text-xs font-bold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl transition-colors flex items-center justify-center gap-2 shadow-md"
-            >
-              <MessageSquare className="w-4 h-4 fill-current" />
-              <span>Contact on WhatsApp</span>
-            </a>
+          {/* Single Compact Quote Action */}
+          <div className="pt-3 border-t border-slate-100">
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
                 onOpenQuoteModal();
               }}
-              className="w-full text-center py-2.5 text-xs font-semibold text-slate-800 bg-slate-100 hover:bg-slate-200 rounded-xl transition-colors cursor-pointer"
+              className="w-full text-center py-2.5 text-xs font-bold text-white bg-emerald-700 hover:bg-emerald-800 rounded-xl transition-colors cursor-pointer"
             >
-              Request Institutional Quotation
+              Request Quotation
             </button>
           </div>
         </div>

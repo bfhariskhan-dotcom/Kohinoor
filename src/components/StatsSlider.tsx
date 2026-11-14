@@ -1,42 +1,37 @@
 import React, { useState, useEffect } from 'react';
-import { Award, CheckCircle2, ShieldCheck, Truck, Users, Sparkles, ChevronLeft, ChevronRight } from 'lucide-react';
+import { Award, CheckCircle2, ShieldCheck, Truck, ChevronLeft, ChevronRight } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 
 interface StatSlide {
   metric: string;
   label: string;
   subtext: string;
-  badge: string;
   icon: React.ElementType;
 }
 
 const STATS: StatSlide[] = [
   {
     metric: '15+ Years',
-    label: 'Industry Experience in Pakistan',
-    subtext: 'Engineering AV & educational tech solutions since 2009',
-    badge: 'Established Trust',
+    label: 'Industry Experience',
+    subtext: 'AV engineering & supply since 2009',
     icon: Award
   },
   {
     metric: '500+ Projects',
-    label: 'Classrooms & Auditoriums Equipped',
-    subtext: 'Universities, colleges, schools & government chambers nationwide',
-    badge: 'Proven Deployments',
+    label: 'Rooms Equipped',
+    subtext: 'Universities, schools & chambers',
     icon: CheckCircle2
   },
   {
     metric: '6 Major Cities',
-    label: 'Direct Nationwide Logistics Network',
-    subtext: 'Islamabad, Rawalpindi, Lahore, Karachi, Peshawar, Multan & more',
-    badge: 'Nationwide Logistics',
+    label: 'Nationwide Delivery',
+    subtext: 'Islamabad, Lahore, Karachi & more',
     icon: Truck
   },
   {
     metric: '100% Genuine',
-    label: 'Commercial Hardware & Warranty',
-    subtext: 'Cold-rolled steel rostrums, 4K displays & Sennheiser/Beterva audio',
-    badge: 'Official Warranty',
+    label: 'Official Warranty',
+    subtext: 'Certified commercial AV hardware',
     icon: ShieldCheck
   }
 ];
@@ -52,32 +47,29 @@ export const StatsSlider: React.FC = () => {
   }, []);
 
   return (
-    <div className="bg-white rounded-3xl shadow-[0_20px_50px_rgba(21,128,61,0.08)] border border-emerald-100 overflow-hidden">
-      {/* Desktop Grid Layout (4 Columns) with Subtle Green Highlights */}
-      <div className="hidden md:grid grid-cols-4 divide-x divide-emerald-50 p-6 sm:p-8">
+    <div className="bg-white rounded-2xl shadow-[0_14px_35px_rgba(5,150,105,0.08)] border border-emerald-100 overflow-hidden">
+      {/* Desktop 4-Column Strip */}
+      <div className="hidden md:grid grid-cols-4 divide-x divide-emerald-100/80 p-4 sm:p-5">
         {STATS.map((stat, idx) => {
           const Icon = stat.icon;
           return (
             <div
               key={idx}
-              className={`p-4 transition-all duration-300 rounded-2xl ${
-                activeIdx === idx ? 'bg-emerald-50/70 scale-[1.02]' : 'hover:bg-slate-50'
+              className={`p-3.5 transition-all duration-300 rounded-xl ${
+                activeIdx === idx ? 'bg-emerald-50/80' : 'hover:bg-slate-50'
               }`}
               onMouseEnter={() => setActiveIdx(idx)}
             >
-              <div className="flex items-center justify-between mb-2">
-                <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-emerald-100/80 text-emerald-800">
-                  {stat.badge}
+              <div className="flex items-center justify-between mb-1">
+                <span className="text-2xl font-extrabold text-emerald-700 tracking-tight tabular-nums">
+                  {stat.metric}
                 </span>
-                <Icon className="w-4 h-4 text-emerald-700" />
+                <Icon className="w-4 h-4 text-emerald-600" />
               </div>
-              <div className="text-3xl font-extrabold text-emerald-800 tracking-tight tabular-nums">
-                {stat.metric}
-              </div>
-              <div className="text-xs font-bold text-slate-900 mt-1">
+              <div className="text-xs font-bold text-slate-900">
                 {stat.label}
               </div>
-              <div className="text-[11px] text-slate-500 mt-0.5 leading-relaxed">
+              <div className="text-[11px] text-slate-500 mt-0.5">
                 {stat.subtext}
               </div>
             </div>
@@ -85,11 +77,11 @@ export const StatsSlider: React.FC = () => {
         })}
       </div>
 
-      {/* Mobile Auto-Playing Slide Card as Requested ("इसको स्लाइड वाला कुछ कर दो, अच्छा लगेगा") */}
-      <div className="md:hidden p-6 relative">
-        <div className="flex items-center justify-between mb-3">
-          <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-800">
-            {STATS[activeIdx].badge}
+      {/* Mobile Compact Auto-Playing Slide */}
+      <div className="md:hidden p-5 relative">
+        <div className="flex items-center justify-between mb-2">
+          <span className="text-[11px] font-bold uppercase tracking-wider text-emerald-700">
+            Kohinoor AV Track Record
           </span>
           <div className="flex items-center gap-1">
             <button
@@ -112,26 +104,25 @@ export const StatsSlider: React.FC = () => {
         <AnimatePresence mode="wait">
           <motion.div
             key={activeIdx}
-            initial={{ opacity: 0, x: 20 }}
+            initial={{ opacity: 0, x: 15 }}
             animate={{ opacity: 1, x: 0 }}
-            exit={{ opacity: 0, x: -20 }}
-            transition={{ duration: 0.35 }}
-            className="space-y-1.5"
+            exit={{ opacity: 0, x: -15 }}
+            transition={{ duration: 0.3 }}
+            className="space-y-0.5"
           >
-            <div className="text-3xl font-extrabold text-emerald-800 tracking-tight">
+            <div className="text-2xl font-extrabold text-emerald-700 tracking-tight tabular-nums">
               {STATS[activeIdx].metric}
             </div>
             <div className="text-sm font-bold text-slate-900">
               {STATS[activeIdx].label}
             </div>
-            <div className="text-xs text-slate-600 leading-relaxed">
+            <div className="text-xs text-slate-500">
               {STATS[activeIdx].subtext}
             </div>
           </motion.div>
         </AnimatePresence>
 
-        {/* Mobile Slide Dots */}
-        <div className="flex items-center justify-center gap-1.5 mt-4 pt-3 border-t border-slate-100">
+        <div className="flex items-center justify-center gap-1.5 mt-3 pt-2.5 border-t border-slate-100">
           {STATS.map((_, i) => (
             <button
               key={i}

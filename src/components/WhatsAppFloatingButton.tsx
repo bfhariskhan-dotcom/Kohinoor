@@ -6,81 +6,67 @@ export const WhatsAppFloatingButton: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const quickMessages = [
-    'Hello Kohinoor AV, I would like to order / inquire about Digital Podiums.',
-    'Hello, I need pricing and specifications for 75" and 86" Interactive Flat Panel LEDs.',
-    'Hi, we require a formal proposal for a Conference Room Audio System in Islamabad.',
-    'Hello Kohinoor AV, please share details for Turnkey Smart Classroom setups.'
+    'Pricing for Digital Podiums',
+    'Pricing for 75" / 86" Interactive LEDs',
+    'Conference Room Audio Quote',
+    'Turnkey Smart Classroom Setup'
   ];
 
   const handleSendQuick = (msg: string) => {
-    const encoded = encodeURIComponent(msg);
+    const encoded = encodeURIComponent(`Hello Kohinoor AV, I need details on: ${msg}`);
     window.open(`${BUSINESS_INFO.whatsappUrl}?text=${encoded}`, '_blank');
     setIsOpen(false);
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 flex flex-col items-end">
-      {/* Quick message options popover in cohesive Emerald Green */}
+    <div className="fixed bottom-5 right-5 z-50 flex flex-col items-end">
       {isOpen && (
-        <div className="mb-3 w-80 bg-white rounded-2xl shadow-2xl border border-emerald-100 p-4 transition-all duration-200 animate-in fade-in slide-in-from-bottom-3">
-          <div className="flex items-center justify-between pb-3 border-b border-slate-100">
-            <div className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-xl bg-emerald-700 text-white flex items-center justify-center font-bold text-xs shadow-xs">
-                KAV
-              </div>
-              <div>
-                <h4 className="text-xs font-bold text-slate-900">Kohinoor Audio Visual</h4>
-                <p className="text-[11px] text-emerald-700 font-semibold">Direct WhatsApp Sales &middot; Online</p>
-              </div>
+        <div className="mb-3 w-72 bg-white rounded-2xl shadow-2xl border border-emerald-100 p-4 transition-all duration-200 animate-in fade-in slide-in-from-bottom-3">
+          <div className="flex items-center justify-between pb-2.5 border-b border-slate-100">
+            <div>
+              <h4 className="text-xs font-bold text-slate-900">Kohinoor Audio Visual</h4>
+              <p className="text-[11px] text-emerald-700 font-semibold">Direct WhatsApp Sales</p>
             </div>
             <button
               onClick={() => setIsOpen(false)}
               className="p-1 text-slate-400 hover:text-slate-600 rounded-lg hover:bg-slate-100 transition-colors"
+              aria-label="Close"
             >
               <X className="w-4 h-4" />
             </button>
           </div>
 
-          <p className="text-xs text-slate-600 my-3 leading-relaxed">
-            Need immediate pricing, quotations, or delivery details in Islamabad or nationwide? Tap a message:
-          </p>
-
-          <div className="space-y-1.5">
+          <div className="space-y-1.5 my-3">
             {quickMessages.map((msg, i) => (
               <button
                 key={i}
                 onClick={() => handleSendQuick(msg)}
-                className="w-full text-left text-xs p-2.5 rounded-xl bg-slate-50 hover:bg-emerald-50 hover:text-emerald-900 text-slate-700 transition-colors border border-slate-100 hover:border-emerald-200 block font-medium"
+                className="w-full text-left text-xs p-2 rounded-lg bg-slate-50 hover:bg-emerald-50 hover:text-emerald-900 text-slate-700 transition-colors border border-slate-100 block font-medium"
               >
                 {msg}
               </button>
             ))}
           </div>
 
-          <div className="mt-3 pt-2 border-t border-slate-100">
-            <a
-              href={BUSINESS_INFO.whatsappUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold rounded-xl text-center flex items-center justify-center gap-2 transition-colors shadow-sm"
-            >
-              <MessageSquare className="w-4 h-4" />
-              <span>Open Direct WhatsApp Chat</span>
-            </a>
-          </div>
+          <a
+            href={BUSINESS_INFO.whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="w-full py-2 bg-emerald-700 hover:bg-emerald-800 text-white text-xs font-bold rounded-lg text-center flex items-center justify-center gap-1.5 transition-colors"
+          >
+            <MessageSquare className="w-3.5 h-3.5" />
+            <span>Start Chat</span>
+          </a>
         </div>
       )}
 
-      {/* Floating Action Button in Emerald Green (No Phone Number in Label) */}
+      {/* Compact Circular Floating Button */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        aria-label="Contact Kohinoor Audio Visual on WhatsApp"
-        className="cursor-pointer group flex items-center gap-2.5 px-4 py-3 bg-emerald-700 hover:bg-emerald-800 text-white rounded-full shadow-xl hover:shadow-emerald-700/30 active:scale-95 transition-all duration-200 border-2 border-white/20"
+        aria-label="Chat on WhatsApp"
+        className="cursor-pointer w-12 h-12 bg-emerald-700 hover:bg-emerald-800 text-white rounded-full shadow-xl hover:shadow-emerald-700/30 active:scale-95 transition-all duration-200 border-2 border-white/25 flex items-center justify-center"
       >
-        <MessageSquare className="w-5 h-5 fill-current" />
-        <span className="text-xs font-extrabold tracking-wide hidden sm:inline">
-          Order on WhatsApp
-        </span>
+        {isOpen ? <X className="w-5 h-5" /> : <MessageSquare className="w-5 h-5 fill-current" />}
       </button>
     </div>
   );

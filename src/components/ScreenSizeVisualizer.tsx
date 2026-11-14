@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { BUSINESS_INFO } from '../data/products';
-import { Tv, MessageSquare, Check, Users, Eye, Maximize2 } from 'lucide-react';
+import { Tv, Check, Users, Eye, Maximize2 } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface ScreenSize {
@@ -95,29 +94,21 @@ export const ScreenSizeVisualizer: React.FC = () => {
   const [selectedIdx, setSelectedIdx] = useState<number>(3); // 85"/86" default
   const active = SCREEN_SIZES[selectedIdx];
 
-  const handleWhatsApp = () => {
-    const text = `Hello Kohinoor AV, I am checking the *${active.size} 4K Interactive Flat Panel LED* on your visualizer tool. Please send availability and price quotation for Islamabad.`;
-    window.open(`${BUSINESS_INFO.whatsappUrl}?text=${encodeURIComponent(text)}`, '_blank');
-  };
-
   return (
     <div className="bg-white rounded-3xl border border-slate-200 p-6 sm:p-10 shadow-sm space-y-8">
       {/* Header */}
-      <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-3">
         <div>
-          <div className="text-xs font-bold text-emerald-800 uppercase tracking-wider">
-            Interactive LED Dimensional Selector
-          </div>
-          <h3 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight mt-1">
-            Compare Display Sizes (55" to 110")
+          <span className="text-[11px] font-bold text-emerald-700 uppercase tracking-wider">
+            Display Size Guide
+          </span>
+          <h3 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight mt-0.5">
+            Compare LED Sizes (55" – 110")
           </h3>
-          <p className="text-xs sm:text-sm text-slate-600 mt-1 max-w-xl">
-            Choose a screen size to see exact physical dimensions, recommended room capacity, viewing distance, and classroom suitability.
-          </p>
         </div>
 
-        <span className="text-xs font-semibold px-3 py-1.5 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 self-start md:self-auto">
-          Stock in Islamabad Warehouse
+        <span className="text-xs font-semibold px-3 py-1 rounded-full bg-emerald-50 text-emerald-800 border border-emerald-200 self-start md:self-auto">
+          In-Stock Islamabad
         </span>
       </div>
 
@@ -227,19 +218,9 @@ export const ScreenSizeVisualizer: React.FC = () => {
             </div>
           </div>
 
-          <div className="p-4 rounded-xl bg-emerald-50/70 border border-emerald-200 text-xs text-emerald-900 space-y-1">
-            <div className="font-bold">Ideal Deployment Setting:</div>
-            <div>{active.idealRoomType}</div>
-          </div>
-
-          <div className="pt-2">
-            <button
-              onClick={handleWhatsApp}
-              className="w-full sm:w-auto cursor-pointer px-6 py-3 bg-emerald-700 hover:bg-emerald-800 active:scale-95 text-white text-xs font-bold rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
-            >
-              <MessageSquare className="w-4 h-4 fill-current" />
-              <span>Inquire on WhatsApp</span>
-            </button>
+          <div className="p-3.5 rounded-xl bg-emerald-50/70 border border-emerald-200 text-xs text-emerald-900">
+            <span className="font-bold">Ideal Setting: </span>
+            <span>{active.idealRoomType}</span>
           </div>
         </div>
       </div>

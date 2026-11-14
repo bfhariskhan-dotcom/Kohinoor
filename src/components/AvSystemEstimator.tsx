@@ -111,23 +111,19 @@ export const AvSystemEstimator: React.FC = () => {
 
       <div className="relative z-10 space-y-6 sm:space-y-8">
         {/* Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
-          <div className="space-y-2">
-            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/20 border border-emerald-400/30 text-emerald-300 text-xs font-bold tracking-wide">
-              <Sparkles className="w-3.5 h-3.5 text-emerald-400" />
-              <span>Interactive System Configurator</span>
-            </div>
-            <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
-              Design Your Institutional AV Package
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-3">
+          <div className="space-y-1">
+            <span className="text-[11px] font-bold text-emerald-300 uppercase tracking-wider">
+              System Configurator
+            </span>
+            <h2 className="text-xl sm:text-2xl font-extrabold text-white tracking-tight">
+              Configure Your AV Setup
             </h2>
-            <p className="text-xs sm:text-sm text-emerald-100/80 max-w-2xl">
-              Select your institution space type to get an engineer-curated hardware combination. Send directly to our Islamabad team via WhatsApp for instant pricing.
-            </p>
           </div>
 
-          <div className="text-xs text-emerald-300 font-mono bg-emerald-900/40 px-3 py-1.5 rounded-xl border border-emerald-700/40 self-start md:self-auto">
-            Direct Blue Area Supply
-          </div>
+          <span className="text-xs text-emerald-200 font-medium bg-emerald-900/50 px-3 py-1 rounded-lg border border-emerald-700/50 self-start md:self-auto">
+            Blue Area, Islamabad
+          </span>
         </div>
 
         {/* Space Selector Tabs */}

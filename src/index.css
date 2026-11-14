@@ -6,24 +6,24 @@
     scroll-behavior: smooth;
   }
 
-  /* Custom Professional Emerald/Forest Green Scrollbar */
+  /* Custom Refined Emerald Green Scrollbar */
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
   }
   ::-webkit-scrollbar-track {
-    background: #0f1f17;
+    background: #f1f5f9;
   }
   ::-webkit-scrollbar-thumb {
-    background: #15803d;
+    background: #059669;
     border-radius: 4px;
   }
   ::-webkit-scrollbar-thumb:hover {
-    background: #16a34a;
+    background: #047857;
   }
 }
 
-/* Continuous Auto-Running Marquee Animation */
+/* Continuous Auto-Running Marquee Animation (Top Bar & Gallery) */
 @keyframes marquee {
   0% {
     transform: translateX(0%);
@@ -43,7 +43,17 @@
   animation-play-state: paused;
 }
 
+.animate-marquee-gallery {
+  display: flex;
+  width: max-content;
+  animation: marquee 42s linear infinite;
+}
+
+.animate-marquee-gallery:hover {
+  animation-play-state: paused;
+}
+
 /* Smooth Image Glow on Hover */
 .hover-glow-green:hover {
-  box-shadow: 0 10px 30px -10px rgba(22, 101, 52, 0.3);
+  box-shadow: 0 10px 30px -10px rgba(5, 150, 105, 0.28);
 }

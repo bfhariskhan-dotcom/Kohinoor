@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Product } from '../types';
 import { BUSINESS_INFO } from '../data/products';
-import { X, MessageSquare, Check, Tag } from 'lucide-react';
+import { X, MessageSquare, Check } from 'lucide-react';
 
 interface ProductDetailModalProps {
   product: Product | null;
@@ -25,7 +25,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
   if (!product) return null;
 
   const handleWhatsApp = () => {
-    const text = `Hello Kohinoor AV, I am inquiring about *${product.name}* (Model: ${product.modelNumber || 'Standard'}, Listed Price: ${product.price || 'Special'}). Please provide price, delivery time, and stock availability in Pakistan.`;
+    const text = `Hello Kohinoor AV, I am inquiring about *${product.name}* (Model: ${product.modelNumber || 'Standard'}). Please provide detailed specifications, stock availability, and an institutional quotation in Pakistan.`;
     window.open(`${BUSINESS_INFO.whatsappUrl}?text=${encodeURIComponent(text)}`, '_blank');
   };
 
@@ -34,19 +34,23 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
       <div className="relative w-full max-w-4xl bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden flex flex-col max-h-[90vh]">
         {/* Header Bar */}
         <div className="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
-          <div className="flex items-center gap-2">
-            <span className="text-[11px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-lg bg-emerald-100 text-emerald-800">
+          <div className="flex items-center gap-2 text-xs">
+            <span className="font-bold uppercase tracking-wider text-emerald-700">
               {product.categoryLabel}
             </span>
             {product.modelNumber && (
-              <span className="text-xs text-slate-500 font-mono">
-                {product.modelNumber}
-              </span>
+              <>
+                <span aria-hidden="true" className="text-slate-300">&middot;</span>
+                <span className="text-slate-600 font-mono font-semibold">
+                  {product.modelNumber}
+                </span>
+              </>
             )}
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 text-slate-400 hover:text-slate-600 rounded-xl hover:bg-slate-200 transition-colors"
+            className="p-1.5 text-slate-400 hover:text-slate-600 rounded-xl hover:bg-slate-200 transition-colors cursor-pointer"
+            aria-label="Close modal"
           >
             <X className="w-5 h-5" />
           </button>
@@ -88,26 +92,29 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
             {/* Info Right */}
             <div className="md:col-span-7 space-y-4">
               <div>
+                {product.brand && (
+                  <div className="text-[11px] font-bold text-slate-500 uppercase tracking-wider mb-1">
+                    {product.brand}
+                  </div>
+                )}
                 <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 leading-snug">
                   {product.name}
                 </h2>
                 <p className="text-xs text-emerald-800 font-semibold mt-1">
                   {product.tagline}
                 </p>
-
-                {/* Price Display */}
-                {product.price && (
-                  <div className="mt-3 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-xl bg-emerald-50 border border-emerald-200 text-emerald-900 font-bold text-sm">
-                    <Tag className="w-4 h-4 text-emerald-700" />
-                    <span>Price: {product.price}</span>
-                    <span className="text-[11px] font-normal text-emerald-700">· Official GST Invoice Available</span>
-                  </div>
-                )}
               </div>
 
               <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
                 {product.description}
               </p>
+
+              {product.availableSizes && product.availableSizes.length > 0 && (
+                <div className="p-3 rounded-xl bg-emerald-50/70 border border-emerald-100 text-xs text-emerald-950">
+                  <span className="font-bold">Available Sizes: </span>
+                  <span>{product.availableSizes.join(' · ')}</span>
+                </div>
+              )}
 
               {/* Key Features */}
               <div className="space-y-2 pt-2">
@@ -153,39 +160,32 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
               <h4 className="text-xs font-bold text-slate-900 uppercase tracking-wider">
                 Recommended Applications
               </h4>
-              <div className="flex flex-wrap gap-2">
-                {product.applications.map((app, i) => (
-                  <span
-                    key={i}
-                    className="px-3 py-1 rounded-lg bg-slate-100 text-slate-700 text-xs font-medium"
-                  >
-                    {app}
-                  </span>
-                ))}
+              <div className="text-xs text-slate-700 font-medium">
+                {product.applications.join(' · ')}
               </div>
             </div>
           )}
         </div>
 
-        {/* Footer Actions: Clean WhatsApp (No Phone in Label) */}
+        {/* Footer Actions */}
         <div className="p-4 sm:p-6 bg-slate-50 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
           <div className="text-xs text-slate-500 text-center sm:text-left">
-            <span>Stock available at United Plaza, Blue Area, Islamabad. Nationwide delivery.</span>
+            <span>Supply &amp; After-Sales Service · Blue Area, Islamabad · Nationwide Delivery</span>
           </div>
           <div className="flex items-center gap-3 w-full sm:w-auto">
             <button
               onClick={handleWhatsApp}
-              className="cursor-pointer flex-1 sm:flex-initial px-6 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
+              className="cursor-pointer flex-1 sm:flex-initial px-6 py-2.5 bg-emerald-700 hover:bg-emerald-800 text-white font-bold text-xs rounded-xl shadow-md transition-all flex items-center justify-center gap-2 whitespace-nowrap"
             >
               <MessageSquare className="w-4 h-4 fill-current" />
-              <span>Order via WhatsApp</span>
+              <span>Inquire via WhatsApp</span>
             </button>
             <button
               onClick={() => {
                 onClose();
                 onOpenQuote(product.name);
               }}
-              className="cursor-pointer px-5 py-2.5 bg-white hover:bg-slate-100 text-slate-800 font-semibold text-xs rounded-xl border border-slate-300 transition-colors"
+              className="cursor-pointer px-5 py-2.5 bg-white hover:bg-slate-100 text-slate-800 font-semibold text-xs rounded-xl border border-slate-300 transition-colors whitespace-nowrap"
             >
               Request Formal Quote
             </button>

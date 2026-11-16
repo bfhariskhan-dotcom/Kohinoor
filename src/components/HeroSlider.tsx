@@ -100,7 +100,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = () => {
   const slide = SLIDES[currentSlide];
 
   const handleWhatsAppSlideInquiry = () => {
-    const text = `Hello Kohinoor AV, I would like to order *${slide.productName}*. Please share pricing and delivery details.`;
+    const text = `Hello Kohinoor AV, I would like technical specifications and institutional quotation details for *${slide.productName}*.`;
     window.open(`${BUSINESS_INFO.whatsappUrl}?text=${encodeURIComponent(text)}`, '_blank');
   };
 

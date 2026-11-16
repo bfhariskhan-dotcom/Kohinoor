@@ -1,7 +1,7 @@
 import React from 'react';
 import { Product } from '../types';
 import { BUSINESS_INFO } from '../data/products';
-import { MessageSquare, ArrowRight, Check, Tag } from 'lucide-react';
+import { MessageSquare, ArrowRight, Check } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface ProductCardProps {
@@ -18,7 +18,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
 }) => {
   const handleWhatsAppOrder = (e: React.MouseEvent) => {
     e.stopPropagation();
-    const text = `Hello Kohinoor AV, I want to purchase *${product.name}* (Model: ${product.modelNumber || 'Standard'}, Price: ${product.price || 'Special'}). Please share details.`;
+    const text = `Hello Kohinoor AV, I would like to inquire about *${product.name}* (Model: ${product.modelNumber || 'Standard'}). Please share specifications, availability, and institutional quotation details.`;
     window.open(`${BUSINESS_INFO.whatsappUrl}?text=${encodeURIComponent(text)}`, '_blank');
   };
 
@@ -42,35 +42,35 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           }}
           className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
         />
-
-        <div className="absolute top-3 left-3 bg-emerald-800/90 text-white px-2.5 py-0.5 rounded-lg text-[10px] font-bold">
-          {product.categoryLabel}
-        </div>
-
-        {product.modelNumber && (
-          <div className="absolute top-3 right-3 bg-slate-900/80 text-emerald-300 px-2 py-0.5 rounded-lg text-[10px] font-bold font-mono">
-            {product.modelNumber}
-          </div>
-        )}
       </div>
 
       {/* Card Content */}
       <div className="p-5 flex-1 flex flex-col justify-between space-y-3">
         <div>
+          {/* Clean Unboxed Metadata */}
+          <div className="flex flex-wrap items-center gap-1.5 text-[11px] font-semibold text-emerald-700 mb-1">
+            <span>{product.categoryLabel}</span>
+            {product.modelNumber && (
+              <>
+                <span aria-hidden="true" className="text-slate-300">&middot;</span>
+                <span className="font-mono text-slate-500">{product.modelNumber}</span>
+              </>
+            )}
+          </div>
+
           <h3 className="text-sm sm:text-base font-extrabold text-slate-900 group-hover:text-emerald-700 transition-colors leading-snug line-clamp-1">
             {product.name}
           </h3>
 
-          {product.price && (
-            <div className="mt-2 inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-emerald-50 border border-emerald-200/80 text-emerald-800 text-xs font-extrabold">
-              <Tag className="w-3 h-3 text-emerald-600" />
-              <span>{product.price}</span>
-            </div>
-          )}
-
-          <p className="text-xs text-slate-600 mt-2 line-clamp-2 leading-relaxed">
+          <p className="text-xs text-slate-600 mt-1.5 line-clamp-2 leading-relaxed">
             {product.description}
           </p>
+
+          {product.availableSizes && product.availableSizes.length > 0 && (
+            <div className="mt-2 text-[11px] text-slate-700 font-semibold">
+              Sizes: <span className="text-emerald-800">{product.availableSizes.join(' · ')}</span>
+            </div>
+          )}
 
           <div className="mt-3 space-y-1">
             {product.keyFeatures.slice(0, 2).map((feat, i) => (
@@ -86,10 +86,10 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <div className="pt-3 border-t border-slate-100 flex items-center gap-2">
           <button
             onClick={handleWhatsAppOrder}
-            className="cursor-pointer flex-1 py-2 px-3 bg-emerald-700 hover:bg-emerald-800 active:scale-95 text-white text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-1.5"
+            className="cursor-pointer flex-1 py-2 px-3 bg-emerald-700 hover:bg-emerald-800 active:scale-95 text-white text-xs font-bold rounded-lg transition-all flex items-center justify-center gap-1.5 whitespace-nowrap"
           >
             <MessageSquare className="w-3.5 h-3.5 fill-current" />
-            <span>Order on WhatsApp</span>
+            <span>Inquire on WhatsApp</span>
           </button>
 
           <button
@@ -97,7 +97,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
               e.stopPropagation();
               onSelect(product);
             }}
-            className="cursor-pointer py-2 px-3 bg-slate-100 hover:bg-emerald-50 hover:text-emerald-700 text-slate-800 text-xs font-semibold rounded-lg transition-colors flex items-center justify-center gap-1 shrink-0"
+            className="cursor-pointer py-2 px-3 bg-slate-100 hover:bg-emerald-50 hover:text-emerald-700 text-slate-800 text-xs font-semibold rounded-lg transition-colors flex items-center justify-center gap-1 shrink-0 whitespace-nowrap"
           >
             <span>Specs</span>
             <ArrowRight className="w-3.5 h-3.5" />

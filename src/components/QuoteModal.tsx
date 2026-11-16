@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { BUSINESS_INFO, PRODUCTS } from '../data/products';
-import { X, Send, CheckCircle2, MessageSquare } from 'lucide-react';
+import { BUSINESS_INFO, CATEGORIES, PRODUCTS } from '../data/products';
+import { X, CheckCircle2, MessageSquare } from 'lucide-react';
 
 interface QuoteModalProps {
   isOpen: boolean;
@@ -17,8 +17,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
   const [organization, setOrganization] = useState('');
   const [city, setCity] = useState('Islamabad');
   const [phone, setPhone] = useState('');
-  const [email, setEmail] = useState('');
-  const [selectedProduct, setSelectedProduct] = useState(preSelectedProduct || 'Digital Rostrum');
+  const [selectedProduct, setSelectedProduct] = useState(preSelectedProduct || 'Interactive LED Displays');
   const [message, setMessage] = useState('');
   const [submitted, setSubmitted] = useState(false);
 
@@ -37,16 +36,16 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
 
   const handleSendViaWhatsApp = () => {
     const text =
-      `*New Quote Request - Kohinoor Audio Visual*\n` +
+      `*New Quotation Request - Kohinoor Audio Visual*\n` +
       `-----------------------------------------\n` +
       `• Name: ${fullName || 'Valued Client'}\n` +
       `• Organization: ${organization || 'Institutional/Corporate'}\n` +
       `• City: ${city}\n` +
       `• Phone: ${phone || 'N/A'}\n` +
-      `• Product of Interest: ${selectedProduct}\n` +
-      `• Additional Requirements: ${message || 'Standard specification & formal quotation request'}\n` +
+      `• Equipment / Model: ${selectedProduct}\n` +
+      `• Requirements: ${message || 'Please provide technical specification & formal quotation.'}\n` +
       `-----------------------------------------\n` +
-      `Sent via kohinoorav.com website`;
+      `Sent via kohinoorav.com`;
 
     window.open(`${BUSINESS_INFO.whatsappUrl}?text=${encodeURIComponent(text)}`, '_blank');
     onClose();
@@ -55,17 +54,16 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
   return (
     <div className="fixed inset-0 z-50 overflow-y-auto bg-slate-950/80 backdrop-blur-sm flex items-center justify-center p-4 sm:p-6 animate-in fade-in duration-200">
       <div className="relative w-full max-w-lg bg-white rounded-3xl shadow-2xl border border-slate-200 overflow-hidden">
-        {/* Header */}
         <div className="px-6 py-5 bg-gradient-to-r from-emerald-800 to-emerald-950 text-white flex items-center justify-between">
           <div>
             <h3 className="text-base sm:text-lg font-bold">Request Official Quotation</h3>
             <p className="text-xs text-emerald-200/90 mt-0.5">
-              Direct procurement proposal from Kohinoor Audio Visual Islamabad
+              Direct institutional proposal from Kohinoor Audio Visual Islamabad
             </p>
           </div>
           <button
             onClick={onClose}
-            className="p-1.5 text-emerald-200 hover:text-white rounded-xl hover:bg-white/10 transition-colors"
+            className="p-1.5 text-emerald-200 hover:text-white rounded-xl hover:bg-white/10 transition-colors cursor-pointer"
           >
             <X className="w-5 h-5" />
           </button>
@@ -151,24 +149,26 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
             </div>
 
             <div>
-              <label className="block font-bold text-slate-700 mb-1">Equipment Category / Product *</label>
+              <label className="block font-bold text-slate-700 mb-1">Equipment Category / Model *</label>
               <select
                 value={selectedProduct}
                 onChange={(e) => setSelectedProduct(e.target.value)}
                 className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-600 bg-white"
               >
-                <option value="Turnkey Smart Classroom">Turnkey Smart Classroom Solution</option>
-                <option value="Digital Rostrum 21.5">Digital Rostrum with PC &amp; Sound System (21.5")</option>
-                <option value="Curved Touch Podium 32">Curved Touch Podium (32")</option>
-                <option value="Executive 43 Touch Rostrum NUST">Executive 43" Touch Rostrum (NUST / NCAI Model)</option>
-                <option value="Interactive Flat Panel 75">Interactive Flat Panel 75" 4K</option>
-                <option value="Interactive Flat Panel 86">Interactive Flat Panel 86" 4K</option>
-                <option value="Interactive Flat Panel 55-110">Interactive Flat Panels (Full Series 55"–110")</option>
-                <option value="Multimedia Projector 5000 Lumens">Professional 5000 Lumens Projector</option>
-                <option value="Conference Microphones MA4617">MA4617 Chairman &amp; Delegate Conference System</option>
-                <option value="Beterva Conference BE2400C">Beterva BE-2400C Conference System</option>
-                <option value="4K AI Auto-Tracking PTZ Camera">4K AI Auto-Tracking PTZ Robotic Camera</option>
-                <option value="Other / Tender Inquiry">Other Custom Hardware Requirement</option>
+                <optgroup label="Product Categories">
+                  {CATEGORIES.map((cat) => (
+                    <option key={cat.id} value={cat.name}>
+                      {cat.name}
+                    </option>
+                  ))}
+                </optgroup>
+                <optgroup label="Specific Equipment Models">
+                  {PRODUCTS.map((prod) => (
+                    <option key={prod.id} value={prod.name}>
+                      {prod.name}
+                    </option>
+                  ))}
+                </optgroup>
               </select>
             </div>
 
@@ -178,7 +178,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
                 rows={3}
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
-                placeholder="Mention room dimensions, number of seats, or specific tender timeline..."
+                placeholder="Mention quantities, screen sizes, room dimensions, or tender documentation..."
                 className="w-full px-3.5 py-2.5 rounded-xl border border-slate-200 focus:outline-none focus:border-emerald-600"
               />
             </div>

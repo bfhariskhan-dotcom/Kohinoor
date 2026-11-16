@@ -2,43 +2,43 @@ import { FAQItem } from '../types';
 
 export const FAQS: FAQItem[] = [
   {
-    category: 'Procurement & Pricing',
-    question: 'What is the price of a Digital Podium in Pakistan?',
-    answer: 'The price of a digital podium in Pakistan depends on the screen size (21.5-inch, 32-inch, or 43-inch), internal computer configuration (Core i5 / i7 OPS), audio amplification power (60W built-in amp), and gooseneck microphone specifications. For an official institutional quotation with formal NTN/GST invoice and delivery estimates in Islamabad or nationwide, please contact our team via WhatsApp at +92 333 5163220 or through our quotation form.'
+    category: 'Procurement & Quotations',
+    question: 'How can we obtain a formal quotation for Digital Podiums or AV Systems?',
+    answer: 'Institutional quotations depend on screen size (21.5-inch, 32-inch, or 43-inch), internal computer configuration, audio amplification, and room quantities. To receive a tailored proposal with formal NTN/GST documentation and delivery timelines in Islamabad or nationwide, contact our team via WhatsApp at +92 333 5163220 or through our quotation form.'
   },
   {
-    category: 'Procurement & Pricing',
+    category: 'Procurement & Quotations',
     question: 'Do you provide formal quotations for government tenders and university tenders?',
-    answer: 'Yes. Kohinoor Audio Visual regularly provides comprehensive technical specifications, formal itemized quotations, manufacturer warranty letters, and tender-compliant bid documentation for universities, public sector organizations, Higher Education Commission (HEC) projects, and government departments across Pakistan.'
+    answer: 'Yes. Kohinoor Audio Visual—established in 1978—regularly supplies comprehensive technical specifications, itemized quotations, manufacturer authorization and warranty letters, and tender-compliant bid documentation for universities, HEC projects, and government departments across Pakistan.'
   },
   {
     category: 'Delivery & Coverage',
     question: 'Which cities across Pakistan do you supply and install equipment in?',
-    answer: 'Our main office and technical center is located at United Plaza, 2nd Floor, Fazlehaq Road, Blue Area, Islamabad. We provide nationwide supply, insured courier delivery, and on-site engineering installation across Islamabad, Rawalpindi, Lahore, Karachi, Peshawar, Multan, Faisalabad, Abbottabad, and all major cities in Pakistan.'
+    answer: 'Our head office and technical hub is located at United Plaza, 2nd Floor, Fazlehaq Road, Blue Area, Islamabad. We provide nationwide equipment supply, insured logistics, and on-site engineering installation across Islamabad, Rawalpindi, Lahore, Karachi, Peshawar, Multan, Faisalabad, and all major university campuses.'
   },
   {
     category: 'Interactive Displays',
-    question: 'What sizes of Interactive Flat Panel LED displays do you supply?',
-    answer: 'We stock and supply commercial 4K Ultra HD interactive touch panels in 55-inch, 65-inch, 75-inch, 85-inch, 86-inch, 98-inch, and 110-inch diagonal sizes. All panels feature 20-point multi-touch writing, anti-glare 4mm toughened glass, dual operating systems (Android 13 and Windows OPS PC), and compatibility with both wall mounts and heavy-duty mobile trolley stands.'
+    question: 'What sizes of Interactive LED Displays do you supply?',
+    answer: 'We stock and supply commercial 4K Ultra HD interactive touch displays in 55-inch, 65-inch, 75-inch, 85-inch, 86-inch, 98-inch, and 110-inch diagonal sizes. All panels feature 20-point multi-touch writing, anti-glare 4mm toughened glass, dual operating systems (Android & Windows OPS), and wall or mobile trolley mounting options.'
   },
   {
     category: 'Conference Systems',
-    question: 'How does the Chairman and Delegate conference microphone system function?',
-    answer: 'In our conference systems (such as the MA4617 and Beterva BE-2400C series), the Chairman microphone unit features an exclusive priority override button. When pressed, it automatically attenuates or mutes all active delegate units to maintain meeting decorum. Delegate units feature soft push-to-talk buttons with illuminated LED rings indicating active speech. The entire system connects in a reliable daisy chain with central DSP anti-feedback processing.'
+    question: 'How does the BETERVA BE-2300 Chairman & Delegate Conference System work?',
+    answer: 'The BETERVA BE-2300 series connects Chairman (BE-2300C) and Delegate (BE-2300D) units to a Central Control Unit via shielded 8-pin DIN cabling. The Chairman unit features a priority override button to silence active delegates, while each unit includes a red-ring gooseneck microphone, auto-muting monitor speaker, and side headphone jack.'
   },
   {
     category: 'Digital Podiums',
-    question: 'What built-in features are included in the Kohinoor Digital Rostrum?',
-    answer: 'Our flagship 1200x700x950mm steel digital rostrum is an all-in-one presentation station. It includes an integrated 21.5" touch screen, internal master AV controller, built-in 60W amplifier, a pair of 30W high-dispersion speakers, a sensitive gooseneck microphone, lockable chassis doors for internal PC security, and external laptop connection sockets (HDMI, USB, LAN, Audio).'
+    question: 'What is the difference between your Black Digital Podium and Table-Style Digital Podium?',
+    answer: 'Our free-standing Black Digital Podium is a full steel smart rostrum with a 21.5"–43" touch display, central AV switcher, 60W amplifier, twin 30W speakers, and lockable cabinet. The Table-Style Digital Podium is a compact portable audio podium console with integrated amp/speaker, gooseneck mic, reading lamp, wireless mics, and MP3/USB console designed for any desk.'
   },
   {
-    category: 'Warranty & Support',
+    category: 'Warranty & After-Sales',
     question: 'What warranty and after-sales support do you provide?',
-    answer: 'All equipment supplied by Kohinoor Audio Visual comes with official hardware warranty coverage. Our Islamabad-based technical team provides initial on-site installation, system calibration, faculty training, and ongoing technical maintenance support.'
+    answer: 'Kohinoor Audio Visual provides complete after-sales services including technical support, preventive maintenance, on-site professional installation, system calibration, faculty training, and official hardware warranty coverage backed by our Islamabad engineering team.'
   },
   {
-    category: 'PTZ Cameras & Streaming',
-    question: 'Can your PTZ cameras automatically track teachers during live lectures?',
-    answer: 'Yes. Our 4K AI Auto-Tracking PTZ cameras use integrated computer vision to follow the presenter naturally as they move across the blackboard or dais without requiring any neck lanyard, radio beacon, or manual camera operator. They interface seamlessly with Zoom, Microsoft Teams, Google Meet, OBS Studio, and lecture recording systems via USB, HDMI, and IP/NDI.'
+    category: 'Projection & Teleprompters',
+    question: 'Which projector brands and teleprompter models do you offer?',
+    answer: 'We supply genuine multimedia projectors from Casio, Panasonic, NEC, Mitsubishi Corporation Japan, and MAGAPOWER alongside Tripod, Wall-Mounted, and Electric Motorized projection screens (6×6 up to 13×10 ft) and mounting kits. For broadcast and stage prompting, we offer the full King Teleprompter lineup from TP27 (27") up to TP100 (100").'
   }
 ];

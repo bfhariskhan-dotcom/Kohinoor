@@ -9,10 +9,14 @@ import { CursorGlow } from './components/CursorGlow';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { ProductsPage } from './pages/ProductsPage';
-import { DigitalPodiumsPage } from './pages/DigitalPodiumsPage';
-import { MultimediaProjectorsPage } from './pages/MultimediaProjectorsPage';
 import { InteractiveLedPage } from './pages/InteractiveLedPage';
+import { MultimediaProjectorsPage } from './pages/MultimediaProjectorsPage';
+import { ProjectionScreensPage } from './pages/ProjectionScreensPage';
+import { ProjectorMountsPage } from './pages/ProjectorMountsPage';
+import { DigitalPodiumsPage } from './pages/DigitalPodiumsPage';
+import { AudioEquipmentPage } from './pages/AudioEquipmentPage';
 import { ConferenceSystemsPage } from './pages/ConferenceSystemsPage';
+import { TelepromptersPage } from './pages/TelepromptersPage';
 import { PtzCamerasPage } from './pages/PtzCamerasPage';
 import { SmartClassroomPage } from './pages/SmartClassroomPage';
 import { ProjectsPage } from './pages/ProjectsPage';
@@ -25,7 +29,6 @@ export default function App() {
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [quotePreselectedProduct, setQuotePreselectedProduct] = useState<string | undefined>();
 
-  // Synchronize with URL hash for bookmarking & browser back/forward buttons
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '') as PageId;
@@ -33,10 +36,14 @@ export default function App() {
         'home',
         'about',
         'products',
-        'digital-podiums',
-        'multimedia-projectors',
         'interactive-led-displays',
+        'multimedia-projectors',
+        'projection-screens',
+        'projector-mounting-kits',
+        'digital-podiums',
+        'audio-equipment',
         'conference-systems',
+        'teleprompters',
         'ptz-robotic-cameras',
         'smart-classroom-solutions',
         'projects',
@@ -92,9 +99,9 @@ export default function App() {
             onOpenQuoteModal={handleOpenQuoteModal}
           />
         );
-      case 'digital-podiums':
+      case 'interactive-led-displays':
         return (
-          <DigitalPodiumsPage
+          <InteractiveLedPage
             onNavigate={handleNavigate}
             onSelectProduct={setSelectedProduct}
             onOpenQuoteModal={handleOpenQuoteModal}
@@ -108,9 +115,33 @@ export default function App() {
             onOpenQuoteModal={handleOpenQuoteModal}
           />
         );
-      case 'interactive-led-displays':
+      case 'projection-screens':
         return (
-          <InteractiveLedPage
+          <ProjectionScreensPage
+            onNavigate={handleNavigate}
+            onSelectProduct={setSelectedProduct}
+            onOpenQuoteModal={handleOpenQuoteModal}
+          />
+        );
+      case 'projector-mounting-kits':
+        return (
+          <ProjectorMountsPage
+            onNavigate={handleNavigate}
+            onSelectProduct={setSelectedProduct}
+            onOpenQuoteModal={handleOpenQuoteModal}
+          />
+        );
+      case 'digital-podiums':
+        return (
+          <DigitalPodiumsPage
+            onNavigate={handleNavigate}
+            onSelectProduct={setSelectedProduct}
+            onOpenQuoteModal={handleOpenQuoteModal}
+          />
+        );
+      case 'audio-equipment':
+        return (
+          <AudioEquipmentPage
             onNavigate={handleNavigate}
             onSelectProduct={setSelectedProduct}
             onOpenQuoteModal={handleOpenQuoteModal}
@@ -119,6 +150,14 @@ export default function App() {
       case 'conference-systems':
         return (
           <ConferenceSystemsPage
+            onNavigate={handleNavigate}
+            onSelectProduct={setSelectedProduct}
+            onOpenQuoteModal={handleOpenQuoteModal}
+          />
+        );
+      case 'teleprompters':
+        return (
+          <TelepromptersPage
             onNavigate={handleNavigate}
             onSelectProduct={setSelectedProduct}
             onOpenQuoteModal={handleOpenQuoteModal}
@@ -169,36 +208,29 @@ export default function App() {
 
   return (
     <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800 selection:bg-emerald-700 selection:text-white relative">
-      {/* Subtle Ambient Cursor Glow Effect */}
       <CursorGlow />
 
-      {/* Top Navigation */}
       <Navbar
         currentPage={currentPage}
         onNavigate={handleNavigate}
         onOpenQuoteModal={handleOpenQuoteModal}
       />
 
-      {/* Main Page Body */}
       <main className="flex-1">{renderPage()}</main>
 
-      {/* Corporate Footer */}
       <Footer
         onNavigate={handleNavigate}
         onOpenQuoteModal={() => handleOpenQuoteModal()}
       />
 
-      {/* Floating WhatsApp Quick Action Button */}
       <WhatsAppFloatingButton />
 
-      {/* Quotation Request Modal */}
       <QuoteModal
         isOpen={quoteModalOpen}
         onClose={() => setQuoteModalOpen(false)}
         preSelectedProduct={quotePreselectedProduct}
       />
 
-      {/* Deep Specification Product Detail Modal */}
       <ProductDetailModal
         product={selectedProduct}
         onClose={() => setSelectedProduct(null)}

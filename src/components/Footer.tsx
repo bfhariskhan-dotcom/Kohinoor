@@ -36,9 +36,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
             <ShieldCheck className="w-5 h-5" />
           </div>
           <div>
-            <h4 className="text-xs sm:text-sm font-bold text-slate-900">100% Genuine Hardware</h4>
+            <h4 className="text-xs sm:text-sm font-bold text-slate-900">Trusted Since 1978</h4>
             <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
-              Official warranty on digital rostrums, 4K LEDs, conference audio &amp; PTZ cameras.
+              Official warranty on interactive LEDs, projectors, digital podiums &amp; conference systems.
             </p>
           </div>
         </div>
@@ -48,9 +48,9 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
             <Headphones className="w-5 h-5" />
           </div>
           <div>
-            <h4 className="text-xs sm:text-sm font-bold text-slate-900">On-Site Setup &amp; Training</h4>
+            <h4 className="text-xs sm:text-sm font-bold text-slate-900">After-Sales Service</h4>
             <p className="text-xs text-slate-600 mt-0.5 leading-relaxed">
-              Mounting, audio tuning, cabling, and faculty training by our Islamabad team.
+              Technical support, preventive maintenance, installation &amp; warranty care.
             </p>
           </div>
         </div>
@@ -62,22 +62,22 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
         <div className="lg:col-span-4 space-y-4">
           <Logo variant="dark" size="lg" />
           <p className="text-xs text-slate-600 leading-relaxed pr-2">
-            Trusted AV solutions provider in Pakistan for smart classrooms, digital podiums, 4K interactive displays, projectors, and conference systems.
+            Established in 1978, Kohinoor Audio Visual delivers professional audio-visual equipment, educational technology, and business systems across Pakistan.
           </p>
           <div className="pt-1">
             <button
               onClick={onOpenQuoteModal}
               className="cursor-pointer px-4 py-2 text-xs font-bold text-white bg-emerald-700 hover:bg-emerald-800 rounded-lg transition-colors shadow-xs"
             >
-              Get Quote
+              Request Quotation
             </button>
           </div>
         </div>
 
-        {/* Column 2: Categories */}
+        {/* Column 2: 8 Product Categories */}
         <div className="lg:col-span-3 space-y-3">
           <h4 className="text-xs font-extrabold text-slate-900 uppercase tracking-wider">
-            Products
+            Product Categories
           </h4>
           <ul className="space-y-2 text-xs text-slate-600 font-medium">
             {CATEGORIES.map((cat) => (
@@ -179,7 +179,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
 
       {/* Bottom Legal Bar */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
-        <p>&copy; {new Date().getFullYear()} Kohinoor Audio Visual. All rights reserved.</p>
+        <p>&copy; {new Date().getFullYear()} Kohinoor Audio Visual. Established 1978. All rights reserved.</p>
         <div className="flex items-center gap-3 text-[11px]">
           <span>Islamabad, Pakistan</span>
           <span>&middot;</span>

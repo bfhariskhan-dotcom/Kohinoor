@@ -6,6 +6,7 @@ import { ProductCard } from '../components/ProductCard';
 import { HeroSlider } from '../components/HeroSlider';
 import { StatsSlider } from '../components/StatsSlider';
 import { GalleryMarquee } from '../components/GalleryMarquee';
+import { PartnersSection } from '../components/PartnersSection';
 import { AvSystemEstimator } from '../components/AvSystemEstimator';
 import { ScreenSizeVisualizer } from '../components/ScreenSizeVisualizer';
 import {
@@ -42,13 +43,21 @@ export const HomePage: React.FC<HomePageProps> = ({
     setOpenFaq(openFaq === index ? null : index);
   };
 
+  // Highlight representative products across key categories (zero prices)
+  const featuredProducts = [
+    PRODUCTS.find((p) => p.id === 'interactive-led-75-85-86'),
+    PRODUCTS.find((p) => p.id === 'casio-xj-v2-projector'),
+    PRODUCTS.find((p) => p.id === 'black-digital-podium'),
+    PRODUCTS.find((p) => p.id === 'beterva-be2300-chairman-unit')
+  ].filter(Boolean) as Product[];
+
   const clientProjects = [
     {
       title: 'Council Conference Chamber',
       client: 'Government Assembly',
       location: 'Islamabad',
       image: '/images/client-uploads/upload_2.jpg',
-      equipment: 'Chairman & Delegate Mics, DSP Audio, Wall Display',
+      equipment: 'BETERVA BE-2300 Chairman & Delegate Units, DSP Audio, Wall Display',
       summary: 'Multi-seat council discussion setup with Chairman priority override and clean acoustic distribution.'
     },
     {
@@ -56,7 +65,7 @@ export const HomePage: React.FC<HomePageProps> = ({
       client: 'Higher Education',
       location: 'Islamabad / Rawalpindi',
       image: '/images/client-uploads/upload_3.jpg',
-      equipment: 'Steel Digital Rostrum, 21.5" Touch Display, Gooseneck Mics',
+      equipment: 'Black Digital Podium, 21.5" Touch Display, Gooseneck Mics',
       summary: 'Commercial digital teaching podium with integrated PC, touch monitor, and classroom audio.'
     },
     {
@@ -72,8 +81,8 @@ export const HomePage: React.FC<HomePageProps> = ({
       client: 'Convocation Hall',
       location: 'Lahore, Punjab',
       image: '/images/client-uploads/upload_5.jpg',
-      equipment: 'Beterva Smart Rostrum, Motorized Screens, Line Array Audio',
-      summary: 'Turnkey auditorium presentation stage with dual screens and crystal-clear speech amplification.'
+      equipment: 'Beterva Smart Rostrum, Motorized Screens, CMX Line Audio',
+      summary: 'Turnkey auditorium presentation stage with motorized screens and crystal-clear speech amplification.'
     }
   ];
 
@@ -82,18 +91,18 @@ export const HomePage: React.FC<HomePageProps> = ({
       {/* 1. HERO BANNER SLIDER */}
       <HeroSlider onNavigate={onNavigate} onOpenQuoteModal={onOpenQuoteModal} />
 
-      {/* 2. 15+ YEARS / 500+ PROJECTS SECTION (Directly after Banner) */}
+      {/* 2. ESTABLISHED 1978 / 500+ PROJECTS SECTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8 -mt-6 sm:-mt-10 relative z-20">
         <StatsSlider />
       </section>
 
-      {/* 3. CONTINUOUS SQUARE MARQUEE GALLERY SLIDER (Right after 15+ Years / 500+ Projects) */}
+      {/* 3. CONTINUOUS SQUARE MARQUEE GALLERY SLIDER */}
       <GalleryMarquee
         onNavigate={onNavigate}
         onSelectImage={(img) => setLightboxImage(img)}
       />
 
-      {/* 4. SHORT CORPORATE ABOUT SECTION */}
+      {/* 4. SHORT CORPORATE ABOUT SECTION (Established 1978) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <motion.div
@@ -104,30 +113,30 @@ export const HomePage: React.FC<HomePageProps> = ({
             className="lg:col-span-7 space-y-4"
           >
             <span className="text-[11px] font-bold text-emerald-700 uppercase tracking-wider block">
-              Since 2009 · Islamabad
+              Established 1978 · Islamabad
             </span>
             <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight leading-tight">
-              AV Hardware &amp; Smart Classroom Supplier
+              Audio Visual Equipment, Educational &amp; Business Systems
             </h2>
             <p className="text-xs sm:text-sm text-slate-600 leading-relaxed max-w-2xl">
-              Based at <strong>United Plaza, Blue Area, Islamabad</strong>, Kohinoor Audio Visual supplies digital rostrums, 4K interactive LEDs, projectors, and conference systems with full on-site installation across Pakistan.
+              Founded in <strong>1978</strong> and headquartered at <strong>United Plaza, Blue Area, Islamabad</strong>, Kohinoor Audio Visual provides professional audio-visual solutions for educational institutions and businesses across Pakistan, backed by dedicated after-sales technical support, installation, maintenance, and warranty.
             </p>
 
             <div className="grid grid-cols-3 gap-3 pt-1">
               <div className="p-3 bg-white rounded-xl border border-slate-200">
                 <ShieldCheck className="w-4 h-4 text-emerald-700 mb-1" />
-                <span className="font-bold text-xs text-slate-900 block">Genuine</span>
+                <span className="font-bold text-xs text-slate-900 block">Est. 1978</span>
                 <span className="text-[10px] text-slate-500">Official Warranty</span>
               </div>
               <div className="p-3 bg-white rounded-xl border border-slate-200">
                 <Wrench className="w-4 h-4 text-emerald-700 mb-1" />
-                <span className="font-bold text-xs text-slate-900 block">On-Site Setup</span>
-                <span className="text-[10px] text-slate-500">Expert Team</span>
+                <span className="font-bold text-xs text-slate-900 block">After-Sales Care</span>
+                <span className="text-[10px] text-slate-500">Setup &amp; Maintenance</span>
               </div>
               <div className="p-3 bg-white rounded-xl border border-slate-200">
                 <Building2 className="w-4 h-4 text-emerald-700 mb-1" />
                 <span className="font-bold text-xs text-slate-900 block">Nationwide</span>
-                <span className="text-[10px] text-slate-500">All Cities</span>
+                <span className="text-[10px] text-slate-500">All Major Cities</span>
               </div>
             </div>
 
@@ -167,12 +176,12 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 5. PRODUCT CATEGORIES GRID (Clean, Short, No Extra WhatsApp Buttons) */}
+      {/* 5. EXACT 8 PRODUCT CATEGORIES GRID IN MANDATORY ORDER */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
         <div className="flex items-end justify-between gap-4">
           <div>
             <span className="text-[11px] font-bold text-emerald-700 uppercase tracking-wider">
-              Equipment Range
+              Equipment Range · 8 Core Categories
             </span>
             <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
               Product Categories
@@ -182,36 +191,36 @@ export const HomePage: React.FC<HomePageProps> = ({
             onClick={() => onNavigate('products')}
             className="cursor-pointer text-xs font-bold text-emerald-700 hover:text-emerald-800 inline-flex items-center gap-1 shrink-0"
           >
-            <span>View All</span>
+            <span>View Full Catalog</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {CATEGORIES.map((cat, idx) => (
             <motion.div
               key={cat.id}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
-              transition={{ duration: 0.4, delay: idx * 0.05 }}
+              transition={{ duration: 0.4, delay: idx * 0.04 }}
               className="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:border-emerald-500 hover:shadow-lg transition-all duration-300 flex flex-col justify-between cursor-pointer"
               onClick={() => onNavigate(cat.id as PageId)}
             >
-              <div className="aspect-16/10 overflow-hidden bg-slate-900 relative">
+              <div className="aspect-4/3 overflow-hidden bg-slate-100 relative">
                 <img
                   src={cat.heroImage}
                   alt={cat.name}
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-2.5 right-2.5 px-2 py-0.5 rounded-md bg-emerald-900/90 text-white text-[10px] font-bold">
-                  {PRODUCTS.filter((p) => p.category === cat.id).length || 3} Models
-                </div>
               </div>
 
               <div className="p-4 flex-1 flex flex-col justify-between space-y-2.5">
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition-colors">
+                  <div className="text-[11px] font-bold text-emerald-700 tabular-nums mb-0.5">
+                    0{idx + 1}. Category
+                  </div>
+                  <h3 className="text-sm font-bold text-slate-900 group-hover:text-emerald-700 transition-colors leading-snug">
                     {cat.name}
                   </h3>
                   <p className="text-xs text-slate-600 line-clamp-2 mt-1 leading-relaxed">
@@ -220,7 +229,7 @@ export const HomePage: React.FC<HomePageProps> = ({
                 </div>
 
                 <div className="pt-2 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-emerald-700">
-                  <span>Explore</span>
+                  <span>Explore Models</span>
                   <ArrowRight className="w-3.5 h-3.5 group-hover:translate-x-1 transition-transform" />
                 </div>
               </div>
@@ -229,16 +238,16 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 6. FEATURED PRODUCTS (2-Column Grid with Transparent Prices) */}
+      {/* 6. FEATURED PRODUCTS (Zero Prices Shown Anywhere) */}
       <section className="bg-slate-100/60 py-12 border-y border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
           <div className="flex items-end justify-between gap-4">
             <div>
               <span className="text-[11px] font-bold text-emerald-700 uppercase tracking-wider">
-                PKR Pricing
+                Commercial AV Hardware
               </span>
               <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
-                Featured Products
+                Featured Equipment Lineup
               </h2>
             </div>
             <button
@@ -251,7 +260,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-            {PRODUCTS.slice(0, 4).map((prod, idx) => (
+            {featuredProducts.map((prod, idx) => (
               <ProductCard
                 key={prod.id}
                 product={prod}
@@ -264,17 +273,20 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 7. AV SYSTEM CONFIGURATOR */}
+      {/* 7. SEPARATE BUSINESS PARTNERS SECTION */}
+      <PartnersSection />
+
+      {/* 8. AV SYSTEM CONFIGURATOR */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <AvSystemEstimator />
       </section>
 
-      {/* 8. LED SIZE GUIDE */}
+      {/* 9. LED SIZE GUIDE */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <ScreenSizeVisualizer />
       </section>
 
-      {/* 9. CLIENT PROJECTS SLIDE SHOWCASE */}
+      {/* 10. CLIENT PROJECTS SLIDE SHOWCASE */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-3">
           <div>
@@ -346,7 +358,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 10. CONCISE FAQ SECTION */}
+      {/* 11. CONCISE FAQ SECTION */}
       <section className="max-w-4xl mx-auto px-4 sm:px-8 space-y-5">
         <div className="text-center space-y-1">
           <span className="text-[11px] font-bold text-emerald-700 uppercase tracking-wider">
@@ -387,7 +399,7 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 11. COMPACT CALL TO ACTION */}
+      {/* 12. COMPACT CALL TO ACTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="bg-gradient-to-br from-[#062c1b] via-[#0a3d26] to-[#041f13] rounded-2xl p-6 sm:p-10 text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border border-emerald-900/60 shadow-xl">
           <div className="space-y-1.5 max-w-xl">
@@ -395,7 +407,7 @@ export const HomePage: React.FC<HomePageProps> = ({
               Need AV Equipment for Your Institution?
             </h2>
             <p className="text-xs sm:text-sm text-emerald-100/85">
-              Request pricing, product demos, or turnkey classroom installations across Pakistan.
+              Request technical specifications, live product demonstrations, or turnkey installations across Pakistan.
             </p>
           </div>
           <div className="flex flex-wrap items-center gap-2.5 shrink-0">
@@ -406,13 +418,13 @@ export const HomePage: React.FC<HomePageProps> = ({
               className="cursor-pointer px-4 py-2.5 bg-white text-emerald-900 hover:bg-emerald-50 text-xs font-bold rounded-lg transition-all inline-flex items-center gap-1.5"
             >
               <MessageSquare className="w-3.5 h-3.5 fill-current text-emerald-700" />
-              <span>Order on WhatsApp</span>
+              <span>Inquire on WhatsApp</span>
             </a>
             <button
               onClick={() => onOpenQuoteModal()}
               className="cursor-pointer px-4 py-2.5 bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-bold rounded-lg border border-emerald-500/40 transition-all"
             >
-              Get Quote
+              Request Quotation
             </button>
           </div>
         </div>

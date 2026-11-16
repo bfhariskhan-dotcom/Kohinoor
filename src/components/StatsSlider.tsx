@@ -11,9 +11,9 @@ interface StatSlide {
 
 const STATS: StatSlide[] = [
   {
-    metric: '15+ Years',
-    label: 'Industry Experience',
-    subtext: 'AV engineering & supply since 2009',
+    metric: 'Est. 1978',
+    label: '45+ Years Heritage',
+    subtext: 'AV & Educational Systems Pioneer',
     icon: Award
   },
   {
@@ -23,15 +23,15 @@ const STATS: StatSlide[] = [
     icon: CheckCircle2
   },
   {
-    metric: '6 Major Cities',
-    label: 'Nationwide Delivery',
-    subtext: 'Islamabad, Lahore, Karachi & more',
+    metric: '7 Global Partners',
+    label: 'Official Brands',
+    subtext: 'Mitsubishi, Casio, QOMO, Beterva & CMX',
     icon: Truck
   },
   {
-    metric: '100% Genuine',
-    label: 'Official Warranty',
-    subtext: 'Certified commercial AV hardware',
+    metric: 'Full After-Sales',
+    label: 'Support & Warranty',
+    subtext: 'Installation, maintenance & servicing',
     icon: ShieldCheck
   }
 ];

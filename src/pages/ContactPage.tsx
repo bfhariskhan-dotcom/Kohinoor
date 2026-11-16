@@ -40,7 +40,7 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
 *Email:* ${email || 'Not specified'}
 *Location / City:* ${city}
 *Product Interested In:* ${productInterested}
-*Message / Requirements:* ${message || 'Please provide equipment pricing & specifications.'}`;
+*Message / Requirements:* ${message || 'Please provide equipment technical specifications & institutional quotation details.'}`;
 
     window.open(`${BUSINESS_INFO.whatsappUrl}?text=${encodeURIComponent(text)}`, '_blank');
     setSubmitted(true);

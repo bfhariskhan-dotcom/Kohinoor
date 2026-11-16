@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import { PageId, Product } from '../types';
 import { PRODUCTS, CATEGORIES, BUSINESS_INFO } from '../data/products';
 import { ProductCard } from '../components/ProductCard';
-import { Search, SlidersHorizontal, Tag, MessageSquare, CheckCircle2, ArrowRight } from 'lucide-react';
-import { motion } from 'motion/react';
+import { Search, MessageSquare, Layers } from 'lucide-react';
 
 interface ProductsPageProps {
   onNavigate: (page: PageId) => void;
@@ -18,45 +17,37 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
 }) => {
   const [selectedCategory, setSelectedCategory] = useState<string>('all');
   const [searchQuery, setSearchQuery] = useState<string>('');
-  const [sortBy, setSortBy] = useState<'featured' | 'price-asc' | 'price-desc'>('featured');
 
-  // Filter products by category and search
-  const filtered = PRODUCTS.filter((p) => {
+  // Filter products by category and search query
+  const filteredProducts = PRODUCTS.filter((p) => {
     const matchesCategory = selectedCategory === 'all' || p.category === selectedCategory;
     const matchesSearch =
       searchQuery.trim() === '' ||
       p.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
       p.description.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      (p.modelNumber && p.modelNumber.toLowerCase().includes(searchQuery.toLowerCase()));
+      (p.modelNumber && p.modelNumber.toLowerCase().includes(searchQuery.toLowerCase())) ||
+      (p.brand && p.brand.toLowerCase().includes(searchQuery.toLowerCase()));
     return matchesCategory && matchesSearch;
-  });
-
-  // Sort products
-  const sortedProducts = [...filtered].sort((a, b) => {
-    if (sortBy === 'price-asc') return (a.priceNumeric || 0) - (b.priceNumeric || 0);
-    if (sortBy === 'price-desc') return (b.priceNumeric || 0) - (a.priceNumeric || 0);
-    return 0;
   });
 
   return (
     <div className="space-y-12 py-10 max-w-7xl mx-auto px-4 sm:px-8">
       {/* Page Header */}
       <div className="space-y-3 max-w-3xl">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-100 text-emerald-800 text-xs font-bold uppercase tracking-wider">
-          <Tag className="w-3.5 h-3.5" />
-          <span>Hardware Catalog &amp; Transparent Pricing</span>
+        <div className="inline-flex items-center gap-2 text-xs font-bold text-emerald-700 uppercase tracking-wider">
+          <Layers className="w-3.5 h-3.5" />
+          <span>Complete Equipment Directory · Since 1978</span>
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-          Complete AV Equipment Catalog
+          Audio Visual Equipment Catalog
         </h1>
         <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-          Explore genuine prices, technical specifications, and official warranties for all our digital podiums, 4K interactive flat panels, multimedia projectors, and conference microphone systems.
+          Browse technical specifications, model numbers, screen sizes, and system features across all 8 equipment categories supplied by Kohinoor Audio Visual across Pakistan.
         </p>
       </div>
 
-      {/* Filter & Search Toolbar */}
-      <div className="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200/90 shadow-sm space-y-4">
-        {/* Search Input & Sort Dropdown */}
+      {/* Search & Category Filter Toolbar */}
+      <div className="bg-white rounded-3xl p-5 sm:p-6 border border-slate-200/90 shadow-xs space-y-4">
         <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-4">
           <div className="relative flex-1 max-w-md">
             <Search className="w-4 h-4 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2" />
@@ -64,26 +55,22 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
               type="text"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
-              placeholder="Search by model, display size, or keyword..."
+              placeholder="Search by model (e.g. BE-2300, XJ-V2, TP43), brand, or keyword..."
               className="w-full pl-10 pr-4 py-2.5 text-xs sm:text-sm rounded-xl border border-slate-200 bg-slate-50/50 focus:bg-white focus:outline-none focus:border-emerald-600 transition-colors"
             />
           </div>
 
-          <div className="flex items-center gap-3">
-            <span className="text-xs text-slate-500 font-medium whitespace-nowrap">Sort by:</span>
-            <select
-              value={sortBy}
-              onChange={(e) => setSortBy(e.target.value as any)}
-              className="px-3.5 py-2.5 text-xs font-semibold rounded-xl border border-slate-200 bg-white text-slate-700 focus:outline-none focus:border-emerald-600 cursor-pointer"
+          {selectedCategory !== 'all' && (
+            <button
+              onClick={() => onNavigate(selectedCategory as PageId)}
+              className="cursor-pointer px-4 py-2.5 text-xs font-bold text-emerald-700 bg-emerald-50 hover:bg-emerald-100 rounded-xl transition-colors whitespace-nowrap"
             >
-              <option value="featured">Featured Order</option>
-              <option value="price-asc">Price: Low to High</option>
-              <option value="price-desc">Price: High to Low</option>
-            </select>
-          </div>
+              Open Dedicated Category View &rarr;
+            </button>
+          )}
         </div>
 
-        {/* Category Filter Pills (Emerald Theme) */}
+        {/* Exact 8 Category Filter Tabs in Order */}
         <div className="flex items-center gap-2 overflow-x-auto pb-1 pt-1 scrollbar-none">
           <button
             onClick={() => setSelectedCategory('all')}
@@ -93,9 +80,9 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
                 : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
             }`}
           >
-            All Hardware ({PRODUCTS.length})
+            All Equipment ({PRODUCTS.length})
           </button>
-          {CATEGORIES.map((cat) => (
+          {CATEGORIES.map((cat, idx) => (
             <button
               key={cat.id}
               onClick={() => setSelectedCategory(cat.id)}
@@ -105,7 +92,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
                   : 'bg-slate-100 text-slate-700 hover:bg-slate-200'
               }`}
             >
-              {cat.name}
+              {idx + 1}. {cat.name}
             </button>
           ))}
         </div>
@@ -113,34 +100,55 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
 
       {/* Product Results Counter */}
       <div className="flex items-center justify-between text-xs text-slate-500 font-medium">
-        <span>Showing {sortedProducts.length} of {PRODUCTS.length} hardware models</span>
-        <span className="text-emerald-700 font-bold">Official Warranty &amp; On-Site Setup Available</span>
+        <span className="tabular-nums">
+          Showing {filteredProducts.length} of {PRODUCTS.length} hardware models
+        </span>
+        <span className="text-emerald-700 font-bold">
+          Installation, Warranty &amp; After-Sales Support Nationwide
+        </span>
       </div>
 
-      {/* Clean 2-Column Product Grid with Real Pricing */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-        {sortedProducts.map((product, idx) => (
-          <ProductCard
-            key={product.id}
-            product={product}
-            onSelect={onSelectProduct}
-            onOpenQuote={onOpenQuoteModal}
-            index={idx}
-          />
-        ))}
-      </div>
+      {/* Clean Corporate Product Grid */}
+      {filteredProducts.length > 0 ? (
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+          {filteredProducts.map((product, idx) => (
+            <ProductCard
+              key={product.id}
+              product={product}
+              onSelect={onSelectProduct}
+              onOpenQuote={onOpenQuoteModal}
+              index={idx}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className="bg-white rounded-3xl border border-slate-200 p-10 text-center space-y-3">
+          <p className="text-sm font-bold text-slate-900">
+            No matching equipment found for &ldquo;{searchQuery}&rdquo;
+          </p>
+          <button
+            onClick={() => {
+              setSearchQuery('');
+              setSelectedCategory('all');
+            }}
+            className="cursor-pointer px-4 py-2 bg-emerald-700 text-white text-xs font-bold rounded-xl"
+          >
+            Reset Filters
+          </button>
+        </div>
+      )}
 
-      {/* Instant Procurement Banner in Emerald Theme */}
-      <div className="bg-gradient-to-br from-[#072115] via-[#0d3420] to-[#05180f] text-white rounded-3xl p-8 sm:p-12 border border-emerald-900/60 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl max-w-5xl mx-auto">
+      {/* Institutional Quotation Banner */}
+      <div className="bg-gradient-to-br from-[#072115] via-[#0d3420] to-[#05180f] text-white rounded-3xl p-8 sm:p-12 border border-emerald-900/60 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
         <div className="space-y-1.5 text-center md:text-left">
           <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">
-            Custom Procurement &amp; Tenders
+            Institutional Procurement &amp; Tenders
           </span>
           <h3 className="text-xl font-bold text-white">
-            Need a Formal Institutional Bid Sheet or GST Quotation?
+            Need a Formal Bid Sheet or Technical Proposal?
           </h3>
           <p className="text-xs text-emerald-100/80 max-w-xl">
-            Our Islamabad technical sales team provides official NTN/GST invoices, delivery schedules, and tender compliance documents.
+            Our Islamabad engineering team provides official NTN/GST quotations, delivery timelines, and compliant tender specifications nationwide.
           </p>
         </div>
         <a
@@ -150,7 +158,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
           className="cursor-pointer px-6 py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl whitespace-nowrap transition-colors flex items-center gap-2 shadow-md shrink-0"
         >
           <MessageSquare className="w-4 h-4 fill-current" />
-          <span>Order on WhatsApp</span>
+          <span>Inquire on WhatsApp</span>
         </a>
       </div>
     </div>

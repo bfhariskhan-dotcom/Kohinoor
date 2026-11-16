@@ -1,7 +1,19 @@
+export type ProductCategoryId =
+  | 'interactive-led-displays'
+  | 'multimedia-projectors'
+  | 'projection-screens'
+  | 'projector-mounting-kits'
+  | 'digital-podiums'
+  | 'audio-equipment'
+  | 'conference-systems'
+  | 'teleprompters'
+  | 'ptz-robotic-cameras'
+  | 'smart-classroom-solutions';
+
 export interface Product {
   id: string;
   name: string;
-  category: 'digital-podiums' | 'multimedia-projectors' | 'interactive-led-displays' | 'conference-systems' | 'ptz-robotic-cameras' | 'smart-classroom-solutions';
+  category: ProductCategoryId;
   categoryLabel: string;
   tagline: string;
   description: string;
@@ -12,8 +24,9 @@ export interface Product {
   specs: Record<string, string>;
   applications: string[];
   modelNumber?: string;
-  price?: string;
-  priceNumeric?: number;
+  brand?: string;
+  availableSizes?: string[];
+  subType?: string;
   stockStatus?: string;
 }
 
@@ -47,15 +60,27 @@ export interface FAQItem {
   category: string;
 }
 
+export interface BusinessPartner {
+  id: string;
+  name: string;
+  origin: string;
+  specialty: string;
+  shortCode: string;
+}
+
 export type PageId =
   | 'home'
   | 'about'
   | 'products'
   | 'gallery'
-  | 'digital-podiums'
-  | 'multimedia-projectors'
   | 'interactive-led-displays'
+  | 'multimedia-projectors'
+  | 'projection-screens'
+  | 'projector-mounting-kits'
+  | 'digital-podiums'
+  | 'audio-equipment'
   | 'conference-systems'
+  | 'teleprompters'
   | 'ptz-robotic-cameras'
   | 'smart-classroom-solutions'
   | 'projects'

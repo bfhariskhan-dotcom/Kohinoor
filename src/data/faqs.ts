@@ -4,7 +4,7 @@ export const FAQS: FAQItem[] = [
   {
     category: 'Procurement & Quotations',
     question: 'How can we obtain a formal quotation for Digital Podiums or AV Systems?',
-    answer: 'Institutional quotations depend on screen size (21.5-inch, 32-inch, or 43-inch), internal computer configuration, audio amplification, and room quantities. To receive a tailored proposal with formal NTN/GST documentation and delivery timelines in Islamabad or nationwide, contact our team via WhatsApp at +92 333 5163220 or through our quotation form.'
+    answer: 'Institutional quotations depend on equipment configuration, screen sizes, and venue quantities. To receive a tailored proposal with formal NTN/GST documentation and delivery timelines in Islamabad or nationwide, contact our team via WhatsApp at +92 333 5163220 or through our quotation form.'
   },
   {
     category: 'Procurement & Quotations',
@@ -19,17 +19,17 @@ export const FAQS: FAQItem[] = [
   {
     category: 'Interactive Displays',
     question: 'What sizes of Interactive LED Displays do you supply?',
-    answer: 'We stock and supply commercial 4K Ultra HD interactive touch displays in 55-inch, 65-inch, 75-inch, 85-inch, 86-inch, 98-inch, and 110-inch diagonal sizes. All panels feature 20-point multi-touch writing, anti-glare 4mm toughened glass, dual operating systems (Android & Windows OPS), and wall or mobile trolley mounting options.'
+    answer: 'We stock and supply commercial 4K Ultra HD interactive touch displays in 55-inch, 65-inch, 75-inch, 86-inch, and 98-inch+ sizes. All panels feature multi-point infrared writing, anti-glare toughened glass, dual operating systems (Android & Windows OPS), and wall or heavy-duty mobile trolley mounting options.'
   },
   {
-    category: 'Conference Systems',
-    question: 'How does the BETERVA BE-2300 Chairman & Delegate Conference System work?',
-    answer: 'The BETERVA BE-2300 series connects Chairman (BE-2300C) and Delegate (BE-2300D) units to a Central Control Unit via shielded 8-pin DIN cabling. The Chairman unit features a priority override button to silence active delegates, while each unit includes a red-ring gooseneck microphone, auto-muting monitor speaker, and side headphone jack.'
+    category: 'Conference & Video Systems',
+    question: 'How do Tenveo TEVO-VA3000E and BETERVA BE-2300 systems equip boardrooms?',
+    answer: 'The Tenveo TEVO-VA3000 / TEVO-VA3000E is an all-in-one USB/Bluetooth video conferencing kit featuring a 10X Lossless Optical Zoom 1080p@30fps PTZ camera (51.3° FOV, 350° pan, 90° tilt), full-duplex speakerphone, hub, IR remote, and optional 2 expansion mics for up to 25 people (Zoom/Teams/WebEx ready). For structured council halls, BETERVA BE-2300 connects Chairman Priority and Delegate units via shielded cabling.'
   },
   {
     category: 'Digital Podiums',
-    question: 'What is the difference between your Black Digital Podium and Table-Style Digital Podium?',
-    answer: 'Our free-standing Black Digital Podium is a full steel smart rostrum with a 21.5"–43" touch display, central AV switcher, 60W amplifier, twin 30W speakers, and lockable cabinet. The Table-Style Digital Podium is a compact portable audio podium console with integrated amp/speaker, gooseneck mic, reading lamp, wireless mics, and MP3/USB console designed for any desk.'
+    question: 'What finishes and specs are available for your Digital Audio Podiums?',
+    answer: 'We supply our Digital Audio Podium in both sleek Black and clean White anodized finishes. Both feature an integrated 60W audio amplifier (100W power consumed), Dual Gooseneck Microphones + 2 Wireless Handheld Microphones, built-in MP3/USB/SD/AUX media control panel, compact 580 × 420 × 1100 mm footprint, and sturdy 29 kg chassis.'
   },
   {
     category: 'Warranty & After-Sales',
@@ -37,8 +37,8 @@ export const FAQS: FAQItem[] = [
     answer: 'Kohinoor Audio Visual provides complete after-sales services including technical support, preventive maintenance, on-site professional installation, system calibration, faculty training, and official hardware warranty coverage backed by our Islamabad engineering team.'
   },
   {
-    category: 'Projection & Teleprompters',
-    question: 'Which projector brands and teleprompter models do you offer?',
-    answer: 'We supply genuine multimedia projectors from Casio, Panasonic, NEC, Mitsubishi Corporation Japan, and MAGAPOWER alongside Tripod, Wall-Mounted, and Electric Motorized projection screens (6×6 up to 13×10 ft) and mounting kits. For broadcast and stage prompting, we offer the full King Teleprompter lineup from TP27 (27") up to TP100 (100").'
+    category: 'Projectors, Screens & Teleprompters',
+    question: 'Which ready-stock projectors, screens, and teleprompter models do you offer?',
+    answer: 'Our ready-stock projectors include high-lumen Mitsubishi Electric 8000 Series (UD8900U, UD8850U, WD8700U, XD8600U White & Black BL, 7,300–8,500 lumens) and Casio LampFree projectors (XJ-S400UN 4,000 lm WUXGA and XJ-V100W 3,000 lm WXGA), paired with Wall-Mounted, Portable Tripod/Stand, and Electric Motorized screens. We also stock Stage Monitor / Floor Captioner Teleprompters TP27–TP100 (1920×1080 Full HD) with Foot Pedal, Remote Control, and HDMI/SDI/Wireless inputs.'
   }
 ];

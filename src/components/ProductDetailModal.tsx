@@ -82,7 +82,7 @@ export const ProductDetailModal: React.FC<ProductDetailModalProps> = ({
                         activeImage === img ? 'border-emerald-600 ring-2 ring-emerald-600/30' : 'border-slate-200 hover:border-slate-300'
                       }`}
                     >
-                      <img src={img} alt="" className="w-full h-full object-cover rounded-lg" />
+                      <img src={img} alt="" className="w-full h-full object-contain bg-slate-50 rounded-lg" />
                     </button>
                   ))}
                 </div>

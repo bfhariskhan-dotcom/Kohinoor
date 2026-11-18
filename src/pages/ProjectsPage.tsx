@@ -176,13 +176,15 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
           </div>
 
           <div className="lg:col-span-5">
-            <div className="rounded-2xl overflow-hidden border border-white/20 bg-slate-950 shadow-2xl">
-              <img
-                src="/images/client-uploads/upload_2.jpg"
-                alt="Multinational Council Conference Chamber Installation"
-                className="w-full h-auto object-cover hover:scale-104 transition-transform duration-500"
-              />
-              <div className="p-3 bg-slate-950/90 text-xs text-emerald-300 font-medium border-t border-emerald-900/50">
+            <div className="rounded-2xl overflow-hidden border border-white/20 bg-white shadow-2xl">
+              <div className="p-2.5 flex items-center justify-center bg-white">
+                <img
+                  src="/images/client-uploads/upload_2.jpg"
+                  alt="Multinational Council Conference Chamber Installation"
+                  className="w-full h-auto max-h-[380px] object-contain rounded-xl"
+                />
+              </div>
+              <div className="p-3 bg-emerald-950 text-xs text-emerald-200 font-medium border-t border-emerald-800/60 text-center">
                 Official Photo: Conference Microphones on-site in Islamabad
               </div>
             </div>
@@ -211,13 +213,13 @@ export const ProjectsPage: React.FC<ProjectsPageProps> = ({
               transition={{ duration: 0.5, delay: (idx % 2) * 0.12 }}
               className="bg-white rounded-3xl border border-slate-200/90 overflow-hidden shadow-xs hover:border-emerald-600 hover:shadow-xl transition-all duration-300 flex flex-col hover:-translate-y-1"
             >
-              <div className="aspect-16/10 bg-slate-950 overflow-hidden border-b border-slate-100 relative">
+              <div className="h-60 sm:h-64 bg-slate-50 overflow-hidden border-b border-slate-100 relative p-3 flex items-center justify-center">
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="w-full h-full object-cover hover:scale-106 transition-transform duration-500"
+                  className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute top-3 left-3 bg-emerald-900/90 text-white backdrop-blur-sm px-3 py-1 rounded-xl text-[11px] font-bold border border-emerald-700/50">
+                <div className="absolute top-3 left-3 bg-emerald-800/95 text-white px-3 py-1 rounded-xl text-[11px] font-bold shadow-xs">
                   {project.category}
                 </div>
               </div>

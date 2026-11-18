@@ -9,6 +9,41 @@ interface GalleryMarqueeProps {
 
 const MARQUEE_IMAGES = [
   {
+    src: '/images/products/product_6.jpg',
+    title: '4K Interactive Flat Panels (55"–110")',
+    location: 'In Stock'
+  },
+  {
+    src: '/images/real-stock/casio-xj-s400un.jpg',
+    title: 'Casio XJ-S400UN LampFree WUXGA Projector',
+    location: 'Ready Stock'
+  },
+  {
+    src: '/images/real-stock/mitsubishi-ud8900u.jpg',
+    title: 'Mitsubishi 8000 Series (7,300–8,500 Lumens)',
+    location: 'White & Black BL'
+  },
+  {
+    src: '/images/real-stock/digital-podium-black.jpg',
+    title: 'Black Digital Podium (60W Audio · 29 kg)',
+    location: 'Ready Stock'
+  },
+  {
+    src: '/images/products/product_9.jpg',
+    title: 'White Digital Podium Variant',
+    location: 'Ready Stock'
+  },
+  {
+    src: '/images/real-stock/tenveo-va3000e.jpg',
+    title: 'Tenveo TEVO-VA3000E Video Conference Kit',
+    location: 'Zoom & Teams Ready'
+  },
+  {
+    src: '/images/products/product_2.jpg',
+    title: 'Stage / Floor Teleprompter (TP27–TP100)',
+    location: 'Auditorium Stage'
+  },
+  {
     src: '/images/client-uploads/upload_5.jpg',
     title: 'Auditorium Digital Podium Stage',
     location: 'Islamabad'
@@ -35,48 +70,13 @@ const MARQUEE_IMAGES = [
   },
   {
     src: '/images/client-uploads/upload_1.jpg',
-    title: 'MA4617 Chairman Microphone',
+    title: 'BETERVA BE-2300 Chairman Mic',
     location: 'Islamabad'
-  },
-  {
-    src: '/images/client-uploads/upload_7.jpg',
-    title: 'Seminar Hall Steel Lectern',
-    location: 'Peshawar'
-  },
-  {
-    src: '/images/products/product_6.jpg',
-    title: '4K Interactive Flat Panels (55"–110")',
-    location: 'In Stock'
   },
   {
     src: '/images/products/product_8.jpg',
     title: 'Executive 43" Touch Podium',
     location: 'NUST NCAI'
-  },
-  {
-    src: '/images/products/product_11.jpg',
-    title: 'Chairman & Delegate Mics',
-    location: 'Boardroom'
-  },
-  {
-    src: '/images/products/product_7.jpg',
-    title: 'Heavy-Duty Mobile Trolley Cart',
-    location: 'Nationwide'
-  },
-  {
-    src: '/images/ptz_camera_tracking_1793992811906.jpg',
-    title: '4K AI Auto-Tracking PTZ Camera',
-    location: 'Hybrid Hall'
-  },
-  {
-    src: '/images/multimedia_projector_pro_1793992811682.jpg',
-    title: '5000 Lumens Laser Projector',
-    location: 'Auditorium'
-  },
-  {
-    src: '/images/hero_av_solutions_1793992811053.jpg',
-    title: 'Turnkey Smart Classroom',
-    location: 'Pakistan'
   }
 ];
 
@@ -123,22 +123,23 @@ export const GalleryMarquee: React.FC<GalleryMarqueeProps> = ({ onNavigate, onSe
                   onNavigate('gallery');
                 }
               }}
-              className="group relative w-44 h-44 sm:w-56 sm:h-56 md:w-64 md:h-64 shrink-0 rounded-2xl overflow-hidden border border-slate-200 bg-slate-950 shadow-sm hover:border-emerald-500 hover:shadow-xl transition-all duration-300 cursor-pointer text-left"
+              className="group relative w-48 sm:w-60 md:w-64 shrink-0 rounded-2xl overflow-hidden border border-slate-200 bg-white shadow-sm hover:border-emerald-500 hover:shadow-xl transition-all duration-300 cursor-pointer text-left flex flex-col"
             >
-              <img
-                src={item.src}
-                alt={item.title}
-                referrerPolicy="no-referrer"
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/85 via-slate-950/20 to-transparent" />
+              <div className="w-full h-40 sm:h-48 bg-slate-50 p-2.5 flex items-center justify-center overflow-hidden border-b border-slate-100">
+                <img
+                  src={item.src}
+                  alt={item.title}
+                  referrerPolicy="no-referrer"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+                />
+              </div>
 
-              <div className="absolute bottom-2.5 left-2.5 right-2.5 space-y-0.5">
-                <div className="flex items-center gap-1 text-[10px] font-semibold text-emerald-300">
+              <div className="p-3 bg-white space-y-0.5">
+                <div className="flex items-center gap-1 text-[10px] font-bold text-emerald-700">
                   <MapPin className="w-2.5 h-2.5 shrink-0" />
                   <span className="truncate">{item.location}</span>
                 </div>
-                <div className="text-xs font-bold text-white line-clamp-1 leading-snug">
+                <div className="text-xs font-bold text-slate-900 line-clamp-1 leading-snug">
                   {item.title}
                 </div>
               </div>

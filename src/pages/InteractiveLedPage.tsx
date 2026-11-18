@@ -133,12 +133,14 @@ export const InteractiveLedPage: React.FC<InteractiveLedPageProps> = ({
           </div>
 
           <div className="lg:col-span-6">
-            <div className="rounded-2xl overflow-hidden border border-emerald-800/80 bg-slate-900 shadow-2xl">
-              <img
-                src="/images/products/product_6.jpg"
-                alt="Interactive LED Displays Lineup 55 to 110 inch in Kohinoor AV Warehouse"
-                className="w-full h-auto object-cover"
-              />
+            <div className="rounded-2xl overflow-hidden border border-emerald-800/80 bg-white shadow-2xl">
+              <div className="p-3 bg-white flex items-center justify-center">
+                <img
+                  src="/images/products/product_6.jpg"
+                  alt="Interactive LED Displays Lineup 55 to 110 inch in Kohinoor AV Warehouse"
+                  className="w-full h-auto max-h-[380px] object-contain rounded-xl"
+                />
+              </div>
               <div className="p-3 bg-emerald-900 text-[11px] text-emerald-100 flex items-center justify-between border-t border-emerald-700">
                 <span>Available Screen Sizes</span>
                 <span className="font-bold text-emerald-400">55" · 65" · 75" · 85" · 86" · 98" · 110"</span>
@@ -215,11 +217,11 @@ export const InteractiveLedPage: React.FC<InteractiveLedPageProps> = ({
       {/* Mobile Trolley Integration */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-slate-100/80 rounded-3xl p-6 sm:p-10 border border-slate-200 max-w-5xl mx-auto">
         <div className="lg:col-span-5">
-          <div className="rounded-2xl overflow-hidden border border-slate-200 bg-white p-2 shadow-md">
+          <div className="rounded-2xl overflow-hidden border border-slate-200 bg-white p-3 shadow-md flex items-center justify-center">
             <img
               src="/images/products/product_7.jpg"
               alt="Interactive LED Display on Heavy-Duty Mobile Trolley Cart with Whiteboard"
-              className="w-full h-auto object-cover rounded-xl"
+              className="w-full h-auto max-h-[380px] object-contain rounded-xl"
             />
           </div>
         </div>

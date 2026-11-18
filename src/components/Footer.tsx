@@ -1,7 +1,6 @@
 import React from 'react';
 import { PageId } from '../types';
 import { BUSINESS_INFO, CATEGORIES } from '../data/products';
-import { Logo } from './Logo';
 import { MapPin, Phone, Mail, Clock, ExternalLink, ShieldCheck, Truck, Headphones } from 'lucide-react';
 
 interface FooterProps {
@@ -58,11 +57,17 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
 
       {/* Main Footer Columns */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 sm:gap-10">
-        {/* Column 1: Enlarged Logo & Compact Action */}
-        <div className="lg:col-span-4 space-y-4">
-          <Logo variant="dark" size="lg" />
+        {/* Column 1: Prominent Enlarged Company Logo & Direct Action */}
+        <div className="lg:col-span-4 space-y-5">
+          <div className="inline-block">
+            <img
+              src="/images/client-uploads/logo.png"
+              alt="Kohinoor Audio Visual Company Logo"
+              className="w-28 h-28 sm:w-32 sm:h-32 object-contain filter drop-shadow-md"
+            />
+          </div>
           <p className="text-xs text-slate-600 leading-relaxed pr-2">
-            Established in 1978, Kohinoor Audio Visual delivers professional audio-visual equipment, educational technology, and business systems across Pakistan.
+            Established in 1978 — Audio Visual Equipment, Educational Technology &amp; Business Systems across Pakistan.
           </p>
           <div className="pt-1">
             <button
@@ -177,13 +182,11 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
         </div>
       </div>
 
-      {/* Bottom Legal Bar */}
+      {/* Bottom Legal Bar (No URL Text) */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
         <p>&copy; {new Date().getFullYear()} Kohinoor Audio Visual. Established 1978. All rights reserved.</p>
         <div className="flex items-center gap-3 text-[11px]">
-          <span>Islamabad, Pakistan</span>
-          <span>&middot;</span>
-          <span>kohinoorav.com</span>
+          <span>United Plaza, Blue Area, Islamabad, Pakistan</span>
         </div>
       </div>
     </footer>

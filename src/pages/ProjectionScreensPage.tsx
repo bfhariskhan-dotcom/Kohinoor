@@ -39,50 +39,77 @@ export const ProjectionScreensPage: React.FC<ProjectionScreensPageProps> = ({
         </p>
       </div>
 
-      {/* Three Separate Screen Configuration Types */}
+      {/* Three Separate Screen Configuration Types with Real Photos */}
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div className="bg-white rounded-2xl border border-slate-200 p-6 space-y-3 shadow-xs">
-          <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
-            01 · Portable Series
+        <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs flex flex-col">
+          <div className="h-44 bg-slate-50 p-3 flex items-center justify-center border-b border-slate-100">
+            <img
+              src="/images/real-stock/wall-screen-clean.jpg"
+              alt="Wall-Mounted Projection Screen"
+              className="w-full h-full object-contain"
+            />
           </div>
-          <h2 className="text-lg font-extrabold text-slate-900">
-            Tripod / Stand Projection Screens
-          </h2>
-          <p className="text-xs text-slate-600 leading-relaxed">
-            Self-standing heavy steel tripod screens with quick height locking, keystone eliminator bar, and anti-skid legs for mobile seminars and training workshops.
-          </p>
-          <div className="pt-2 border-t border-slate-100 text-xs font-semibold text-slate-700">
-            Sizes: 6 × 6 ft · 8 × 6 ft · 10 × 8 ft
-          </div>
-        </div>
-
-        <div className="bg-white rounded-2xl border border-slate-200 p-6 space-y-3 shadow-xs">
-          <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
-            02 · Fixed Room Series
-          </div>
-          <h2 className="text-lg font-extrabold text-slate-900">
-            Wall-Mounted Projection Screens
-          </h2>
-          <p className="text-xs text-slate-600 leading-relaxed">
-            Flush-mounted steel housing with slow-retract spring roller and multi-position auto-lock—designed for permanent school and university classrooms.
-          </p>
-          <div className="pt-2 border-t border-slate-100 text-xs font-semibold text-slate-700">
-            Sizes: 6 × 6 · 8 × 6 · 10 × 8 · 12 × 9 ft
+          <div className="p-6 space-y-2 flex-1">
+            <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
+              01 · Wall &amp; Ceiling Series
+            </div>
+            <h2 className="text-lg font-extrabold text-slate-900">
+              Wall-Mounted Projection Screen
+            </h2>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              Flush-mounted white steel casing with slow-retract spring roller and multi-position auto-lock—built for permanent school and university classrooms.
+            </p>
+            <div className="pt-2 border-t border-slate-100 text-xs font-semibold text-slate-700">
+              Sizes: 6 × 6 · 8 × 6 · 10 × 8 · 12 × 9 ft
+            </div>
           </div>
         </div>
 
-        <div className="bg-white rounded-2xl border border-slate-200 p-6 space-y-3 shadow-xs">
-          <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
-            03 · Remote Automated Series
+        <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs flex flex-col">
+          <div className="h-44 bg-slate-50 p-3 flex items-center justify-center border-b border-slate-100">
+            <img
+              src="/images/real-stock/tripod-screen.jpg"
+              alt="Portable Tripod / Stand Projection Screen"
+              className="w-full h-full object-contain"
+            />
           </div>
-          <h2 className="text-lg font-extrabold text-slate-900">
-            Electric Motorized Projection Screens
-          </h2>
-          <p className="text-xs text-slate-600 leading-relaxed">
-            Silent tubular motor drop screens operated via RF wireless remote control or wired wall switch—engineered for conference halls and auditorium stages.
-          </p>
-          <div className="pt-2 border-t border-slate-100 text-xs font-semibold text-slate-700">
-            Sizes: 6 × 6 · 8 × 6 · 10 × 8 · 12 × 9 · 13 × 10 ft
+          <div className="p-6 space-y-2 flex-1">
+            <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
+              02 · Mobile Folding Series
+            </div>
+            <h2 className="text-lg font-extrabold text-slate-900">
+              Portable Tripod / Stand Projection Screen
+            </h2>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              Self-standing heavy steel tripod floor stand with quick height cam-lock, keystone eliminator arm, and anti-skid rubber leg caps for seminars.
+            </p>
+            <div className="pt-2 border-t border-slate-100 text-xs font-semibold text-slate-700">
+              Sizes: 6 × 6 ft · 8 × 6 ft · 10 × 8 ft
+            </div>
+          </div>
+        </div>
+
+        <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs flex flex-col">
+          <div className="h-44 bg-slate-50 p-3 flex items-center justify-center border-b border-slate-100">
+            <img
+              src="/images/real-stock/wall-screen-clean.jpg"
+              alt="Electric Motorized RF Projection Screen"
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <div className="p-6 space-y-2 flex-1">
+            <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
+              03 · Remote Automated Series
+            </div>
+            <h2 className="text-lg font-extrabold text-slate-900">
+              Electric Motorized Projection Screen
+            </h2>
+            <p className="text-xs text-slate-600 leading-relaxed">
+              Silent tubular motor drop screen operated via RF wireless remote control or wired wall switch—engineered for conference halls and auditoriums.
+            </p>
+            <div className="pt-2 border-t border-slate-100 text-xs font-semibold text-slate-700">
+              Sizes: 6 × 6 · 8 × 6 · 10 × 8 · 12 × 9 · 13 × 10 ft
+            </div>
           </div>
         </div>
       </div>

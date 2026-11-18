@@ -114,11 +114,13 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
             className="lg:col-span-5 space-y-4"
           >
             <div className="rounded-3xl overflow-hidden border border-slate-200 bg-white shadow-md hover:border-emerald-400 transition-colors">
-              <img
-                src="/images/client-uploads/upload_6.jpg"
-                alt="Kohinoor AV Digital Rostrum Installation in Pakistan"
-                className="w-full h-auto object-cover"
-              />
+              <div className="p-3 bg-slate-50 flex items-center justify-center">
+                <img
+                  src="/images/client-uploads/upload_6.jpg"
+                  alt="Kohinoor AV Digital Rostrum Installation in Pakistan"
+                  className="w-full h-auto max-h-[380px] object-contain rounded-xl"
+                />
+              </div>
               <div className="p-4 bg-slate-50 border-t border-slate-200 text-xs">
                 <p className="font-bold text-slate-900">Established 1978 · Islamabad</p>
                 <p className="text-slate-500 text-[11px]">Audio Visual Equipment, Educational Equipment &amp; Business Systems</p>
@@ -195,11 +197,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xs">
-            <div className="h-64 sm:h-80 overflow-hidden bg-slate-950">
+            <div className="h-64 sm:h-80 overflow-hidden bg-slate-50 border-b border-slate-100 p-3 flex items-center justify-center">
               <img
                 src="/images/client-uploads/upload_6.jpg"
                 alt="Digital Rostrum Deployment in University Lecture Hall"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="p-6 space-y-2">
@@ -211,11 +213,11 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
           </div>
 
           <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xs">
-            <div className="h-64 sm:h-80 overflow-hidden bg-slate-950">
+            <div className="h-64 sm:h-80 overflow-hidden bg-slate-50 border-b border-slate-100 p-3 flex items-center justify-center">
               <img
                 src="/images/client-uploads/upload_7.jpg"
                 alt="Institutional Presentation Setup with Steel Rostrum"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="p-6 space-y-2">

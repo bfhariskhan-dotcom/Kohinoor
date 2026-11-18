@@ -137,11 +137,11 @@ export const SmartClassroomPage: React.FC<SmartClassroomPageProps> = ({
         </div>
 
         <div className="lg:col-span-5">
-          <div className="rounded-2xl overflow-hidden border border-emerald-800/80 bg-slate-900 shadow-2xl">
+          <div className="rounded-2xl overflow-hidden border border-white/25 bg-white shadow-2xl p-2.5 flex items-center justify-center">
             <img
               src="/images/client-uploads/upload_5.jpg"
               alt="Complete Smart Classroom Integration by Kohinoor AV in Pakistan"
-              className="w-full h-auto object-cover"
+              className="w-full h-auto max-h-[360px] object-contain rounded-xl"
             />
           </div>
         </div>
@@ -160,11 +160,11 @@ export const SmartClassroomPage: React.FC<SmartClassroomPageProps> = ({
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:border-emerald-300 transition-all">
-            <div className="h-52 overflow-hidden bg-slate-950">
+            <div className="h-56 overflow-hidden bg-slate-50 border-b border-slate-100 p-2.5 flex items-center justify-center">
               <img
                 src="/images/client-uploads/upload_3.jpg"
                 alt="Digital Podium with Interactive Touch Display in University Hall"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="p-4 space-y-1">
@@ -174,11 +174,11 @@ export const SmartClassroomPage: React.FC<SmartClassroomPageProps> = ({
           </div>
 
           <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:border-emerald-300 transition-all">
-            <div className="h-52 overflow-hidden bg-slate-950">
+            <div className="h-56 overflow-hidden bg-slate-50 border-b border-slate-100 p-2.5 flex items-center justify-center">
               <img
                 src="/images/client-uploads/upload_4.jpg"
                 alt="Smart Rostrum and Faculty Lectern Deployment"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="p-4 space-y-1">
@@ -188,11 +188,11 @@ export const SmartClassroomPage: React.FC<SmartClassroomPageProps> = ({
           </div>
 
           <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:border-emerald-300 transition-all">
-            <div className="h-52 overflow-hidden bg-slate-950">
+            <div className="h-56 overflow-hidden bg-slate-50 border-b border-slate-100 p-2.5 flex items-center justify-center">
               <img
                 src="/images/client-uploads/upload_5.jpg"
                 alt="Auditorium Main Stage Setup with Beterva Digital Podium"
-                className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                className="w-full h-full object-contain hover:scale-105 transition-transform duration-500"
               />
             </div>
             <div className="p-4 space-y-1">

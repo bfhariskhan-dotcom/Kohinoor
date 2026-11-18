@@ -4,9 +4,6 @@ import {
   Monitor,
   Mic2,
   Video,
-  Projector,
-  Volume2,
-  Sparkles,
   MessageSquare,
   Building,
   GraduationCap,
@@ -35,11 +32,11 @@ const SPACES: PresetSpace[] = [
     type: 'Higher Education',
     capacity: '80 – 250 Students',
     icon: GraduationCap,
-    recommendedDisplay: '86" 4K Interactive Flat Panel LED (or 5000 Lumens Laser Projector)',
-    recommendedPodium: 'Smart Digital Rostrum 32" Touch with Integrated 60W Amplifier',
-    recommendedAudio: 'Gooseneck Dual Microphones + DSP Feedback Suppressor + 4x Wall Speakers',
-    recommendedCamera: '4K AI Auto-Tracking PTZ Robotic Camera (12x Optical Zoom)',
-    summary: 'Optimized for interactive academic lecturing, dual-OS slide annotations, and automated tag-free lecturer tracking.'
+    recommendedDisplay: '86" 4K Interactive Flat Panel LED (or Casio XJ-S400UN 4,000 Lumens Projector + Wall Screen)',
+    recommendedPodium: 'Black or White Digital Podium (580×420×1100 mm, 60W Output, Dual Gooseneck + 2 Wireless Mics)',
+    recommendedAudio: 'CMX EA-120A Mixer Amplifier + Dual Gooseneck & 2 UHF Wireless Handheld Microphones',
+    recommendedCamera: 'Tenveo TEVO-VA3000E 10X Optical Zoom PTZ + Speakerphone + 2 Expansion Mics',
+    summary: 'Optimized for interactive lecturing, dual-OS annotation, built-in MP3/USB/SD/AUX podium playback, and live hybrid streaming.'
   },
   {
     id: 'corporate-boardroom',
@@ -47,11 +44,11 @@ const SPACES: PresetSpace[] = [
     type: 'Corporate & Government',
     capacity: '16 – 35 Attendees',
     icon: Building,
-    recommendedDisplay: '75" or 85" Ultra-HD Interactive Touch LED on Mobile Trolley',
-    recommendedPodium: 'Compact Digital Presentation Lectern 21.5" with Wireless Casting',
-    recommendedAudio: 'MA4617 Chairman Priority Discussion System (1 Chairman + 12 Delegate Units)',
-    recommendedCamera: 'Wide-Angle 4K PTZ Camera with Preset Position Recall',
-    summary: 'Executive boardroom assembly setup with chairman priority override, paperless document review, and video conferencing.'
+    recommendedDisplay: '75" or 86" Ultra-HD Interactive Touch LED on Mobile Trolley (or Wall-Mounted Screen)',
+    recommendedPodium: 'White or Black Digital Presentation Podium (29 kg, Dual Gooseneck & MP3/USB/SD/AUX)',
+    recommendedAudio: 'BETERVA BE-2300 Chairman Priority System + Tenveo VA3000E Full-Duplex Speakerphone',
+    recommendedCamera: 'Tenveo TEVO-VA3000 / TEVO-VA3000E 10X Lossless Zoom PTZ Kit (Zoom/Teams/WebEx Ready)',
+    summary: 'Executive boardroom setup with Chairman priority override, plug-and-play USB video conferencing up to 25 people, and interactive collaboration.'
   },
   {
     id: 'smart-classroom',
@@ -59,11 +56,11 @@ const SPACES: PresetSpace[] = [
     type: 'K-12 & Colleges',
     capacity: '35 – 55 Students',
     icon: Monitor,
-    recommendedDisplay: '65" or 75" 4K Interactive LED Flat Panel with Dual OS',
-    recommendedPodium: 'Teacher Ergonomic Digital Rostrum with Document Storage',
-    recommendedAudio: 'Classroom Column Wall Speakers (40W Stereo) + Wireless Lapel Mic',
-    recommendedCamera: 'Full HD USB 3.0 Presenter Webcam / Classroom Streaming Camera',
-    summary: 'Standard smart classroom bundle ensuring high student engagement, multi-touch whiteboard collaboration, and intuitive teaching.'
+    recommendedDisplay: '65" or 75" 4K Interactive LED Flat Panel + Casio XJ-V100W / Portable Tripod Screen',
+    recommendedPodium: 'Digital Audio Podium Console (60W Integrated Amp, 2 Gooseneck + 2 Wireless Handheld Mics)',
+    recommendedAudio: 'Classroom Speakers + Dual Wireless Handheld & Lapel Microphone Kit',
+    recommendedCamera: 'Tenveo TEVO-VA3000 USB/Bluetooth PTZ Camera & Speakerphone',
+    summary: 'Standard smart classroom bundle ensuring high student engagement, lamp-free reliability, and clear lecture amplification.'
   },
   {
     id: 'grand-auditorium',
@@ -71,18 +68,17 @@ const SPACES: PresetSpace[] = [
     type: 'Auditoriums & Convocation',
     capacity: '300 – 1,200 Seats',
     icon: Landmark,
-    recommendedDisplay: '5000+ Lumens 3LCD Multimedia Projector + 180" Motorized Tensioned Screen',
-    recommendedPodium: 'Flagship 43" Floor-Standing Steel Rostrum with Dual Touch & Dais Prompting',
-    recommendedAudio: 'Line Array PA System + Wireless UHF Handheld / Collar Sets (Sennheiser Acoustic)',
-    recommendedCamera: 'Dual 4K PTZ Robotic Cameras with Joystick Controller for Live Streaming',
-    summary: 'High-impact auditorium deployment for university convocations, national symposiums, and government keynotes.'
+    recommendedDisplay: 'Mitsubishi 8000 Series (UD8900U, 7,300–8,500 Lumens) + Large Wall / Motorized Screen',
+    recommendedPodium: 'Stage Monitor / Floor Captioner Teleprompter (TP55–TP100 Full HD) + Black Digital Podium',
+    recommendedAudio: 'CMX Commercial PA Amplification + Dual-Channel UHF Wireless Microphones',
+    recommendedCamera: 'Tenveo TEVO-VA3000E PTZ Conferencing & Stage Recording Feed',
+    summary: 'High-brightness auditorium deployment with dual-lamp Mitsubishi projection and foot-pedal/remote controlled Stage Teleprompters.'
   }
 ];
 
 export const AvSystemEstimator: React.FC = () => {
   const [selectedSpaceId, setSelectedSpaceId] = useState<string>('university-lecture');
   const [includeInstallation, setIncludeInstallation] = useState<boolean>(true);
-  const [customNotes, setCustomNotes] = useState<string>('');
 
   const currentSpace = SPACES.find((s) => s.id === selectedSpaceId) || SPACES[0];
 
@@ -96,7 +92,6 @@ export const AvSystemEstimator: React.FC = () => {
       `• Audio Setup: ${currentSpace.recommendedAudio}\n` +
       `• Video/Camera: ${currentSpace.recommendedCamera}\n` +
       `• Turnkey Installation: ${includeInstallation ? 'Yes (Requested)' : 'Supply Only'}\n` +
-      (customNotes ? `• Custom Requirements: ${customNotes}\n` : '') +
       `-----------------------------------------\n` +
       `Please provide formal quotation, lead time, and technical proposal for Islamabad/Pakistan.`;
 

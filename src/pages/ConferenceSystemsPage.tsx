@@ -30,14 +30,80 @@ export const ConferenceSystemsPage: React.FC<ConferenceSystemsPageProps> = ({
       {/* Category Header */}
       <div className="space-y-4 max-w-3xl">
         <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
-          Category 07 · Parliamentary &amp; Boardroom Systems
+          Category 05 · Video Conferencing &amp; Council Audio Systems
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-          Conference Systems – BETERVA BE-2300
+          Video Conferencing &amp; Conference Systems
         </h1>
         <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-          Official boardroom and council chamber discussion hardware from Beterva Audio Visual Company. Features the complete BETERVA BE-2300 Series comprising separate <strong>BE-2300 Chairman Units</strong>, <strong>BE-2300 Delegate Units</strong>, and <strong>BE-2300 Central Control Units</strong>.
+          Complete conference technology featuring the ready-stock <strong>Tenveo TEVO-VA3000 / TEVO-VA3000E</strong> All-in-One HD 1080p 10X Zoom Video &amp; Audio Conferencing Kit, alongside parliamentary <strong>BETERVA BE-2300</strong> Chairman, Delegate &amp; Central Control discussion units.
         </p>
+      </div>
+
+      {/* Featured Tenveo TEVO-VA3000 / TEVO-VA3000E Flagship Hero */}
+      <div className="bg-gradient-to-br from-emerald-700 via-emerald-600 to-emerald-800 text-white rounded-3xl p-8 sm:p-12 border border-emerald-500/40 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-2xl">
+        <div className="lg:col-span-6 space-y-5">
+          <div className="inline-flex items-center gap-1.5 text-emerald-300 text-xs font-bold uppercase tracking-wider">
+            <Shield className="w-4 h-4" />
+            <span>Ready Stock · Tenveo Group Conference Series</span>
+          </div>
+          <h2 className="text-2xl sm:text-3xl font-extrabold text-white leading-snug">
+            Tenveo TEVO-VA3000 / TEVO-VA3000E All-in-One Video &amp; Audio Kit
+          </h2>
+          <p className="text-xs sm:text-sm text-emerald-100/90 leading-relaxed">
+            Built for medium-to-large conference rooms up to 25 people. Unifies a 10X Lossless Zoom PTZ Camera (HD 1080p @ 30fps, 51.3° FOV, 350° pan / 90° tilt), Full-duplex Speakerphone, Connection Hub, IR Remote Control, Bluetooth &amp; USB plug-and-play, plus optional 2 Expansion Mics (TEVO-VA3000E).
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 text-xs text-emerald-100/95">
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-300 shrink-0" />
+              <span>10X Lossless Zoom · 1080p @ 30fps</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-300 shrink-0" />
+              <span>51.3° FOV · 350° Pan / 90° Tilt</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-300 shrink-0" />
+              <span>Speakerphone + Hub + IR Remote</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <CheckCircle2 className="w-4 h-4 text-emerald-300 shrink-0" />
+              <span>Zoom, Teams, WebEx &amp; Polycom Ready</span>
+            </div>
+          </div>
+
+          <div className="pt-2 flex flex-wrap gap-3">
+            <a
+              href={`${BUSINESS_INFO.whatsappUrl}?text=${encodeURIComponent('Hello Kohinoor AV, I would like specifications and availability for Tenveo TEVO-VA3000 / TEVO-VA3000E Video Conference System.')}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="cursor-pointer px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl transition-all shadow-md flex items-center gap-2"
+            >
+              <MessageSquare className="w-4 h-4 fill-current" />
+              <span>Inquire on WhatsApp</span>
+            </a>
+            <button
+              onClick={() => onOpenQuoteModal('Tenveo TEVO-VA3000 / TEVO-VA3000E Video Conference System')}
+              className="cursor-pointer px-5 py-3 bg-white/10 hover:bg-white/20 text-white text-xs font-semibold rounded-xl border border-white/20 transition-colors"
+            >
+              Request Technical Proposal
+            </button>
+          </div>
+        </div>
+
+        <div className="lg:col-span-6">
+          <div className="rounded-2xl overflow-hidden border border-white/20 bg-white shadow-2xl p-4">
+            <img
+              src="/images/real-stock/tenveo-va3000e.jpg"
+              alt="Tenveo TEVO-VA3000 / TEVO-VA3000E All-in-One Video & Audio Conference System"
+              className="w-full h-72 object-contain mx-auto"
+            />
+            <div className="mt-2 text-center text-xs text-emerald-800 font-bold border-t border-slate-100 pt-2">
+              Tenveo TEVO-VA3000 / VA3000E · PTZ Camera + Speakerphone + Hub + IR Remote
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* Three Separate BE-2300 System Architecture Highlights */}
@@ -79,13 +145,13 @@ export const ConferenceSystemsPage: React.FC<ConferenceSystemsPageProps> = ({
       {/* Real Council Room Field Showcase */}
       <div className="bg-white rounded-3xl border border-slate-200 overflow-hidden shadow-xs">
         <div className="grid grid-cols-1 lg:grid-cols-12 items-center">
-          <div className="lg:col-span-7 h-72 lg:h-[420px] relative overflow-hidden bg-slate-950">
+          <div className="lg:col-span-7 h-72 lg:h-[420px] relative overflow-hidden bg-slate-50 border-b lg:border-b-0 lg:border-r border-slate-200 p-3 flex items-center justify-center">
             <img
               src="/images/client-uploads/upload_2.jpg"
               alt="Council Chamber Conference Audio System Installation in Pakistan"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain rounded-xl"
             />
-            <div className="absolute top-4 left-4 px-3 py-1 rounded-lg bg-emerald-900/90 text-white text-[11px] font-bold flex items-center gap-1.5">
+            <div className="absolute top-4 left-4 px-3 py-1 rounded-lg bg-emerald-800/95 text-white text-[11px] font-bold flex items-center gap-1.5 shadow-xs">
               <Building2 className="w-3.5 h-3.5 text-emerald-300" />
               <span>Council Hall Deployment · Islamabad</span>
             </div>

@@ -42,12 +42,12 @@ export const Navbar: React.FC<NavbarProps> = ({
   };
 
   const marqueeText = [
-    'Kohinoor Audio Visual Education Business System · Established 1978',
-    'United Plaza, 2nd Floor, Blue Area, Islamabad',
-    'Interactive LED Displays (55"–110") & Projectors',
-    'Black & Table-Style Digital Podiums',
-    'BETERVA BE-2300 Conference Systems & King Teleprompters',
-    'Nationwide AV Supply, Installation & After-Sales Service'
+    'Kohinoor Audio Visual · Established 1978',
+    'Interactive LED Displays (55"–110") & Mitsubishi / Casio Projectors',
+    'Wall-Mounted & Portable Tripod Projection Screens',
+    'Black & White Digital Podiums · Dual Gooseneck & Wireless Mics',
+    'Tenveo TEVO-VA3000E Video Conferencing & Stage Teleprompters (TP27–TP100)',
+    'United Plaza, 2nd Floor, Fazlehaq Road, Blue Area, Islamabad'
   ];
 
   return (

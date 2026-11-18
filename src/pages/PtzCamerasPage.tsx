@@ -18,24 +18,25 @@ interface PtzCamerasPageProps {
 }
 
 export const PtzCamerasPage: React.FC<PtzCamerasPageProps> = ({
-  onNavigate,
   onSelectProduct,
   onOpenQuoteModal
 }) => {
-  const ptzProducts = PRODUCTS.filter((p) => p.category === 'ptz-robotic-cameras');
+  const ptzProducts = PRODUCTS.filter(
+    (p) => p.id === 'tenveo-va3000e-conference-system' || p.category === 'conference-systems'
+  );
 
   return (
     <div className="space-y-16 py-10 max-w-7xl mx-auto px-4 sm:px-8">
       {/* Category Header */}
       <div className="space-y-4 max-w-3xl">
         <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
-          Product Category 05 · Intelligent Video Capture
+          Product Category 05 · Video Conferencing &amp; PTZ Cameras
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
-          PTZ Robotic Cameras &amp; Auto-Tracking Systems
+          Tenveo TEVO-VA3000 / TEVO-VA3000E Video Conferencing PTZ System
         </h1>
         <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-          High-definition and 4K Ultra HD motorized Pan-Tilt-Zoom robotic cameras engineered for hybrid university classrooms, lecture capture recording, live distance learning, council chambers, and broadcast video streaming in Pakistan.
+          Complete all-in-one video conferencing hardware engineered for executive boardrooms, hybrid classrooms, and government committee rooms: 10X Lossless Optical Zoom HD 1080p@30fps PTZ Camera, Full-Duplex Speakerphone, Central Hub, IR Remote, Bluetooth &amp; USB plug-and-play, with optional 2 expansion microphones (TEVO-VA3000E) for up to 25 attendees.
         </p>
       </div>
 
@@ -45,9 +46,9 @@ export const PtzCamerasPage: React.FC<PtzCamerasPageProps> = ({
           <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
             <Camera className="w-5 h-5" />
           </div>
-          <h3 className="text-xs font-bold text-slate-900">4K Ultra HD &amp; 60fps Optics</h3>
+          <h3 className="text-xs font-bold text-slate-900">10X Lossless Optical Zoom</h3>
           <p className="text-xs text-slate-600 leading-relaxed">
-            Sony 1/2.8" commercial CMOS sensors capturing intricate blackboard handwriting and lecture diagrams.
+            HD 1080p@30fps video clarity with 51.3° wide field of view and razor-sharp optical magnification.
           </p>
         </div>
 
@@ -55,9 +56,9 @@ export const PtzCamerasPage: React.FC<PtzCamerasPageProps> = ({
           <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
             <Sparkles className="w-5 h-5" />
           </div>
-          <h3 className="text-xs font-bold text-slate-900">AI Teacher Auto-Tracking</h3>
+          <h3 className="text-xs font-bold text-slate-900">350° Pan &amp; 90° Tilt</h3>
           <p className="text-xs text-slate-600 leading-relaxed">
-            Smooth presenter tracking follows faculty movement automatically without requiring lanyards or camera crew.
+            Whisper-quiet motorized gimbal sweeps ±175° horizontally and ±45° vertically with IR remote presets.
           </p>
         </div>
 
@@ -65,9 +66,9 @@ export const PtzCamerasPage: React.FC<PtzCamerasPageProps> = ({
           <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
             <ZoomIn className="w-5 h-5" />
           </div>
-          <h3 className="text-xs font-bold text-slate-900">12x &amp; 20x Optical Zoom</h3>
+          <h3 className="text-xs font-bold text-slate-900">Full-Duplex Speakerphone + Hub</h3>
           <p className="text-xs text-slate-600 leading-relaxed">
-            Lossless optical zoom with distortion-free multi-element glass lenses for deep auditorium focal ranges.
+            Echo-canceling omnidirectional speakerphone with optional 2 expansion mics (TEVO-VA3000E) for up to 25 people.
           </p>
         </div>
 
@@ -75,9 +76,9 @@ export const PtzCamerasPage: React.FC<PtzCamerasPageProps> = ({
           <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
             <Video className="w-5 h-5" />
           </div>
-          <h3 className="text-xs font-bold text-slate-900">HDMI, USB, IP &amp; NDI|HX</h3>
+          <h3 className="text-xs font-bold text-slate-900">USB &amp; Bluetooth Plug-and-Play</h3>
           <p className="text-xs text-slate-600 leading-relaxed">
-            Direct USB 3.0 plug-and-play for Zoom and MS Teams alongside network IP and HDMI outputs.
+            Driver-free compatibility with Zoom, Microsoft Teams, Cisco WebEx, Skype for Business, and Polycom.
           </p>
         </div>
       </div>
@@ -87,33 +88,33 @@ export const PtzCamerasPage: React.FC<PtzCamerasPageProps> = ({
         <div className="lg:col-span-6 space-y-5">
           <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-emerald-900/80 border border-emerald-700/50 text-emerald-300 text-xs font-bold">
             <Video className="w-3.5 h-3.5" />
-            <span>Hybrid Education &amp; Boardroom Standard</span>
+            <span>Tenveo TEVO-VA3000 / TEVO-VA3000E Complete Kit</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white leading-snug">
-            Intelligent Presenter Tracking without Human Operators
+            All-in-One PTZ Camera, Speakerphone, Hub &amp; Expansion Mics
           </h2>
           <p className="text-xs sm:text-sm text-emerald-100/80 leading-relaxed">
-            Equipped with proprietary humanoid motion algorithms, the camera locks onto the designated lecturer or keynote speaker, panning and tilting seamlessly across the dais while maintaining optimal framing. If the presenter walks to the blackboard or interactive LED, the camera fluidly follows.
+            Designed for medium to large conference rooms up to 25 participants. Single central hub connects power, USB host computer, PTZ camera, and tabletop speakerphone—plus 2 daisy-chained expansion microphones in the VA3000E edition.
           </p>
 
           <div className="space-y-2 pt-1 text-xs text-emerald-100/90">
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>Zero wearable tags or infrared beacons required</span>
+              <span>10X Lossless Optical Zoom · 1080p@30fps · 51.3° Wide Angle Lens</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>Whisper-quiet stepper motors with 255 preset memory slots</span>
+              <span>350° Pan &amp; 90° Tilt with IR Remote Controller included</span>
             </div>
             <div className="flex items-center gap-2">
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>Wall mount, ceiling inverted mount, and tripod brackets included</span>
+              <span>Works seamlessly with Zoom, MS Teams, WebEx, Skype &amp; Polycom</span>
             </div>
           </div>
 
           <div className="pt-2 flex flex-wrap gap-3">
             <a
-              href={`${BUSINESS_INFO.whatsappUrl}?text=${encodeURIComponent('Hello Kohinoor AV, I would like to order the 4K AI Auto-Tracking PTZ Robotic Camera.')}`}
+              href={`${BUSINESS_INFO.whatsappUrl}?text=${encodeURIComponent('Hello Kohinoor AV, I would like specifications and stock availability for Tenveo TEVO-VA3000 / TEVO-VA3000E.')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="cursor-pointer px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl transition-all shadow-md flex items-center gap-2"
@@ -122,44 +123,51 @@ export const PtzCamerasPage: React.FC<PtzCamerasPageProps> = ({
               <span>Order on WhatsApp</span>
             </a>
             <button
-              onClick={() => onOpenQuoteModal('4K AI Auto-Tracking PTZ Robotic Camera')}
+              onClick={() => onOpenQuoteModal('Tenveo TEVO-VA3000E Group Video Conferencing System')}
               className="cursor-pointer px-5 py-3 bg-emerald-950/80 hover:bg-emerald-900 text-emerald-200 text-xs font-semibold rounded-xl border border-emerald-800 transition-colors"
             >
-              Request Specs &amp; Mount Options
+              Request Technical Proposal
             </button>
           </div>
         </div>
 
-        <div className="lg:col-span-6">
-          <div className="rounded-2xl overflow-hidden border border-emerald-800/80 bg-slate-900 shadow-2xl">
+        <div className="lg:col-span-6 grid grid-cols-2 gap-4">
+          <div className="rounded-2xl overflow-hidden border border-emerald-800/80 bg-white shadow-2xl p-4 flex items-center justify-center aspect-square">
             <img
-              src="/images/ptz_camera_tracking_1793992811906.jpg"
-              alt="4K PTZ Robotic Tracking Camera with Optical Zoom"
-              className="w-full h-auto object-cover"
+              src="/images/real-stock/tenveo-va3000e.jpg"
+              alt="Tenveo TEVO-VA3000E Complete Kit with Expansion Microphones"
+              className="w-full h-full object-contain"
+            />
+          </div>
+          <div className="rounded-2xl overflow-hidden border border-emerald-800/80 bg-white shadow-2xl p-4 flex items-center justify-center aspect-square">
+            <img
+              src="/images/real-stock/tenveo-va3000.jpg"
+              alt="Tenveo TEVO-VA3000 PTZ Camera Speakerphone Hub and Remote"
+              className="w-full h-full object-contain"
             />
           </div>
         </div>
       </div>
 
-      {/* Available Models: CLEAN 2-COLUMN GRID */}
+      {/* Available Models */}
       <div className="space-y-6">
         <div className="max-w-2xl">
           <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900">
-            Robotic PTZ Camera Systems
+            Video Conferencing &amp; PTZ Hardware
           </h2>
           <p className="text-xs text-slate-500 mt-1">
-            Engineered for high reliability in university lecture halls and government committee rooms.
+            Engineered for high reliability in corporate boardrooms and government committee rooms.
           </p>
         </div>
 
-        {/* 2-Column Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-          {ptzProducts.map((prod) => (
+          {ptzProducts.map((prod, idx) => (
             <ProductCard
               key={prod.id}
               product={prod}
               onSelect={onSelectProduct}
               onOpenQuote={onOpenQuoteModal}
+              index={idx}
             />
           ))}
         </div>

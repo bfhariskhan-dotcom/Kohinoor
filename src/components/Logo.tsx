@@ -18,23 +18,23 @@ export const Logo: React.FC<LogoProps> = ({
   // Size variations for the official crest and large all-green company title
   const sizeMap = {
     sm: {
-      img: 'w-11 h-11',
-      title: 'text-base sm:text-lg',
+      img: 'w-12 h-12',
+      title: 'text-base sm:text-xl',
       sub: 'text-[9px] tracking-[0.14em]'
     },
     md: {
-      img: 'w-12 h-12 sm:w-16 sm:h-16',
-      title: 'text-[17px] sm:text-2xl lg:text-[26px]',
-      sub: 'text-[9px] sm:text-[11px] tracking-[0.15em]'
+      img: 'w-14 h-14 sm:w-20 sm:h-20',
+      title: 'text-[18px] sm:text-[26px] lg:text-[31px]',
+      sub: 'text-[10px] sm:text-xs tracking-[0.16em]'
     },
     lg: {
-      img: 'w-18 h-18 sm:w-20 sm:h-20',
+      img: 'w-20 h-20 sm:w-24 sm:h-24',
       title: 'text-xl sm:text-3xl',
       sub: 'text-[10px] sm:text-xs tracking-[0.18em]'
     },
     xl: {
-      img: 'w-22 h-22 sm:w-28 sm:h-28',
-      title: 'text-2xl sm:text-4xl',
+      img: 'w-24 h-24 sm:w-32 sm:h-32',
+      title: 'text-2xl sm:text-3xl',
       sub: 'text-xs sm:text-sm tracking-[0.2em]'
     }
   };

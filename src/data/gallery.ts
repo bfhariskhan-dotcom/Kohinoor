@@ -156,35 +156,35 @@ export const GALLERY_ITEMS: GalleryItem[] = [
   },
   {
     id: 'gal-10',
-    title: '4K AI Auto-Tracking PTZ Robotic Camera System',
-    category: 'smart-classrooms',
-    categoryLabel: 'Smart Classrooms',
-    image: '/images/ptz_camera_tracking_1793992811906.jpg',
+    title: 'Tenveo TEVO-VA3000E All-in-One Video & Audio Conference System',
+    category: 'conference',
+    categoryLabel: 'Conference & Chambers',
+    image: '/images/real-stock/tenveo-va3000e.jpg',
     location: 'Islamabad, Pakistan',
-    clientType: 'Hybrid Education & Distance Learning',
-    description: 'Motorized Pan-Tilt-Zoom camera equipped with proprietary human motion tracking algorithms for hands-free lecture recording and video streaming.',
+    clientType: 'Corporate Boardrooms & Hybrid Learning (Up to 25 People)',
+    description: 'Complete HD 1080p @ 30fps video & audio conferencing kit featuring a 10X lossless optical zoom PTZ camera (51.3° FOV, 350° pan / 90° tilt), full-duplex speakerphone, central hub, IR remote, Bluetooth/USB connectivity, and 2 expansion microphones.',
     equipmentDeployed: [
-      'Sony 1/2.8" CMOS 4K Sensor',
-      '12x / 20x Lossless Optical Zoom',
-      'USB 3.0, HDMI, IP & NDI|HX Outputs',
-      'Whisper-Quiet Pan-Tilt Stepper Motors'
+      '10X Lossless Zoom PTZ Camera (1080p @ 30fps)',
+      'Full-Duplex Speakerphone + Hub + IR Remote',
+      '2x Expansion Microphones (TEVO-VA3000E)',
+      'Zoom, MS Teams, Cisco WebEx & Polycom Ready'
     ],
-    highlightBadge: 'AI Robotic Video Capture'
+    highlightBadge: 'Ready Stock · Video Conferencing'
   },
   {
     id: 'gal-11',
-    title: 'Professional 5000 Lumens Laser Multimedia Projector',
+    title: 'Mitsubishi Electric 8000 Series & Casio XJ-S400UN Projectors',
     category: 'auditorium',
     categoryLabel: 'Auditoriums & Stages',
-    image: '/images/multimedia_projector_pro_1793992811682.jpg',
-    location: 'Rawalpindi / Islamabad',
-    clientType: 'Higher Education Amphitheater',
-    description: 'High-lumen optical projection engineered for daytime classrooms and amphitheaters without darkening curtains, with 20,000 hours laser life.',
+    image: '/images/real-stock/mitsubishi-ud8900u.jpg',
+    location: 'Islamabad Warehouse, Pakistan',
+    clientType: 'Auditoriums & Higher Education Amphitheaters',
+    description: 'Ready-stock commercial projection lineup featuring Mitsubishi Electric 8000 Series (UD8900U, UD8850U, WD8700U, XD8600U — 7,300 to 8,500 lumens, dual-lamp) alongside Casio XJ-S400UN LampFree WUXGA Laser/LED projectors.',
     equipmentDeployed: [
-      '5000 ANSI Lumens Optical Engine',
-      'Full HD 1080p / WUXGA Resolution',
-      'Dual HDMI 2.0 + Wireless Projection',
-      'Multi-Angle Geometric Keystone'
+      'Mitsubishi 8000 Series (White & Black BL)',
+      '7,300–8,500 ANSI Lumens · 2800:1 Contrast',
+      'Casio XJ-S400UN (4,000 Lumens · WUXGA)',
+      'Optional Interchangeable Projection Lenses'
     ],
     highlightBadge: 'High-Lumen Optical Projection'
   },

@@ -45,7 +45,7 @@ export const QuoteModal: React.FC<QuoteModalProps> = ({
       `• Equipment / Model: ${selectedProduct}\n` +
       `• Requirements: ${message || 'Please provide technical specification & formal quotation.'}\n` +
       `-----------------------------------------\n` +
-      `Sent via kohinoorav.com`;
+      `Sent via Kohinoor Audio Visual`;
 
     window.open(`${BUSINESS_INFO.whatsappUrl}?text=${encodeURIComponent(text)}`, '_blank');
     onClose();

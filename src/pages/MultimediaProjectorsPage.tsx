@@ -30,13 +30,13 @@ export const MultimediaProjectorsPage: React.FC<MultimediaProjectorsPageProps> =
       {/* Category Header */}
       <div className="space-y-4 max-w-3xl">
         <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
-          Category 02 · Large-Format Visual Projection
+          Category 02 · Large-Format Optical Projection
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
           Multimedia Projectors
         </h1>
         <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
-          Genuine multimedia projectors from authorized partners and global manufacturers—Casio, Panasonic, NEC, Mitsubishi Corporation Japan, and MAGAPOWER. Engineered for bright classrooms, university amphitheaters, and corporate boardrooms across Pakistan.
+          Ready-stock commercial and educational multimedia projectors from Japan’s trusted manufacturers—<strong>Mitsubishi Electric 8000 Series</strong> (UD8900U, UD8850U, WD8700U, XD8600U in White &amp; Black BL) and <strong>Casio XJ-S400UN / XJ-V100W LampFree Series</strong>.
         </p>
       </div>
 
@@ -46,9 +46,9 @@ export const MultimediaProjectorsPage: React.FC<MultimediaProjectorsPageProps> =
           <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
             <Sun className="w-5 h-5" />
           </div>
-          <h3 className="text-xs font-bold text-slate-900">3,000 – 5,500 Lumens</h3>
+          <h3 className="text-xs font-bold text-slate-900">7,300 – 8,500 Lumens</h3>
           <p className="text-xs text-slate-600 leading-relaxed">
-            High-brightness optical output delivering clear visibility even in sunlit classrooms and halls.
+            Mitsubishi 8000 Series dual-lamp output with 2800:1 contrast delivers vivid imagery in large auditoriums.
           </p>
         </div>
 
@@ -56,9 +56,9 @@ export const MultimediaProjectorsPage: React.FC<MultimediaProjectorsPageProps> =
           <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
             <Projector className="w-5 h-5" />
           </div>
-          <h3 className="text-xs font-bold text-slate-900">3LCD, DLP &amp; Laser/LED</h3>
+          <h3 className="text-xs font-bold text-slate-900">LampFree Laser &amp; LED</h3>
           <p className="text-xs text-slate-600 leading-relaxed">
-            Genuine Panasonic/NEC 3LCD, Mitsubishi DLP, and Casio lamp-free Laser/LED hybrid optics.
+            Casio XJ-S400UN (4,000 lm WUXGA) &amp; XJ-V100W deliver 20,000-hour Mercury-Free hybrid operation.
           </p>
         </div>
 
@@ -66,9 +66,9 @@ export const MultimediaProjectorsPage: React.FC<MultimediaProjectorsPageProps> =
           <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
             <Wifi className="w-5 h-5" />
           </div>
-          <h3 className="text-xs font-bold text-slate-900">HDMI, LAN &amp; Wireless</h3>
+          <h3 className="text-xs font-bold text-slate-900">Optional Lenses &amp; Zoom</h3>
           <p className="text-xs text-slate-600 leading-relaxed">
-            Dual HDMI inputs, RJ-45 PJLink network control, and wireless presenter mirroring readiness.
+            Mitsubishi optional bayonet throw lenses plus Casio XJ-S400UN flexible 1.7x manual optical zoom.
           </p>
         </div>
 
@@ -76,39 +76,39 @@ export const MultimediaProjectorsPage: React.FC<MultimediaProjectorsPageProps> =
           <div className="w-10 h-10 rounded-xl bg-emerald-50 text-emerald-700 flex items-center justify-center">
             <Layers className="w-5 h-5" />
           </div>
-          <h3 className="text-xs font-bold text-slate-900">Authorized Brands</h3>
+          <h3 className="text-xs font-bold text-slate-900">Ready-Stock Hardware</h3>
           <p className="text-xs text-slate-600 leading-relaxed">
-            Casio, Panasonic, NEC, Mitsubishi Corporation Japan &amp; MAGAPOWER Multimedia Projectors.
+            Supplied with genuine mounting kits, projection screens, and nationwide engineering support.
           </p>
         </div>
       </div>
 
-      {/* Hero Showcase */}
+      {/* Hero Showcase with Real Dual Product Visuals */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-gradient-to-br from-emerald-700 via-emerald-600 to-emerald-800 text-white rounded-3xl p-8 sm:p-12 border border-emerald-500/40 shadow-2xl">
         <div className="lg:col-span-6 space-y-4">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-            Authorized Global Projector Brands for Institutions
+            Mitsubishi 8000 Series &amp; Casio LampFree Projectors
           </h2>
           <p className="text-xs sm:text-sm text-emerald-100/85 leading-relaxed">
-            From lamp-free CASIO XJ-Series units rated at 20,000 hours to high-brightness Panasonic PT-LB, NEC MC, Mitsubishi EX/EW, and MAGAPOWER Full HD projectors—every unit is supplied with genuine manufacturer support and optional ceiling mounting &amp; screen packages.
+            Built for sunlit university lecture halls, seminar rooms, and large auditoriums across Pakistan. Every unit is backed by genuine accessories, ceiling mounting kits, and installation services from our Islamabad headquarters.
           </p>
           <div className="space-y-2 pt-2">
             <div className="flex items-center gap-2 text-xs text-emerald-100/90">
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>XGA, WXGA &amp; Full HD 1080p optical resolutions</span>
+              <span>Mitsubishi UD8900U, UD8850U, WD8700U, XD8600U (White &amp; Black BL)</span>
             </div>
             <div className="flex items-center gap-2 text-xs text-emerald-100/90">
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>Dual HDMI, VGA PC, and RJ-45 LAN classroom management</span>
+              <span>Casio XJ-S400UN (4,000 Lumens · WUXGA Real · 1.7x Zoom · 20,000 hrs)</span>
             </div>
             <div className="flex items-center gap-2 text-xs text-emerald-100/90">
               <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-              <span>Full after-sales service, spare lamps &amp; on-site installation</span>
+              <span>Casio XJ-V100W (3,000 Lumens · WXGA · 1.5x Optical Zoom)</span>
             </div>
           </div>
           <div className="pt-4 flex flex-wrap gap-3">
             <a
-              href={`${BUSINESS_INFO.whatsappUrl}?text=${encodeURIComponent('Hello Kohinoor AV, I would like technical specs and institutional quotation details for Multimedia Projectors.')}`}
+              href={`${BUSINESS_INFO.whatsappUrl}?text=${encodeURIComponent('Hello Kohinoor AV, I would like technical specs and availability for Mitsubishi 8000 Series / Casio XJ-S400UN Multimedia Projectors.')}`}
               target="_blank"
               rel="noopener noreferrer"
               className="cursor-pointer px-6 py-3 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold rounded-xl transition-all shadow-md flex items-center gap-2"
@@ -117,7 +117,7 @@ export const MultimediaProjectorsPage: React.FC<MultimediaProjectorsPageProps> =
               <span>Inquire on WhatsApp</span>
             </a>
             <button
-              onClick={() => onOpenQuoteModal('Multimedia Projectors')}
+              onClick={() => onOpenQuoteModal('Multimedia Projectors (Mitsubishi 8000 Series / Casio XJ-S400UN)')}
               className="cursor-pointer px-5 py-3 bg-emerald-950/80 hover:bg-emerald-900 text-emerald-200 text-xs font-semibold rounded-xl border border-emerald-800 transition-colors"
             >
               Request Institutional Quote
@@ -125,13 +125,26 @@ export const MultimediaProjectorsPage: React.FC<MultimediaProjectorsPageProps> =
           </div>
         </div>
 
-        <div className="lg:col-span-6">
-          <div className="rounded-2xl overflow-hidden border border-emerald-800/80 bg-slate-900 shadow-2xl">
+        <div className="lg:col-span-6 grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="rounded-2xl overflow-hidden border border-white/20 bg-white p-4 shadow-xl space-y-2">
             <img
-              src="/images/multimedia_projector_pro_1793992811682.jpg"
-              alt="Professional High-Lumen Multimedia Projector with HDMI and Optical Zoom"
-              className="w-full h-auto object-cover"
+              src="/images/real-stock/mitsubishi-ud8900u.jpg"
+              alt="Mitsubishi Electric 8000 Series Multimedia Projector UD8900U"
+              className="w-full h-40 object-contain"
             />
+            <div className="text-[11px] font-bold text-slate-900 text-center border-t border-slate-100 pt-2">
+              Mitsubishi 8000 Series (White &amp; Black BL)
+            </div>
+          </div>
+          <div className="rounded-2xl overflow-hidden border border-white/20 bg-white p-4 shadow-xl space-y-2">
+            <img
+              src="/images/real-stock/casio-xj-s400un.jpg"
+              alt="Casio XJ-S400UN Superior Series LampFree WUXGA Projector"
+              className="w-full h-40 object-contain"
+            />
+            <div className="text-[11px] font-bold text-slate-900 text-center border-t border-slate-100 pt-2">
+              Casio XJ-S400UN LampFree WUXGA
+            </div>
           </div>
         </div>
       </div>
@@ -140,10 +153,10 @@ export const MultimediaProjectorsPage: React.FC<MultimediaProjectorsPageProps> =
       <div className="space-y-6">
         <div className="max-w-2xl">
           <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900">
-            Multimedia Projector Lineup ({projectorProducts.length} Verified Models)
+            Ready-Stock Multimedia Projectors ({projectorProducts.length} Models)
           </h2>
           <p className="text-xs text-slate-500 mt-1">
-            Casio, Panasonic, NEC, Mitsubishi &amp; MAGAPOWER models with verified brightness and native optical specifications.
+            Official Mitsubishi Electric 8000 Series and Casio LampFree projectors with verified optical specifications.
           </p>
         </div>
 
@@ -160,13 +173,13 @@ export const MultimediaProjectorsPage: React.FC<MultimediaProjectorsPageProps> =
         </div>
       </div>
 
-      {/* Cross-Link to Dedicated Category 3 (Screens) & Category 4 (Mounts) */}
+      {/* Cross-Link to Dedicated Category 3 (Screens) & Supporting Mounting Kits */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div className="bg-white rounded-2xl border border-slate-200 p-6 flex items-center justify-between gap-4 shadow-xs">
           <div className="space-y-1">
-            <div className="text-[11px] font-bold text-emerald-700 uppercase">Category 03</div>
+            <div className="text-[11px] font-bold text-emerald-700 uppercase">Priority Category 03</div>
             <h3 className="text-base font-extrabold text-slate-900">Projection Screens</h3>
-            <p className="text-xs text-slate-600">Tripod, Wall-Mounted &amp; Motorized Electric (6×6 to 13×10 ft).</p>
+            <p className="text-xs text-slate-600">Wall-Mounted, Portable Tripod / Stand &amp; Motorized Electric (6×6 to 13×10 ft).</p>
           </div>
           <button
             onClick={() => onNavigate('projection-screens')}
@@ -179,9 +192,9 @@ export const MultimediaProjectorsPage: React.FC<MultimediaProjectorsPageProps> =
 
         <div className="bg-white rounded-2xl border border-slate-200 p-6 flex items-center justify-between gap-4 shadow-xs">
           <div className="space-y-1">
-            <div className="text-[11px] font-bold text-emerald-700 uppercase">Category 04</div>
+            <div className="text-[11px] font-bold text-emerald-700 uppercase">Installation Hardware</div>
             <h3 className="text-base font-extrabold text-slate-900">Projector Mounting Kits</h3>
-            <p className="text-xs text-slate-600">Ceiling mounts, extended telescopic drops &amp; short-throw brackets.</p>
+            <p className="text-xs text-slate-600">Ceiling mounts, extended telescopic drops &amp; short-throw wall brackets.</p>
           </div>
           <button
             onClick={() => onNavigate('projector-mounting-kits')}

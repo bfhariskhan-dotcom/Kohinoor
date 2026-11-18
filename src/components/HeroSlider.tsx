@@ -25,43 +25,43 @@ interface Slide {
 const SLIDES: Slide[] = [
   {
     id: 1,
-    title: 'Smart Audio Visual & Classroom Systems',
-    subtitle: 'Digital Podiums, 4K Interactive LEDs, Projectors & Conference Audio across Pakistan.',
-    image: '/images/client-uploads/upload_5.jpg',
-    alt: 'Beterva Digital Smart Podiums in University Auditorium',
-    productName: 'Turnkey Smart Classroom'
+    title: '4K Interactive LED Displays (55" – 110")',
+    subtitle: '20-point multi-touch panels with Dual OS (Android + Windows OPS) in ready stock across Pakistan.',
+    image: '/images/products/product_6.jpg',
+    alt: 'Kohinoor AV Interactive LED Displays Warehouse Stock 55 to 110 Inch',
+    productName: 'Interactive LED Display (55"–110")'
   },
   {
     id: 2,
-    title: 'Interactive Steel Digital Rostrums',
-    subtitle: '21.5", 32" & 43" touch podiums with built-in 60W audio, deployed at NUST & universities.',
-    image: '/images/client-uploads/upload_3.jpg',
-    alt: 'Digital Rostrum with Built-in Touch & AV Controller Interface',
-    productName: 'Digital Podiums (21.5" - 43")'
+    title: 'Casio & Mitsubishi Multimedia Projectors',
+    subtitle: 'Mitsubishi 8000 Series (7,300–8,500 Lumens) & Casio XJ-S400UN LampFree Laser/LED projectors.',
+    image: '/images/real-stock/mitsubishi-ud8900u.jpg',
+    alt: 'Mitsubishi Electric 8000 Series Multimedia Projector UD8900U White Finish',
+    productName: 'Mitsubishi 8000 Series & Casio XJ-S400UN'
   },
   {
     id: 3,
-    title: '4K Interactive Flat Panel Displays',
-    subtitle: '20-point touch screens (55" to 110") with Dual OS Android & Windows for modern teaching.',
-    image: '/images/products/product_6.jpg',
-    alt: 'Full Series of Interactive Flat Panel LEDs 55 to 110 inch',
-    productName: 'Interactive Flat Panel 86"'
+    title: 'Black & White Digital Podiums',
+    subtitle: 'Dual gooseneck & 2 wireless mics, 60W audio output, MP3/USB/SD/AUX console & 29 kg steel chassis.',
+    image: '/images/client-uploads/upload_3.jpg',
+    alt: 'Digital Podium Installation in University Lecture Hall',
+    productName: 'Black & White Digital Podiums'
   },
   {
     id: 4,
-    title: 'Council Conference Audio Systems',
-    subtitle: 'Chairman priority override & delegate microphones built for boardrooms and chambers.',
-    image: '/images/client-uploads/upload_2.jpg',
-    alt: 'Multinational Conference Room Installation with Conference Microphones',
-    productName: 'MA4617 Conference System'
+    title: 'Tenveo TEVO-VA3000E Video Conferencing',
+    subtitle: '10X Lossless Zoom HD 1080p PTZ camera, speakerphone & 2 expansion mics for up to 25 people.',
+    image: '/images/real-stock/tenveo-va3000e.jpg',
+    alt: 'Tenveo TEVO-VA3000E All-in-One Video and Audio Conference System',
+    productName: 'Tenveo TEVO-VA3000 / TEVO-VA3000E'
   },
   {
     id: 5,
-    title: '4K AI Auto-Tracking PTZ Cameras',
-    subtitle: 'Tag-free presenter tracking with 20x optical zoom for hybrid lecture halls.',
-    image: '/images/ptz_camera_tracking_1793992811906.jpg',
-    alt: '4K PTZ Robotic Tracking Conference Camera',
-    productName: '4K AI Auto-Tracking PTZ Camera'
+    title: 'Stage & Floor Teleprompters (TP27–TP100)',
+    subtitle: '27" to 100" Full HD stage monitor prompters with foot pedal, remote & HDMI/SDI/Wireless inputs.',
+    image: '/images/products/product_2.jpg',
+    alt: 'Stage Monitor Floor Captioner Teleprompter System TP27 to TP100',
+    productName: 'Stage Floor Teleprompters (TP27–TP100)'
   }
 ];
 
@@ -114,10 +114,10 @@ export const HeroSlider: React.FC<HeroSliderProps> = () => {
       <div className="absolute top-0 left-1/4 w-[480px] h-[480px] bg-emerald-300/20 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute bottom-0 right-10 w-[400px] h-[400px] bg-emerald-200/20 rounded-full blur-[120px] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-10 sm:py-14 lg:py-16 relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[340px] sm:min-h-[380px]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8 sm:py-12 lg:py-14 relative z-10">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 lg:gap-12 items-center">
           {/* Left Text Carrier (6 columns): Strictly Heading + Description + 1 Button */}
-          <div className="lg:col-span-6 space-y-5">
+          <div className="lg:col-span-6 space-y-4 sm:space-y-5">
             <AnimatePresence mode="wait">
               <motion.div
                 key={`slide-content-${slide.id}`}
@@ -148,7 +148,7 @@ export const HeroSlider: React.FC<HeroSliderProps> = () => {
             </AnimatePresence>
           </div>
 
-          {/* Right Clean Image Stage (6 columns) */}
+          {/* Right Clean Image Stage (6 columns) — Full Uncropped Product View */}
           <div className="lg:col-span-6">
             <AnimatePresence mode="wait">
               <motion.div
@@ -159,11 +159,11 @@ export const HeroSlider: React.FC<HeroSliderProps> = () => {
                 transition={{ duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
                 className="relative"
               >
-                <div className="rounded-2xl overflow-hidden border border-white/15 shadow-2xl bg-slate-950 aspect-16/10">
+                <div className="rounded-2xl overflow-hidden border border-white/25 shadow-2xl bg-white p-3 sm:p-4 h-[250px] sm:h-[310px] lg:h-[340px] flex items-center justify-center">
                   <img
                     src={slide.image}
                     alt={slide.alt}
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-contain rounded-xl"
                   />
                 </div>
               </motion.div>

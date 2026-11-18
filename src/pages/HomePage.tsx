@@ -43,16 +43,16 @@ export const HomePage: React.FC<HomePageProps> = ({
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  // Representative hardware from all 8 categories in exact requested sequence (zero prices)
+  // Representative hardware in exact ready-stock priority sequence 1 to 5 (zero prices)
   const featuredProducts = [
     PRODUCTS.find((p) => p.id === 'interactive-led-75-85-86'),
-    PRODUCTS.find((p) => p.id === 'casio-xj-v2-projector'),
-    PRODUCTS.find((p) => p.id === 'electric-motorized-projection-screen'),
-    PRODUCTS.find((p) => p.id === 'universal-ceiling-projector-mount'),
+    PRODUCTS.find((p) => p.id === 'mitsubishi-8000-series-projector'),
+    PRODUCTS.find((p) => p.id === 'casio-xj-s400un-projector'),
+    PRODUCTS.find((p) => p.id === 'wall-mounted-projection-screen'),
+    PRODUCTS.find((p) => p.id === 'tripod-stand-projection-screen'),
     PRODUCTS.find((p) => p.id === 'black-digital-podium'),
-    PRODUCTS.find((p) => p.id === 'cmx-ea120-ea240a-amplifier'),
-    PRODUCTS.find((p) => p.id === 'beterva-be2300-chairman-unit'),
-    PRODUCTS.find((p) => p.id === 'king-teleprompter-tp43')
+    PRODUCTS.find((p) => p.id === 'tenveo-va3000e-conference-system'),
+    PRODUCTS.find((p) => p.id === 'stage-teleprompter-tp43-tp55-tp65')
   ].filter(Boolean) as Product[];
 
   const clientProjects = [
@@ -169,11 +169,11 @@ export const HomePage: React.FC<HomePageProps> = ({
             transition={{ duration: 0.5 }}
             className="lg:col-span-5"
           >
-            <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-slate-950 aspect-16/10">
+            <div className="rounded-2xl overflow-hidden shadow-lg border border-slate-200 bg-white p-2.5 flex items-center justify-center">
               <img
                 src="/images/client-uploads/upload_3.jpg"
                 alt="Digital Teaching Rostrum in University Lecture Hall"
-                className="w-full h-full object-cover"
+                className="w-full h-auto max-h-[380px] object-contain rounded-xl"
               />
             </div>
           </motion.div>
@@ -211,11 +211,11 @@ export const HomePage: React.FC<HomePageProps> = ({
               className="group bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-xs hover:border-emerald-500 hover:shadow-lg transition-all duration-300 flex flex-col justify-between cursor-pointer"
               onClick={() => onNavigate(cat.id as PageId)}
             >
-              <div className="aspect-4/3 overflow-hidden bg-slate-100 relative">
+              <div className="aspect-4/3 overflow-hidden bg-slate-50/90 border-b border-slate-100 flex items-center justify-center p-4 relative">
                 <img
                   src={cat.heroImage}
                   alt={cat.name}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
 
@@ -248,7 +248,7 @@ export const HomePage: React.FC<HomePageProps> = ({
           <div className="flex items-end justify-between gap-4">
             <div>
               <span className="text-[11px] font-bold text-emerald-700 uppercase tracking-wider">
-                Commercial AV Hardware · Category Sequence 1–8
+                Ready-Stock Hardware · Priority Lineup 1–5
               </span>
               <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
                 Featured Equipment Lineup
@@ -328,11 +328,11 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
 
         <div className="bg-white rounded-2xl border border-slate-200 overflow-hidden shadow-md grid grid-cols-1 lg:grid-cols-12 items-center">
-          <div className="lg:col-span-7 aspect-16/10 lg:aspect-auto lg:h-[340px] bg-slate-950 overflow-hidden">
+          <div className="lg:col-span-7 h-[260px] sm:h-[340px] lg:h-[380px] bg-slate-50 p-3 sm:p-4 flex items-center justify-center overflow-hidden border-b lg:border-b-0 lg:border-r border-slate-200">
             <img
               src={clientProjects[activeProjectSlide].image}
               alt={clientProjects[activeProjectSlide].title}
-              className="w-full h-full object-cover"
+              className="w-full h-full object-contain rounded-xl"
             />
           </div>
           <div className="lg:col-span-5 p-6 space-y-3">

@@ -21,7 +21,7 @@ export const AudioEquipmentPage: React.FC<AudioEquipmentPageProps> = ({
       {/* Header */}
       <div className="space-y-3 max-w-3xl">
         <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
-          Category 06 · Commercial Sound Reinforcement
+          Category 07 · Commercial Sound Reinforcement
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
           Audio Equipment
@@ -39,7 +39,7 @@ export const AudioEquipmentPage: React.FC<AudioEquipmentPageProps> = ({
           </div>
           <h3 className="text-xs font-bold text-slate-900">Audio Amplifiers</h3>
           <p className="text-xs text-slate-600 leading-relaxed">
-            CMX EA-120 / EA-240A rackmount PA mixer amplifiers with 100V/70V &amp; 4–16Ω zone outputs.
+            CMX EA-120A / EA-240A rackmount PA mixer amplifiers with 100V/70V &amp; 4–16Ω zone outputs.
           </p>
         </div>
 
@@ -122,11 +122,11 @@ export const AudioEquipmentPage: React.FC<AudioEquipmentPageProps> = ({
         </div>
 
         <div className="lg:col-span-6">
-          <div className="rounded-2xl overflow-hidden border border-emerald-800/80 bg-slate-900 shadow-2xl">
+          <div className="rounded-2xl overflow-hidden border border-emerald-800/80 bg-white shadow-2xl p-6">
             <img
-              src="/images/catalog/audio-mixer-amplifier.jpg"
-              alt="CMX PA Mixer Amplifier and Dual-Channel UHF Wireless Microphones"
-              className="w-full h-auto object-cover"
+              src="/images/real-stock/cmx-ea-amplifier.png"
+              alt="CMX EA-120A PA Mixer Amplifier"
+              className="w-full h-auto object-contain max-h-72 mx-auto"
             />
           </div>
         </div>

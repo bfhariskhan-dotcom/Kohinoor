@@ -21,7 +21,7 @@ export const ProjectorMountsPage: React.FC<ProjectorMountsPageProps> = ({
       {/* Header */}
       <div className="space-y-3 max-w-3xl">
         <div className="text-xs font-bold text-emerald-700 uppercase tracking-wider">
-          Category 04 · Structural Installation Hardware
+          Category 08 · Structural Installation Hardware
         </div>
         <h1 className="text-3xl sm:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
           Projector Mounting Kits
@@ -42,7 +42,7 @@ export const ProjectorMountsPage: React.FC<ProjectorMountsPageProps> = ({
             Commercial Steel Ceiling &amp; Wall Mounting Brackets
           </h2>
           <p className="text-xs sm:text-sm text-emerald-100/85 leading-relaxed">
-            Built with heavy-gauge cold-rolled steel and brushed aluminum columns to eliminate image vibration. Compatible with Casio, Panasonic, NEC, Mitsubishi, and MAGAPOWER projectors with complete internal cable concealment and multi-size M4/M5/M6 screw hardware.
+            Built with heavy-gauge cold-rolled steel and brushed aluminum columns to eliminate image vibration. Compatible with Mitsubishi Electric, Casio, Panasonic, and NEC projectors with complete internal cable concealment and multi-size M4/M5/M6 screw hardware.
           </p>
 
           <div className="space-y-2 text-xs text-emerald-100/90">
@@ -80,11 +80,11 @@ export const ProjectorMountsPage: React.FC<ProjectorMountsPageProps> = ({
         </div>
 
         <div className="lg:col-span-6">
-          <div className="rounded-2xl overflow-hidden border border-emerald-800/80 bg-white shadow-2xl p-3">
+          <div className="rounded-2xl overflow-hidden border border-emerald-800/80 bg-white shadow-2xl p-4">
             <img
-              src="/images/catalog/projector-ceiling-mount.jpg"
+              src="/images/real-stock/projector-ceiling-mount.jpg"
               alt="Universal Heavy-Duty Ceiling Projector Mounting Kit with Telescopic Pole and Hardware"
-              className="w-full h-auto object-contain rounded-xl"
+              className="w-full h-auto object-contain rounded-xl max-h-80 mx-auto"
             />
           </div>
         </div>

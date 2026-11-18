@@ -106,13 +106,13 @@ export const HeroSlider: React.FC<HeroSliderProps> = () => {
 
   return (
     <section
-      className="relative text-white overflow-hidden bg-gradient-to-br from-[#062c1b] via-[#0a3d26] to-[#041f13] border-b border-emerald-900/50"
+      className="relative text-white overflow-hidden bg-gradient-to-br from-emerald-700 via-emerald-600 to-emerald-800 border-b border-emerald-500/40"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Subtle Ambient Emerald Glow */}
-      <div className="absolute top-0 left-1/4 w-[480px] h-[480px] bg-emerald-500/15 rounded-full blur-[130px] pointer-events-none" />
-      <div className="absolute bottom-0 right-10 w-[400px] h-[400px] bg-emerald-400/15 rounded-full blur-[120px] pointer-events-none" />
+      {/* Subtle Ambient Light-Emerald Glow */}
+      <div className="absolute top-0 left-1/4 w-[480px] h-[480px] bg-emerald-300/20 rounded-full blur-[130px] pointer-events-none" />
+      <div className="absolute bottom-0 right-10 w-[400px] h-[400px] bg-emerald-200/20 rounded-full blur-[120px] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 py-10 sm:py-14 lg:py-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center min-h-[340px] sm:min-h-[380px]">
@@ -138,9 +138,9 @@ export const HeroSlider: React.FC<HeroSliderProps> = () => {
                 <div className="pt-1">
                   <button
                     onClick={handleWhatsAppSlideInquiry}
-                    className="cursor-pointer px-5 py-2.5 bg-emerald-600 hover:bg-emerald-500 active:scale-95 text-white text-xs font-bold rounded-xl shadow-lg shadow-emerald-950/40 transition-all inline-flex items-center gap-2"
+                    className="cursor-pointer px-5 py-2.5 bg-white hover:bg-emerald-50 active:scale-95 text-emerald-800 text-xs font-extrabold rounded-xl shadow-lg shadow-emerald-900/25 transition-all inline-flex items-center gap-2"
                   >
-                    <MessageSquare className="w-3.5 h-3.5 fill-current" />
+                    <MessageSquare className="w-3.5 h-3.5 fill-current text-emerald-600" />
                     <span>Order on WhatsApp</span>
                   </button>
                 </div>

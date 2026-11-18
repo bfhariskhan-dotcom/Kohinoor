@@ -1386,7 +1386,7 @@ export const BUSINESS_INFO = {
   phone: '+92 333 5163220',
   phoneClean: '923335163220',
   landline: '051-2347377',
-  email: 'kohinoor_ibd@yahoo.co',
+  email: 'kohinoor_ibd@yahoo.co.uk',
   emailAlt: 'kohinoor_ibd@yahoo.co.uk',
   website: 'https://kohinoorav.com',
   whatsappUrl: 'https://wa.me/923335163220',

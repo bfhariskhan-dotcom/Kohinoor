@@ -84,7 +84,7 @@ export const MultimediaProjectorsPage: React.FC<MultimediaProjectorsPageProps> =
       </div>
 
       {/* Hero Showcase */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-gradient-to-br from-[#072115] via-[#0d3420] to-[#05180f] text-white rounded-3xl p-8 sm:p-12 border border-emerald-900/60 shadow-2xl">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center bg-gradient-to-br from-emerald-700 via-emerald-600 to-emerald-800 text-white rounded-3xl p-8 sm:p-12 border border-emerald-500/40 shadow-2xl">
         <div className="lg:col-span-6 space-y-4">
           <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
             Authorized Global Projector Brands for Institutions

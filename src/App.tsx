@@ -207,7 +207,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-slate-50 text-slate-800 selection:bg-emerald-700 selection:text-white relative">
+    <div className="min-h-screen flex flex-col bg-emerald-50/40 text-slate-800 selection:bg-emerald-600 selection:text-white relative">
       <CursorGlow />
 
       <Navbar

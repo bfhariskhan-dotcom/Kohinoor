@@ -88,7 +88,7 @@ export const ProjectionScreensPage: React.FC<ProjectionScreensPageProps> = ({
       </div>
 
       {/* Exact Standard Dimensions Matrix */}
-      <div className="bg-gradient-to-br from-[#062c1b] via-[#0a3d26] to-[#041f13] text-white rounded-3xl p-8 sm:p-10 border border-emerald-900/60 space-y-6 shadow-xl">
+      <div className="bg-gradient-to-br from-emerald-700 via-emerald-600 to-emerald-800 text-white rounded-3xl p-8 sm:p-10 border border-emerald-500/40 space-y-6 shadow-xl">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
           <div className="space-y-1.5">
             <div className="text-xs font-bold text-emerald-300 uppercase tracking-wider flex items-center gap-1.5">

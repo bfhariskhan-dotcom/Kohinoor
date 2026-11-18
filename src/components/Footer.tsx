@@ -16,7 +16,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
   };
 
   return (
-    <footer className="bg-slate-50 text-slate-600 pt-14 pb-10 border-t border-slate-200">
+    <footer className="bg-emerald-50/60 text-slate-600 pt-14 pb-10 border-t border-emerald-200/80">
       {/* Compact Trust Ribbon */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 pb-10 border-b border-slate-200/80 grid grid-cols-1 md:grid-cols-3 gap-5">
         <div className="flex items-start gap-3.5 p-4 bg-white rounded-2xl border border-slate-200/80">
@@ -145,7 +145,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
 
             <div className="flex items-center gap-2">
               <Phone className="w-4 h-4 text-emerald-700 shrink-0" />
-              <a href={`tel:${BUSINESS_INFO.phoneClean}`} className="hover:text-emerald-700 font-bold text-slate-900">
+              <a href={`tel:${BUSINESS_INFO.phoneClean}`} className="hover:text-emerald-800 font-extrabold text-sm text-emerald-700 tabular-nums">
                 {BUSINESS_INFO.phone}
               </a>
             </div>

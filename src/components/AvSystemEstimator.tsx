@@ -104,10 +104,10 @@ export const AvSystemEstimator: React.FC = () => {
   };
 
   return (
-    <div className="bg-gradient-to-br from-[#072115] via-[#0d3420] to-[#05180f] text-white rounded-3xl p-6 sm:p-10 border border-emerald-900/60 shadow-2xl relative overflow-hidden">
+    <div className="bg-gradient-to-br from-emerald-700 via-emerald-600 to-emerald-800 text-white rounded-3xl p-6 sm:p-10 border border-emerald-500/40 shadow-2xl relative overflow-hidden">
       {/* Decorative Ambient Radial Spotlights */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-500/15 rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-teal-500/10 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute top-0 right-0 w-80 h-80 bg-emerald-300/20 rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-80 h-80 bg-teal-300/15 rounded-full blur-3xl pointer-events-none" />
 
       <div className="relative z-10 space-y-6 sm:space-y-8">
         {/* Header */}
@@ -137,8 +137,8 @@ export const AvSystemEstimator: React.FC = () => {
                 onClick={() => setSelectedSpaceId(space.id)}
                 className={`cursor-pointer p-4 rounded-2xl text-left transition-all border flex flex-col justify-between gap-3 ${
                   isSelected
-                    ? 'bg-emerald-700 border-emerald-400 shadow-[0_10px_25px_rgba(16,185,129,0.3)] scale-102'
-                    : 'bg-white/5 border-white/10 hover:bg-white/10 hover:border-white/20'
+                    ? 'bg-emerald-900/70 border-white shadow-[0_10px_25px_rgba(6,78,59,0.3)] scale-102'
+                    : 'bg-white/10 border-white/20 hover:bg-white/15 hover:border-white/35'
                 }`}
               >
                 <div className="flex items-center justify-between">

@@ -130,7 +130,7 @@ export const ConferenceSystemsPage: React.FC<ConferenceSystemsPageProps> = ({
       </div>
 
       {/* BETERVA BE-2300 Technical Banner */}
-      <div className="bg-gradient-to-br from-[#072115] via-[#0d3420] to-[#05180f] text-white rounded-3xl p-8 sm:p-12 border border-emerald-900/60 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-2xl">
+      <div className="bg-gradient-to-br from-emerald-700 via-emerald-600 to-emerald-800 text-white rounded-3xl p-8 sm:p-12 border border-emerald-500/40 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-2xl">
         <div className="lg:col-span-6 space-y-5">
           <div className="inline-flex items-center gap-1.5 text-emerald-300 text-xs font-bold uppercase tracking-wider">
             <Shield className="w-4 h-4" />

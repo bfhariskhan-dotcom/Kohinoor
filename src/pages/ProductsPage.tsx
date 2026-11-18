@@ -139,7 +139,7 @@ export const ProductsPage: React.FC<ProductsPageProps> = ({
       )}
 
       {/* Institutional Quotation Banner */}
-      <div className="bg-gradient-to-br from-[#072115] via-[#0d3420] to-[#05180f] text-white rounded-3xl p-8 sm:p-12 border border-emerald-900/60 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
+      <div className="bg-gradient-to-br from-emerald-700 via-emerald-600 to-emerald-800 text-white rounded-3xl p-8 sm:p-12 border border-emerald-500/40 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
         <div className="space-y-1.5 text-center md:text-left">
           <span className="text-xs font-bold text-emerald-400 uppercase tracking-wider">
             Institutional Procurement &amp; Tenders

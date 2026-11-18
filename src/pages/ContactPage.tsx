@@ -259,7 +259,7 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
                   <span className="font-bold text-slate-900 block">Phone / WhatsApp:</span>
                   <a
                     href={`tel:${BUSINESS_INFO.phoneClean}`}
-                    className="text-emerald-700 hover:underline block font-bold"
+                    className="text-emerald-700 hover:underline block font-extrabold text-base sm:text-lg tabular-nums"
                   >
                     {BUSINESS_INFO.phone}
                   </a>
@@ -275,9 +275,6 @@ export const ContactPage: React.FC<ContactPageProps> = () => {
                   <span className="font-bold text-slate-900 block">Email Inquiries:</span>
                   <a href={`mailto:${BUSINESS_INFO.email}`} className="text-emerald-700 hover:underline block font-semibold">
                     {BUSINESS_INFO.email}
-                  </a>
-                  <a href={`mailto:${BUSINESS_INFO.emailAlt}`} className="text-slate-500 hover:underline text-[11px] block">
-                    {BUSINESS_INFO.emailAlt}
                   </a>
                 </div>
               </div>

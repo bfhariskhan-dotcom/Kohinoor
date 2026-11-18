@@ -6,10 +6,10 @@ export const WhatsAppFloatingButton: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   const quickMessages = [
-    'Pricing for Digital Podiums',
-    'Pricing for 75" / 86" Interactive LEDs',
-    'Conference Room Audio Quote',
-    'Turnkey Smart Classroom Setup'
+    'Interactive LED Displays (55"–110") Specs',
+    'Multimedia Projectors & Screens Inquiry',
+    'Black & Table-Style Digital Podiums',
+    'BETERVA BE-2300 Conference & King Teleprompters'
   ];
 
   const handleSendQuick = (msg: string) => {

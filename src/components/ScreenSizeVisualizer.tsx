@@ -132,8 +132,8 @@ export const ScreenSizeVisualizer: React.FC = () => {
       {/* Visual Comparison Stage */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
         {/* Left Visual Representation */}
-        <div className="lg:col-span-6 bg-[#072115] rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center min-h-[300px] relative overflow-hidden border border-emerald-900/60">
-          <div className="absolute inset-0 bg-[radial-gradient(#15803d_1px,transparent_1px)] [background-size:16px_16px] opacity-25" />
+        <div className="lg:col-span-6 bg-emerald-800 rounded-2xl p-6 sm:p-8 flex flex-col items-center justify-center min-h-[300px] relative overflow-hidden border border-emerald-600/60">
+          <div className="absolute inset-0 bg-[radial-gradient(#34d399_1px,transparent_1px)] [background-size:16px_16px] opacity-20" />
 
           {/* Scaled Bezel Preview */}
           <motion.div
@@ -141,9 +141,9 @@ export const ScreenSizeVisualizer: React.FC = () => {
             initial={{ scale: 0.85, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.4 }}
-            className="relative z-10 w-full max-w-md bg-slate-950 border-2 border-emerald-500 rounded-xl p-3 shadow-[0_0_40px_rgba(21,128,61,0.35)] flex flex-col items-center text-center space-y-2"
+            className="relative z-10 w-full max-w-md bg-slate-950 border-2 border-emerald-400 rounded-xl p-3 shadow-[0_0_40px_rgba(16,185,129,0.3)] flex flex-col items-center text-center space-y-2"
           >
-            <div className="w-full aspect-16/9 bg-gradient-to-br from-[#0c3120] via-slate-950 to-[#072115] rounded-lg flex flex-col items-center justify-center p-4 border border-emerald-400/30">
+            <div className="w-full aspect-16/9 bg-gradient-to-br from-emerald-800 via-emerald-900 to-emerald-950 rounded-lg flex flex-col items-center justify-center p-4 border border-emerald-400/40">
               <Tv className="w-10 h-10 text-emerald-400 mb-1" />
               <div className="text-xl sm:text-2xl font-extrabold text-white">
                 {active.size}

@@ -43,12 +43,16 @@ export const HomePage: React.FC<HomePageProps> = ({
     setOpenFaq(openFaq === index ? null : index);
   };
 
-  // Highlight representative products across key categories (zero prices)
+  // Representative hardware from all 8 categories in exact requested sequence (zero prices)
   const featuredProducts = [
     PRODUCTS.find((p) => p.id === 'interactive-led-75-85-86'),
     PRODUCTS.find((p) => p.id === 'casio-xj-v2-projector'),
+    PRODUCTS.find((p) => p.id === 'electric-motorized-projection-screen'),
+    PRODUCTS.find((p) => p.id === 'universal-ceiling-projector-mount'),
     PRODUCTS.find((p) => p.id === 'black-digital-podium'),
-    PRODUCTS.find((p) => p.id === 'beterva-be2300-chairman-unit')
+    PRODUCTS.find((p) => p.id === 'cmx-ea120-ea240a-amplifier'),
+    PRODUCTS.find((p) => p.id === 'beterva-be2300-chairman-unit'),
+    PRODUCTS.find((p) => p.id === 'king-teleprompter-tp43')
   ].filter(Boolean) as Product[];
 
   const clientProjects = [
@@ -238,13 +242,13 @@ export const HomePage: React.FC<HomePageProps> = ({
         </div>
       </section>
 
-      {/* 6. FEATURED PRODUCTS (Zero Prices Shown Anywhere) */}
-      <section className="bg-slate-100/60 py-12 border-y border-slate-200">
+      {/* 6. FEATURED PRODUCTS IN EXACT 1–8 SEQUENCE (Zero Prices Shown Anywhere) */}
+      <section className="bg-emerald-50/70 py-12 border-y border-emerald-200/70">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
           <div className="flex items-end justify-between gap-4">
             <div>
               <span className="text-[11px] font-bold text-emerald-700 uppercase tracking-wider">
-                Commercial AV Hardware
+                Commercial AV Hardware · Category Sequence 1–8
               </span>
               <h2 className="text-xl sm:text-2xl font-extrabold text-slate-900 tracking-tight">
                 Featured Equipment Lineup
@@ -259,7 +263,7 @@ export const HomePage: React.FC<HomePageProps> = ({
             </button>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {featuredProducts.map((prod, idx) => (
               <ProductCard
                 key={prod.id}
@@ -401,12 +405,12 @@ export const HomePage: React.FC<HomePageProps> = ({
 
       {/* 12. COMPACT CALL TO ACTION */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="bg-gradient-to-br from-[#062c1b] via-[#0a3d26] to-[#041f13] rounded-2xl p-6 sm:p-10 text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border border-emerald-900/60 shadow-xl">
+        <div className="bg-gradient-to-br from-emerald-700 via-emerald-600 to-emerald-800 rounded-2xl p-6 sm:p-10 text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-6 border border-emerald-500/40 shadow-xl">
           <div className="space-y-1.5 max-w-xl">
             <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-white">
               Need AV Equipment for Your Institution?
             </h2>
-            <p className="text-xs sm:text-sm text-emerald-100/85">
+            <p className="text-xs sm:text-sm text-emerald-50/95">
               Request technical specifications, live product demonstrations, or turnkey installations across Pakistan.
             </p>
           </div>
@@ -415,14 +419,14 @@ export const HomePage: React.FC<HomePageProps> = ({
               href={BUSINESS_INFO.whatsappUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="cursor-pointer px-4 py-2.5 bg-white text-emerald-900 hover:bg-emerald-50 text-xs font-bold rounded-lg transition-all inline-flex items-center gap-1.5"
+              className="cursor-pointer px-4 py-2.5 bg-white text-emerald-800 hover:bg-emerald-50 text-xs font-bold rounded-lg transition-all inline-flex items-center gap-1.5"
             >
-              <MessageSquare className="w-3.5 h-3.5 fill-current text-emerald-700" />
+              <MessageSquare className="w-3.5 h-3.5 fill-current text-emerald-600" />
               <span>Inquire on WhatsApp</span>
             </a>
             <button
               onClick={() => onOpenQuoteModal()}
-              className="cursor-pointer px-4 py-2.5 bg-emerald-700 hover:bg-emerald-600 text-white text-xs font-bold rounded-lg border border-emerald-500/40 transition-all"
+              className="cursor-pointer px-4 py-2.5 bg-emerald-800/80 hover:bg-emerald-900 text-white text-xs font-bold rounded-lg border border-white/25 transition-all"
             >
               Request Quotation
             </button>

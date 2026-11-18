@@ -230,7 +230,7 @@ export const AboutPage: React.FC<AboutPageProps> = ({ onNavigate }) => {
 
       {/* Headquarters Address Card */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-[#072115] via-[#0d3420] to-[#05180f] text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xl border border-emerald-900/60">
+        <div className="p-8 sm:p-10 rounded-3xl bg-gradient-to-br from-emerald-700 via-emerald-600 to-emerald-800 text-white flex flex-col md:flex-row items-start md:items-center justify-between gap-6 shadow-xl border border-emerald-500/40">
           <div className="space-y-2 max-w-xl">
             <div className="text-xs font-bold text-emerald-400 uppercase tracking-wider">
               Head Office · Blue Area, Islamabad

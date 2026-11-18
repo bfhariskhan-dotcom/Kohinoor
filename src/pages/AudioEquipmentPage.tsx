@@ -75,7 +75,7 @@ export const AudioEquipmentPage: React.FC<AudioEquipmentPageProps> = ({
       </div>
 
       {/* Partner CMX Audio Showcase */}
-      <div className="bg-gradient-to-br from-[#062c1b] via-[#0a3d26] to-[#041f13] text-white rounded-3xl p-8 sm:p-12 border border-emerald-900/60 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-2xl">
+      <div className="bg-gradient-to-br from-emerald-700 via-emerald-600 to-emerald-800 text-white rounded-3xl p-8 sm:p-12 border border-emerald-500/40 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center shadow-2xl">
         <div className="lg:col-span-6 space-y-5">
           <div className="text-xs font-bold text-emerald-300 uppercase tracking-wider">
             Official Partner Hardware · CMX Audio

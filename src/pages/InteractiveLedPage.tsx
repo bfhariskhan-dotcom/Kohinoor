@@ -82,7 +82,7 @@ export const InteractiveLedPage: React.FC<InteractiveLedPageProps> = ({
       </div>
 
       {/* Supply Lineup Banner */}
-      <div className="bg-gradient-to-br from-[#072115] via-[#0d3420] to-[#05180f] rounded-3xl overflow-hidden border border-emerald-900/60 shadow-2xl">
+      <div className="bg-gradient-to-br from-emerald-700 via-emerald-600 to-emerald-800 rounded-3xl overflow-hidden border border-emerald-500/40 shadow-2xl">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center p-8 sm:p-12">
           <div className="lg:col-span-6 space-y-5 text-white">
             <div className="inline-flex items-center gap-1.5 text-emerald-300 text-xs font-bold uppercase tracking-wider">
@@ -139,7 +139,7 @@ export const InteractiveLedPage: React.FC<InteractiveLedPageProps> = ({
                 alt="Interactive LED Displays Lineup 55 to 110 inch in Kohinoor AV Warehouse"
                 className="w-full h-auto object-cover"
               />
-              <div className="p-3 bg-[#05180f] text-[11px] text-emerald-200/90 flex items-center justify-between border-t border-emerald-900">
+              <div className="p-3 bg-emerald-900 text-[11px] text-emerald-100 flex items-center justify-between border-t border-emerald-700">
                 <span>Available Screen Sizes</span>
                 <span className="font-bold text-emerald-400">55" · 65" · 75" · 85" · 86" · 98" · 110"</span>
               </div>

@@ -97,7 +97,7 @@ export const DigitalPodiumsPage: React.FC<DigitalPodiumsPageProps> = ({
       </div>
 
       {/* SECTION A: BLACK DIGITAL PODIUM (MULTI-ANGLE) */}
-      <section className="bg-gradient-to-br from-[#072115] via-[#0d3420] to-[#05180f] text-white rounded-3xl p-6 sm:p-10 border border-emerald-900/60 shadow-2xl space-y-6">
+      <section className="bg-gradient-to-br from-emerald-700 via-emerald-600 to-emerald-800 text-white rounded-3xl p-6 sm:p-10 border border-emerald-500/40 shadow-2xl space-y-6">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
           <div className="lg:col-span-6 space-y-4">
             <div className="text-xs font-bold text-emerald-300 uppercase tracking-wider">

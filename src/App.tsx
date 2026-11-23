@@ -5,6 +5,7 @@ import { Footer } from './components/Footer';
 import { WhatsAppFloatingButton } from './components/WhatsAppFloatingButton';
 import { QuoteModal } from './components/QuoteModal';
 import { ProductDetailModal } from './components/ProductDetailModal';
+import { AdminLoginModal } from './components/AdminLoginModal';
 import { CursorGlow } from './components/CursorGlow';
 import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
@@ -22,12 +23,15 @@ import { SmartClassroomPage } from './pages/SmartClassroomPage';
 import { ProjectsPage } from './pages/ProjectsPage';
 import { GalleryPage } from './pages/GalleryPage';
 import { ContactPage } from './pages/ContactPage';
+import { AdminPage } from './pages/AdminPage';
 
 export default function App() {
   const [currentPage, setCurrentPage] = useState<PageId>('home');
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [quotePreselectedProduct, setQuotePreselectedProduct] = useState<string | undefined>();
+  const [adminLoginOpen, setAdminLoginOpen] = useState(false);
+  const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -48,7 +52,8 @@ export default function App() {
         'smart-classroom-solutions',
         'projects',
         'gallery',
-        'contact'
+        'contact',
+        'admin'
       ];
       if (validPages.includes(hash)) {
         setCurrentPage(hash);
@@ -195,6 +200,18 @@ export default function App() {
         );
       case 'contact':
         return <ContactPage onNavigate={handleNavigate} />;
+      case 'admin':
+        return (
+          <AdminPage
+            isAuthenticated={isAdminAuthenticated}
+            onLoginSuccess={() => setIsAdminAuthenticated(true)}
+            onLogout={() => {
+              setIsAdminAuthenticated(false);
+              handleNavigate('home');
+            }}
+            onNavigate={handleNavigate}
+          />
+        );
       default:
         return (
           <HomePage
@@ -221,6 +238,13 @@ export default function App() {
       <Footer
         onNavigate={handleNavigate}
         onOpenQuoteModal={() => handleOpenQuoteModal()}
+        onOpenAdmin={() => {
+          if (isAdminAuthenticated) {
+            handleNavigate('admin');
+          } else {
+            setAdminLoginOpen(true);
+          }
+        }}
       />
 
       <WhatsAppFloatingButton />
@@ -229,6 +253,16 @@ export default function App() {
         isOpen={quoteModalOpen}
         onClose={() => setQuoteModalOpen(false)}
         preSelectedProduct={quotePreselectedProduct}
+      />
+
+      <AdminLoginModal
+        isOpen={adminLoginOpen}
+        onClose={() => setAdminLoginOpen(false)}
+        onSuccess={() => {
+          setIsAdminAuthenticated(true);
+          setAdminLoginOpen(false);
+          handleNavigate('admin');
+        }}
       />
 
       <ProductDetailModal

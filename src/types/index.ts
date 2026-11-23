@@ -84,4 +84,5 @@ export type PageId =
   | 'ptz-robotic-cameras'
   | 'smart-classroom-solutions'
   | 'projects'
-  | 'contact';
+  | 'contact'
+  | 'admin';

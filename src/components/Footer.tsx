@@ -1,14 +1,15 @@
 import React from 'react';
 import { PageId } from '../types';
 import { BUSINESS_INFO, CATEGORIES } from '../data/products';
-import { MapPin, Phone, Mail, Clock, ExternalLink, ShieldCheck, Truck, Headphones } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, ExternalLink, ShieldCheck, Truck, Headphones, Lock } from 'lucide-react';
 
 interface FooterProps {
   onNavigate: (page: PageId) => void;
   onOpenQuoteModal: () => void;
+  onOpenAdmin: () => void;
 }
 
-export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) => {
+export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal, onOpenAdmin }) => {
   const handleNav = (page: PageId) => {
     onNavigate(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -185,8 +186,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal }) 
       {/* Bottom Legal Bar (No URL Text) */}
       <div className="max-w-7xl mx-auto px-4 sm:px-8 pt-6 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500">
         <p>&copy; {new Date().getFullYear()} Kohinoor Audio Visual. Established 1978. All rights reserved.</p>
-        <div className="flex items-center gap-3 text-[11px]">
+        <div className="flex items-center gap-4 text-[11px]">
           <span>United Plaza, Blue Area, Islamabad, Pakistan</span>
+          <button
+            type="button"
+            onClick={onOpenAdmin}
+            className="inline-flex items-center gap-1 text-slate-500 hover:text-emerald-700 font-semibold transition-colors cursor-pointer"
+          >
+            <Lock className="w-3 h-3" />
+            <span>Admin</span>
+          </button>
         </div>
       </div>
     </footer>

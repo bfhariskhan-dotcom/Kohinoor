@@ -82,13 +82,17 @@ export const Navbar: React.FC<NavbarProps> = ({
       <div className="bg-emerald-50/90 border-b border-emerald-200/70">
         <div className="max-w-7xl mx-auto px-4 sm:px-8 py-3.5 lg:py-3 flex flex-col lg:flex-row items-center justify-between gap-3.5 lg:gap-6">
           {/* Centered on Mobile / Left on Desktop: Large All-Green Company Name & Logo */}
-          <button
-            onClick={() => handleNavClick('home')}
+          <a
+            href="/"
+            onClick={(e) => {
+              e.preventDefault();
+              handleNavClick('home');
+            }}
             className="cursor-pointer focus:outline-none shrink-0 flex justify-center lg:justify-start"
             aria-label="Kohinoor Audio Visual Education Business System Home"
           >
             <Logo size="md" />
-          </button>
+          </a>
 
           {/* Centered on Mobile / Right Parallel on Desktop: Large Mobile Number in Light Green Box */}
           <a
@@ -132,15 +136,19 @@ export const Navbar: React.FC<NavbarProps> = ({
 
         {/* Desktop Nav Row: Clean Links, Zero CTA Buttons */}
         <div className="hidden lg:flex max-w-7xl mx-auto px-4 sm:px-8 h-12 items-center justify-between">
-          <nav className="flex items-center gap-7 text-sm font-semibold text-slate-700">
-            <button
-              onClick={() => handleNavClick('home')}
+          <nav className="flex items-center gap-7 text-sm font-semibold text-slate-700" aria-label="Main Navigation">
+            <a
+              href="/"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('home');
+              }}
               className={`cursor-pointer transition-colors py-2 whitespace-nowrap shrink-0 hover:text-emerald-700 ${
                 currentPage === 'home' ? 'text-emerald-700 font-bold border-b-2 border-emerald-600' : 'text-slate-700'
               }`}
             >
               Home
-            </button>
+            </a>
 
             {/* Products Dropdown (Exact 8 Categories in Order) */}
             <div
@@ -148,8 +156,12 @@ export const Navbar: React.FC<NavbarProps> = ({
               onMouseEnter={() => setProductsDropdownOpen(true)}
               onMouseLeave={() => setProductsDropdownOpen(false)}
             >
-              <button
-                onClick={() => handleNavClick('products')}
+              <a
+                href="/products"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNavClick('products');
+                }}
                 className={`cursor-pointer flex items-center gap-1 py-2 whitespace-nowrap shrink-0 transition-colors hover:text-emerald-700 ${
                   PRODUCT_PAGE_IDS.includes(currentPage)
                     ? 'text-emerald-700 font-bold'
@@ -158,79 +170,107 @@ export const Navbar: React.FC<NavbarProps> = ({
               >
                 <span>Products</span>
                 <ChevronDown className="w-4 h-4 text-slate-400" />
-              </button>
+              </a>
 
               {productsDropdownOpen && (
                 <div className="absolute top-full -left-4 w-72 bg-white rounded-2xl shadow-2xl border border-emerald-100 py-2.5 px-2 z-50 animate-in fade-in slide-in-from-top-2 duration-150">
-                  <button
-                    onClick={() => handleNavClick('products')}
-                    className="w-full text-left px-3 py-2 text-xs font-bold text-emerald-700 uppercase tracking-wider hover:bg-emerald-50 rounded-xl transition-colors cursor-pointer"
+                  <a
+                    href="/products"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      handleNavClick('products');
+                    }}
+                    className="block w-full text-left px-3 py-2 text-xs font-bold text-emerald-700 uppercase tracking-wider hover:bg-emerald-50 rounded-xl transition-colors cursor-pointer"
                   >
                     All Equipment Catalog &rarr;
-                  </button>
+                  </a>
                   <div className="h-px bg-slate-100 my-1" />
                   {CATEGORIES.map((cat, idx) => (
-                    <button
+                    <a
                       key={cat.id}
-                      onClick={() => handleNavClick(cat.id as PageId)}
-                      className={`w-full text-left px-3 py-2 text-xs font-semibold rounded-xl transition-colors cursor-pointer ${
+                      href={`/${cat.id}`}
+                      onClick={(e) => {
+                        e.preventDefault();
+                        handleNavClick(cat.id as PageId);
+                      }}
+                      className={`block w-full text-left px-3 py-2 text-xs font-semibold rounded-xl transition-colors cursor-pointer ${
                         currentPage === cat.id
                           ? 'bg-emerald-50 text-emerald-800 font-bold'
                           : 'text-slate-700 hover:text-emerald-700 hover:bg-emerald-50/80'
                       }`}
                     >
                       {idx + 1}. {cat.name}
-                    </button>
+                    </a>
                   ))}
                 </div>
               )}
             </div>
 
-            <button
-              onClick={() => handleNavClick('gallery')}
+            <a
+              href="/gallery"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('gallery');
+              }}
               className={`cursor-pointer transition-colors py-2 whitespace-nowrap shrink-0 hover:text-emerald-700 flex items-center gap-1.5 ${
                 currentPage === 'gallery' ? 'text-emerald-700 font-bold border-b-2 border-emerald-600' : 'text-slate-700'
               }`}
             >
               <Images className="w-4 h-4 text-emerald-600" />
               <span>Gallery</span>
-            </button>
+            </a>
 
-            <button
-              onClick={() => handleNavClick('smart-classroom-solutions')}
+            <a
+              href="/smart-classroom-solutions"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('smart-classroom-solutions');
+              }}
               className={`cursor-pointer transition-colors py-2 whitespace-nowrap shrink-0 hover:text-emerald-700 ${
                 currentPage === 'smart-classroom-solutions' ? 'text-emerald-700 font-bold border-b-2 border-emerald-600' : 'text-slate-700'
               }`}
             >
               Smart Classrooms
-            </button>
+            </a>
 
-            <button
-              onClick={() => handleNavClick('projects')}
+            <a
+              href="/projects"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('projects');
+              }}
               className={`cursor-pointer transition-colors py-2 whitespace-nowrap shrink-0 hover:text-emerald-700 ${
                 currentPage === 'projects' ? 'text-emerald-700 font-bold border-b-2 border-emerald-600' : 'text-slate-700'
               }`}
             >
               Projects
-            </button>
+            </a>
 
-            <button
-              onClick={() => handleNavClick('about')}
+            <a
+              href="/about"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('about');
+              }}
               className={`cursor-pointer transition-colors py-2 whitespace-nowrap shrink-0 hover:text-emerald-700 ${
                 currentPage === 'about' ? 'text-emerald-700 font-bold border-b-2 border-emerald-600' : 'text-slate-700'
               }`}
             >
               About
-            </button>
+            </a>
 
-            <button
-              onClick={() => handleNavClick('contact')}
+            <a
+              href="/contact"
+              onClick={(e) => {
+                e.preventDefault();
+                handleNavClick('contact');
+              }}
               className={`cursor-pointer transition-colors py-2 whitespace-nowrap shrink-0 hover:text-emerald-700 ${
                 currentPage === 'contact' ? 'text-emerald-700 font-bold border-b-2 border-emerald-600' : 'text-slate-700'
               }`}
             >
               Contact
-            </button>
+            </a>
           </nav>
 
           <div className="text-xs font-semibold text-emerald-700 flex items-center gap-2">

@@ -1,0 +1,39 @@
+# Kohinoor Audio Visual (kohinoorav.com)
+
+> Established in 1978 and headquartered in Blue Area, Islamabad, Kohinoor Audio Visual Education Business System is one of Pakistan's premier corporate, government, and educational Audio Visual (AV) equipment suppliers and turnkey system integrators.
+
+## Company Information
+- **Company Name**: Kohinoor Audio Visual Education Business System (Kohinoor AV)
+- **Founded**: 1978 (45+ years of institutional deployments across Pakistan)
+- **Head Office**: United Plaza, 2nd Floor, Fazlehaq Road, Blue Area, Islamabad 44000, Pakistan
+- **Phone / WhatsApp**: +92 333 5163220
+- **Landline**: 051-2347377
+- **Email**: kohinoor_ibd@yahoo.co.uk
+- **Website**: https://kohinoorav.com/
+- **Service Coverage**: Islamabad, Rawalpindi, Lahore, Karachi, Peshawar, Multan, Faisalabad, and all universities & government offices across Pakistan.
+
+## Ready-Stock Product Categories (Priority Order)
+1. [Interactive LED Displays (55", 65", 75", 85", 86", 98", 110")](https://kohinoorav.com/interactive-led-displays): 4K Ultra HD 20-point infrared touch panels with Dual OS (Android + Windows OPS), anti-glare 4mm tempered glass, and mobile trolley carts.
+2. [Multimedia Projectors](https://kohinoorav.com/multimedia-projectors):
+   - **Mitsubishi Electric 8000 Series** (`UD8900U`, `UD8850U`, `WD8700U`, `XD8600U` in White & Black `BL`): 7,300–8,500 ANSI lumens, 2800:1 contrast, dual-lamp failover, interchangeable lenses.
+   - **Casio XJ-S400UN (Superior Series LampFree)**: 4,000 ANSI lumens, WUXGA Real (`1920×1200`), Laser & LED R-Hybrid (20,000 hours, Mercury Free), 1.7x Optical Zoom.
+   - **Casio XJ-V100W**: 3,000 ANSI lumens, WXGA (`1280×800`), 1.5x zoom, 20,000-hour LampFree light source.
+3. [Projection Screens](https://kohinoorav.com/projection-screens): Wall-Mounted Manual Pull-Down, Portable Tripod / Floor Stand, and Electric Motorized RF screens (6×6 ft up to 13×10 ft).
+4. [Digital Podiums](https://kohinoorav.com/digital-podiums): **Black Digital Podium** and **White Digital Podium** variants with Dual Gooseneck Mics + 2 Wireless Handheld Mics, 60W audio output (100W power consumed), MP3/USB/SD/AUX panel, 580×420×1100 mm size, 29 kg chassis; plus 43" Executive Touch Rostrum (NCAI NUST reference).
+5. [Video Conferencing & Conference Systems](https://kohinoorav.com/conference-systems):
+   - **Tenveo TEVO-VA3000 / TEVO-VA3000E**: 10X Lossless Optical Zoom HD 1080p@30fps PTZ Camera, 51.3° FOV, 350° pan / 90° tilt, Full-Duplex Speakerphone, Central Hub, IR Remote, Bluetooth & USB plug-and-play, optional 2 Expansion Mics (`TEVO-VA3000E`) for up to 25 people (Zoom, MS Teams, WebEx, Polycom compatible).
+   - **BETERVA BE-2300**: Chairman Priority Unit (`BE-2300C`), Delegate Unit (`BE-2300D`), and Central Control Unit (`BE-2300M / BE-1000`).
+6. [Stage & Floor Teleprompters (TP27–TP100)](https://kohinoorav.com/teleprompters): Stage Monitor / Floor Captioner style (`TP27`, `TP32`, `TP43`, `TP55`, `TP65`, `TP75`, `TP85`, `TP100`), 1920×1080 Full HD, Foot Pedal, Wireless Remote Control, HDMI/SDI/Wireless inputs.
+7. [Audio Equipment](https://kohinoorav.com/audio-equipment): CMX Audio `EA-120` / `EA-240A` 120W/240W PA Mixer Amplifiers, `WM-U200B` Dual-Channel UHF Wireless Microphones, Wired Gooseneck Microphones, and Edifier Portable PA Systems.
+8. [Projector Mounting Kits](https://kohinoorav.com/projector-mounting-kits): Universal Cold-Rolled Steel Ceiling Mounts (`KAV-PMK-CEIL`) & Short-Throw Wall Boom Brackets (`KAV-PMK-WALL`).
+
+## Key Informational & Solutions Pages
+- [All Equipment Catalog](https://kohinoorav.com/products)
+- [Smart Classroom Solutions](https://kohinoorav.com/smart-classroom-solutions)
+- [Client Projects & Case Studies](https://kohinoorav.com/projects)
+- [Installation Gallery](https://kohinoorav.com/gallery)
+- [About Kohinoor AV (Est. 1978)](https://kohinoorav.com/about)
+- [Contact & Quotations](https://kohinoorav.com/contact)
+
+## Full Catalog Details
+- For complete technical specifications across all 24 models and institutional FAQs, see [llms-full.txt](https://kohinoorav.com/llms-full.txt).

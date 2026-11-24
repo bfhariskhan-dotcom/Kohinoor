@@ -163,6 +163,8 @@ export const HeroSlider: React.FC<HeroSliderProps> = () => {
                   <img
                     src={slide.image}
                     alt={slide.alt}
+                    fetchPriority={currentSlide === 0 ? 'high' : 'auto'}
+                    decoding="async"
                     className="w-full h-full object-contain rounded-xl"
                   />
                 </div>

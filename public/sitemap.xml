@@ -1,69 +1,471 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <!-- Core Pages -->
   <url>
     <loc>https://kohinoorav.com/</loc>
-    <lastmod>2026-11-06</lastmod>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/client-uploads/upload_5.jpg</image:loc>
+      <image:title>Kohinoor Audio Visual Pakistan — Smart Classroom and Auditorium Turnkey AV Solutions</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/client-uploads/logo.png</image:loc>
+      <image:title>Kohinoor Audio Visual Official Logo</image:title>
+    </image:image>
   </url>
   <url>
-    <loc>https://kohinoorav.com/#about</loc>
-    <lastmod>2026-11-06</lastmod>
+    <loc>https://kohinoorav.com/interactive-led-displays</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_6.jpg</image:loc>
+      <image:title>4K Interactive LED Displays 55 to 110 Inch Ready Stock Pakistan</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_7.jpg</image:loc>
+      <image:title>Interactive LED Display on Heavy-Duty Mobile Trolley Cart</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/multimedia-projectors</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/real-stock/mitsubishi-ud8900u.jpg</image:loc>
+      <image:title>Mitsubishi Electric 8000 Series Projector UD8900U UD8850U WD8700U XD8600U</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/real-stock/casio-xj-s400un.jpg</image:loc>
+      <image:title>Casio XJ-S400UN Superior Series LampFree WUXGA Projector</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/real-stock/casio-xj-v100w.jpg</image:loc>
+      <image:title>Casio XJ-V100W LampFree Laser and LED Classroom Projector</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/projection-screens</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/real-stock/wall-screen-clean.jpg</image:loc>
+      <image:title>Wall-Mounted and Electric Motorized Projection Screens Pakistan</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/real-stock/tripod-screen.jpg</image:loc>
+      <image:title>Portable Tripod Stand Projection Screen</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/digital-podiums</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/real-stock/digital-podium-black.jpg</image:loc>
+      <image:title>Black Digital Podium 60W Audio Dual Gooseneck and 2 Wireless Microphones</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_9.jpg</image:loc>
+      <image:title>White Digital Podium Interactive and Audio Lectern Variant</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_8.jpg</image:loc>
+      <image:title>Executive 43-Inch Smart Touch Rostrum NUST NCAI Deployment</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/conference-systems</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/real-stock/tenveo-va3000e.jpg</image:loc>
+      <image:title>Tenveo TEVO-VA3000E All-in-One 10X Zoom PTZ Video Conferencing System</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_17.jpg</image:loc>
+      <image:title>BETERVA BE-2300 Chairman and Delegate Conference Microphones</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/teleprompters</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_2.jpg</image:loc>
+      <image:title>Stage Monitor and Floor Captioner Teleprompter TP27 to TP100 Full HD</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/audio-equipment</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/real-stock/cmx-ea-amplifier.png</image:loc>
+      <image:title>CMX Audio EA-120 EA-240A Commercial PA Mixer Amplifier</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_5.jpg</image:loc>
+      <image:title>CMX WM-U200B Dual-Channel UHF Wireless Microphone System</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/projector-mounting-kits</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/real-stock/projector-ceiling-mount.jpg</image:loc>
+      <image:title>Universal Heavy-Duty Ceiling and Wall Projector Mounting Kit</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/ptz-robotic-cameras</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/real-stock/tenveo-va3000.jpg</image:loc>
+      <image:title>Tenveo TEVO-VA3000 10X Lossless Optical Zoom PTZ Camera</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/smart-classroom-solutions</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/products</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/projects</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_8.jpg</image:loc>
+      <image:title>NCAI NUST Smart Digital Rostrum Deployment Islamabad</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_14.jpg</image:loc>
+      <image:title>University Executive Dais Cold-Rolled Steel Digital Rostrum</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/gallery</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/client-uploads/upload_1.jpg</image:loc>
+      <image:title>Chairman Priority Microphone Station Installation Islamabad</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/client-uploads/upload_2.jpg</image:loc>
+      <image:title>Executive Council Chamber 30+ Seat Conference System Islamabad</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/client-uploads/upload_3.jpg</image:loc>
+      <image:title>University Lecture Amphitheater Digital Rostrum Rawalpindi Islamabad</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/client-uploads/upload_4.jpg</image:loc>
+      <image:title>Medical College Smart Classroom Steel Lectern Lahore</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/client-uploads/upload_6.jpg</image:loc>
+      <image:title>National Seminar Hall Cold-Rolled Steel Rostrum NCAI NUST</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/client-uploads/upload_7.jpg</image:loc>
+      <image:title>University Auditorium Interactive Lectern Peshawar</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/about</loc>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://kohinoorav.com/#products</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://kohinoorav.com/#digital-podiums</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://kohinoorav.com/#multimedia-projectors</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://kohinoorav.com/#interactive-led-displays</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://kohinoorav.com/#conference-systems</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://kohinoorav.com/#ptz-robotic-cameras</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://kohinoorav.com/#smart-classroom-solutions</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-  <url>
-    <loc>https://kohinoorav.com/#projects</loc>
-    <lastmod>2026-11-06</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://kohinoorav.com/#contact</loc>
-    <lastmod>2026-11-06</lastmod>
+    <loc>https://kohinoorav.com/contact</loc>
+    <lastmod>2026-11-24</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+  </url>
+
+  <!-- Individual Ready-Stock Product Model URLs (26 Models) -->
+  <url>
+    <loc>https://kohinoorav.com/product/interactive-led-55-65</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_6.jpg</image:loc>
+      <image:title>4K Interactive LED Display 55 and 65 Inch KAV-IFP-55 65</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/interactive-led-75-85-86</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_7.jpg</image:loc>
+      <image:title>4K Interactive LED Display 75 85 86 Inch with Mobile Cart</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/interactive-led-98-110</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_6.jpg</image:loc>
+      <image:title>Ultra-Large Interactive LED Display 98 and 110 Inch Auditorium Touch Panel</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/mitsubishi-8000-series-projector</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/real-stock/mitsubishi-ud8900u.jpg</image:loc>
+      <image:title>Mitsubishi Electric 8000 Series UD8900U UD8850U WD8700U XD8600U</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/casio-xj-s400un-projector</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/real-stock/casio-xj-s400un.jpg</image:loc>
+      <image:title>Casio XJ-S400UN 4000 ANSI Lumens WUXGA LampFree Projector</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/casio-xj-v100w-projector</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/real-stock/casio-xj-v100w.jpg</image:loc>
+      <image:title>Casio XJ-V100W 3000 ANSI Lumens WXGA LampFree Projector</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/wall-mounted-projection-screen</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/real-stock/wall-screen-clean.jpg</image:loc>
+      <image:title>Wall-Mounted Manual Pull-Down Projection Screen KAV-SCR-WALL</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/tripod-stand-projection-screen</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/real-stock/tripod-screen.jpg</image:loc>
+      <image:title>Portable Tripod Stand Projection Screen KAV-SCR-TRIPOD</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/electric-motorized-projection-screen</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/real-stock/wall-screen-clean.jpg</image:loc>
+      <image:title>Electric Motorized RF Projection Screen up to 13x10 ft KAV-SCR-MOTOR</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/black-digital-podium</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/real-stock/digital-podium-black.jpg</image:loc>
+      <image:title>Black Digital Podium 60W Audio Dual Gooseneck and 2 Wireless Mics</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/white-digital-podium</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_9.jpg</image:loc>
+      <image:title>White Digital Podium Interactive and Audio Lectern Variant</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/executive-presentation-podium-43</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_8.jpg</image:loc>
+      <image:title>Executive 43-Inch Smart Touch Rostrum NUST NCAI Reference</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/tenveo-va3000e-conference-system</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/real-stock/tenveo-va3000e.jpg</image:loc>
+      <image:title>Tenveo TEVO-VA3000 TEVO-VA3000E 10X Zoom Video Conference System</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/beterva-be2300-chairman-unit</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_17.jpg</image:loc>
+      <image:title>BETERVA BE-2300C Chairman Priority Conference Unit</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/beterva-be2300-delegate-unit</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_16.jpg</image:loc>
+      <image:title>BETERVA BE-2300D Delegate Conference Microphone Unit</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/beterva-be2300-central-control-unit</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_11.jpg</image:loc>
+      <image:title>BETERVA BE-2300M Central Conference Control Unit</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/stage-teleprompter-tp27-tp32</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_2.jpg</image:loc>
+      <image:title>Stage Floor Teleprompter TP27 TP32 Full HD 1920x1080</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/stage-teleprompter-tp43-tp55-tp65</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_2.jpg</image:loc>
+      <image:title>Stage Floor Teleprompter TP43 TP55 TP65 Full HD</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/stage-teleprompter-tp75-tp85-tp100</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_2.jpg</image:loc>
+      <image:title>Large Venue Stage Teleprompter TP75 TP85 TP100 Full HD</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/cmx-ea120-ea240a-amplifier</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/real-stock/cmx-ea-amplifier.png</image:loc>
+      <image:title>CMX Audio EA-120 EA-240A Commercial PA Mixer Amplifier</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/cmx-wm-u200b-wireless-mic</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_5.jpg</image:loc>
+      <image:title>CMX WM-U200B Dual-Channel UHF Wireless Microphone System</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/wired-conference-podium-microphones</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_3.jpg</image:loc>
+      <image:title>Professional Wired Gooseneck and Dynamic Vocal Microphones</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/edifier-portable-pa-classroom-sound</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/products/product_4.jpg</image:loc>
+      <image:title>Edifier Portable PA Speaker and Classroom Acoustic System</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/universal-ceiling-projector-mount</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/real-stock/projector-ceiling-mount.jpg</image:loc>
+      <image:title>Universal Heavy-Duty Ceiling Projector Mounting Kit KAV-PMK-CEIL</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/short-throw-wall-projector-mount</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/real-stock/projector-ceiling-mount.jpg</image:loc>
+      <image:title>Short-Throw Wall-Mount Projector Bracket Kit KAV-PMK-WALL</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://kohinoorav.com/product/turnkey-smart-classroom-bundle</loc>
+    <lastmod>2026-11-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://kohinoorav.com/images/client-uploads/upload_5.jpg</image:loc>
+      <image:title>Complete Turnkey Smart Classroom Solution Package KAV-CLASSROOM-BUNDLE</image:title>
+    </image:image>
   </url>
 </urlset>

@@ -24,54 +24,110 @@ import { ProjectsPage } from './pages/ProjectsPage';
 import { GalleryPage } from './pages/GalleryPage';
 import { ContactPage } from './pages/ContactPage';
 import { AdminPage } from './pages/AdminPage';
+import { applyRouteSeo, getRoutePath } from './utils/seo';
+import { PRODUCTS } from './data/products';
+
+const VALID_PAGES: PageId[] = [
+  'home',
+  'about',
+  'products',
+  'interactive-led-displays',
+  'multimedia-projectors',
+  'projection-screens',
+  'projector-mounting-kits',
+  'digital-podiums',
+  'audio-equipment',
+  'conference-systems',
+  'teleprompters',
+  'ptz-robotic-cameras',
+  'smart-classroom-solutions',
+  'projects',
+  'gallery',
+  'contact',
+  'admin'
+];
+
+function resolveLocationState(): { page: PageId; product: Product | null } {
+  const path = window.location.pathname.replace(/\/+$/, '');
+  const hash = window.location.hash.replace('#', '');
+
+  if (path.startsWith('/product/')) {
+    const productId = path.replace('/product/', '');
+    const found = PRODUCTS.find((p) => p.id === productId) || null;
+    if (found) {
+      return {
+        page: VALID_PAGES.includes(found.category as PageId)
+          ? (found.category as PageId)
+          : 'products',
+        product: found
+      };
+    }
+  }
+
+  const slug = path.replace(/^\//, '') as PageId;
+  if (slug && VALID_PAGES.includes(slug)) {
+    return { page: slug, product: null };
+  }
+
+  if (hash && VALID_PAGES.includes(hash as PageId)) {
+    return { page: hash as PageId, product: null };
+  }
+
+  return { page: 'home', product: null };
+}
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState<PageId>('home');
-  const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
+  const initial = resolveLocationState();
+  const [currentPage, setCurrentPage] = useState<PageId>(initial.page);
+  const [selectedProduct, setSelectedProduct] = useState<Product | null>(initial.product);
   const [quoteModalOpen, setQuoteModalOpen] = useState(false);
   const [quotePreselectedProduct, setQuotePreselectedProduct] = useState<string | undefined>();
   const [adminLoginOpen, setAdminLoginOpen] = useState(false);
   const [isAdminAuthenticated, setIsAdminAuthenticated] = useState(false);
 
   useEffect(() => {
-    const handleHashChange = () => {
-      const hash = window.location.hash.replace('#', '') as PageId;
-      const validPages: PageId[] = [
-        'home',
-        'about',
-        'products',
-        'interactive-led-displays',
-        'multimedia-projectors',
-        'projection-screens',
-        'projector-mounting-kits',
-        'digital-podiums',
-        'audio-equipment',
-        'conference-systems',
-        'teleprompters',
-        'ptz-robotic-cameras',
-        'smart-classroom-solutions',
-        'projects',
-        'gallery',
-        'contact',
-        'admin'
-      ];
-      if (validPages.includes(hash)) {
-        setCurrentPage(hash);
-      }
+    const syncFromLocation = () => {
+      const next = resolveLocationState();
+      setCurrentPage(next.page);
+      setSelectedProduct(next.product);
     };
 
+    // Normalize legacy #hash links cleanly to path URLs without reloading
     if (window.location.hash) {
-      handleHashChange();
+      const hashPage = window.location.hash.replace('#', '') as PageId;
+      if (VALID_PAGES.includes(hashPage)) {
+        window.history.replaceState({}, '', getRoutePath(hashPage));
+      }
     }
 
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+    window.addEventListener('popstate', syncFromLocation);
+    window.addEventListener('hashchange', syncFromLocation);
+    return () => {
+      window.removeEventListener('popstate', syncFromLocation);
+      window.removeEventListener('hashchange', syncFromLocation);
+    };
   }, []);
 
+  useEffect(() => {
+    applyRouteSeo(currentPage, selectedProduct);
+  }, [currentPage, selectedProduct]);
+
   const handleNavigate = (page: PageId) => {
+    setSelectedProduct(null);
     setCurrentPage(page);
-    window.location.hash = page;
+    const targetPath = getRoutePath(page);
+    if (window.location.pathname !== targetPath) {
+      window.history.pushState({}, '', targetPath);
+    }
     window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const handleSelectProduct = (product: Product | null) => {
+    setSelectedProduct(product);
+    const targetPath = getRoutePath(currentPage, product);
+    if (window.location.pathname !== targetPath) {
+      window.history.pushState({}, '', targetPath);
+    }
   };
 
   const handleOpenQuoteModal = (productName?: string) => {
@@ -85,7 +141,7 @@ export default function App() {
         return (
           <HomePage
             onNavigate={handleNavigate}
-            onSelectProduct={setSelectedProduct}
+            onSelectProduct={handleSelectProduct}
             onOpenQuoteModal={handleOpenQuoteModal}
           />
         );
@@ -100,7 +156,7 @@ export default function App() {
         return (
           <ProductsPage
             onNavigate={handleNavigate}
-            onSelectProduct={setSelectedProduct}
+            onSelectProduct={handleSelectProduct}
             onOpenQuoteModal={handleOpenQuoteModal}
           />
         );
@@ -108,7 +164,7 @@ export default function App() {
         return (
           <InteractiveLedPage
             onNavigate={handleNavigate}
-            onSelectProduct={setSelectedProduct}
+            onSelectProduct={handleSelectProduct}
             onOpenQuoteModal={handleOpenQuoteModal}
           />
         );
@@ -116,7 +172,7 @@ export default function App() {
         return (
           <MultimediaProjectorsPage
             onNavigate={handleNavigate}
-            onSelectProduct={setSelectedProduct}
+            onSelectProduct={handleSelectProduct}
             onOpenQuoteModal={handleOpenQuoteModal}
           />
         );
@@ -124,7 +180,7 @@ export default function App() {
         return (
           <ProjectionScreensPage
             onNavigate={handleNavigate}
-            onSelectProduct={setSelectedProduct}
+            onSelectProduct={handleSelectProduct}
             onOpenQuoteModal={handleOpenQuoteModal}
           />
         );
@@ -132,7 +188,7 @@ export default function App() {
         return (
           <ProjectorMountsPage
             onNavigate={handleNavigate}
-            onSelectProduct={setSelectedProduct}
+            onSelectProduct={handleSelectProduct}
             onOpenQuoteModal={handleOpenQuoteModal}
           />
         );
@@ -140,7 +196,7 @@ export default function App() {
         return (
           <DigitalPodiumsPage
             onNavigate={handleNavigate}
-            onSelectProduct={setSelectedProduct}
+            onSelectProduct={handleSelectProduct}
             onOpenQuoteModal={handleOpenQuoteModal}
           />
         );
@@ -148,7 +204,7 @@ export default function App() {
         return (
           <AudioEquipmentPage
             onNavigate={handleNavigate}
-            onSelectProduct={setSelectedProduct}
+            onSelectProduct={handleSelectProduct}
             onOpenQuoteModal={handleOpenQuoteModal}
           />
         );
@@ -156,7 +212,7 @@ export default function App() {
         return (
           <ConferenceSystemsPage
             onNavigate={handleNavigate}
-            onSelectProduct={setSelectedProduct}
+            onSelectProduct={handleSelectProduct}
             onOpenQuoteModal={handleOpenQuoteModal}
           />
         );
@@ -164,7 +220,7 @@ export default function App() {
         return (
           <TelepromptersPage
             onNavigate={handleNavigate}
-            onSelectProduct={setSelectedProduct}
+            onSelectProduct={handleSelectProduct}
             onOpenQuoteModal={handleOpenQuoteModal}
           />
         );
@@ -172,7 +228,7 @@ export default function App() {
         return (
           <PtzCamerasPage
             onNavigate={handleNavigate}
-            onSelectProduct={setSelectedProduct}
+            onSelectProduct={handleSelectProduct}
             onOpenQuoteModal={handleOpenQuoteModal}
           />
         );
@@ -180,7 +236,7 @@ export default function App() {
         return (
           <SmartClassroomPage
             onNavigate={handleNavigate}
-            onSelectProduct={setSelectedProduct}
+            onSelectProduct={handleSelectProduct}
             onOpenQuoteModal={handleOpenQuoteModal}
           />
         );
@@ -216,7 +272,7 @@ export default function App() {
         return (
           <HomePage
             onNavigate={handleNavigate}
-            onSelectProduct={setSelectedProduct}
+            onSelectProduct={handleSelectProduct}
             onOpenQuoteModal={handleOpenQuoteModal}
           />
         );
@@ -267,7 +323,7 @@ export default function App() {
 
       <ProductDetailModal
         product={selectedProduct}
-        onClose={() => setSelectedProduct(null)}
+        onClose={() => handleSelectProduct(null)}
         onOpenQuote={handleOpenQuoteModal}
       />
     </div>

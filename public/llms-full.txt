@@ -1,0 +1,89 @@
+# Kohinoor Audio Visual Education Business System — Full Product & Technical Index
+
+Website: https://kohinoorav.com/
+Head Office: United Plaza, 2nd Floor, Fazlehaq Road, Blue Area, Islamabad 44000, Pakistan
+Telephone / WhatsApp: +92 333 5163220 | Landline: 051-2347377 | Email: kohinoor_ibd@yahoo.co.uk
+Established: 1978 | Coverage: Islamabad, Rawalpindi, Lahore, Karachi, Peshawar, Multan, Faisalabad & Nationwide Pakistan
+
+Kohinoor Audio Visual is an institutional, corporate, multinational, and government audio-visual systems supplier in Pakistan offering ready-stock equipment, turnkey classroom & auditorium installations, preventive maintenance, and official warranty support.
+
+---
+
+## 1. Interactive LED Displays (Ready Stock)
+- **Sizes**: 55", 65", 75", 85", 86", 98", 110" (`KAV-IFP-55/65`, `KAV-IFP-75/85/86`, `KAV-IFP-98/110`)
+- **Resolution**: 3840 × 2160 4K Ultra HD @ 60Hz IPS
+- **Touch**: 20-Point Infrared Multi-Touch (<5ms response), dual stylus, Mohs-7 4mm anti-glare toughened glass
+- **Operating Systems**: Built-in Android + optional pluggable Windows Intel Core OPS PC
+- **Mounting**: Wall bracket or Heavy-Duty Lockable Mobile Trolley Cart
+- **Category URL**: https://kohinoorav.com/interactive-led-displays
+- **Model URLs**:
+  - https://kohinoorav.com/product/interactive-led-55-65
+  - https://kohinoorav.com/product/interactive-led-75-85-86
+  - https://kohinoorav.com/product/interactive-led-98-110
+
+## 2. Multimedia Projectors (Ready Stock)
+### Mitsubishi Electric 8000 Series (UD8900U, UD8850U, WD8700U, XD8600U)
+- **Brand**: Mitsubishi Electric Japan
+- **Finishes**: White & Matte Black (`BL`)
+- **Brightness**: 7,300 – 8,500 ANSI Lumens | **Contrast**: 2800:1
+- **Key Specs**: Dual-lamp failover system, motorized lens shift, 5 optional interchangeable bayonet lenses, WUXGA/WXGA/XGA optics, HDMI/DVI-D/5-BNC/VGA/RJ-45 LAN
+- **Product URL**: https://kohinoorav.com/product/mitsubishi-8000-series-projector
+
+### Casio XJ-S400UN (Superior Series LampFree)
+- **Brand**: CASIO Computer Ltd Japan
+- **Brightness**: 4,000 ANSI Lumens | **Resolution**: WUXGA Real (1920 × 1200)
+- **Light Source**: Laser & LED R-Hybrid (20,000 Hours, Mercury Free) | **Optical Zoom**: 1.7x Manual Zoom
+- **Product URL**: https://kohinoorav.com/product/casio-xj-s400un-projector
+
+### Casio XJ-V100W
+- **Brand**: CASIO Computer Ltd Japan
+- **Brightness**: 3,000 ANSI Lumens | **Resolution**: WXGA (1280 × 800) | **Zoom**: 1.5x Optical Zoom | 20,000-hour LampFree
+- **Product URL**: https://kohinoorav.com/product/casio-xj-v100w-projector
+- **Category URL**: https://kohinoorav.com/multimedia-projectors
+
+## 3. Projection Screens (Ready Stock)
+- **Wall-Mounted Projection Screen (`KAV-SCR-WALL`)**: Manual pull-down auto-lock matte white (1.1 Gain, 160° viewing angle), sizes 6×6, 8×6, 10×8, 12×9 ft — https://kohinoorav.com/product/wall-mounted-projection-screen
+- **Portable Tripod / Stand Projection Screen (`KAV-SCR-TRIPOD`)**: Folding tripod floor stand with keystone eliminator, sizes 6×6, 8×6, 10×8 ft — https://kohinoorav.com/product/tripod-stand-projection-screen
+- **Electric Motorized RF Projection Screen (`KAV-SCR-MOTOR`)**: Silent tubular motor with wireless RF remote & wall switch, sizes 6×6 up to 13×10 ft — https://kohinoorav.com/product/electric-motorized-projection-screen
+- **Category URL**: https://kohinoorav.com/projection-screens
+
+## 4. Digital Podiums (Black & White Finish Variants)
+- **Black Digital Podium (`KAV-DP-BLK-60W`) & White Digital Podium (`KAV-DP-WHT-60W`)**:
+  - **Dimensions**: 580 × 420 × 1100 mm | **Weight**: 29 kg
+  - **Audio**: High-performance 60W audio output (100W total power consumed)
+  - **Microphones**: Dual Gooseneck Setup + 2 Wireless Handheld Microphones
+  - **Media Control Panel**: Built-in MP3 / USB / SD Card / AUX inputs & tone mixer
+  - **Product URLs**: https://kohinoorav.com/product/black-digital-podium | https://kohinoorav.com/product/white-digital-podium
+- **Executive 43-Inch Smart Touch Rostrum (`KAV-NCAI-43`)**: NCAI / NUST Sector H-12 Islamabad reference deployment — https://kohinoorav.com/product/executive-presentation-podium-43
+- **Category URL**: https://kohinoorav.com/digital-podiums
+
+## 5. Video Conferencing & Conference Audio Systems
+- **Tenveo TEVO-VA3000 / TEVO-VA3000E Group Video & Audio System**:
+  - **Camera**: 10X Lossless Optical Zoom PTZ Camera, HD 1080p @ 30fps, 51.3° FOV, 350° pan, 90° tilt
+  - **Audio**: Full-duplex speakerphone, Hub, IR Remote, Bluetooth & USB plug-and-play + Optional 2 Expansion Microphones (`TEVO-VA3000E`) for up to 25 participants
+  - **Software Compatibility**: Zoom, Microsoft Teams, Cisco WebEx, Polycom, Skype, Google Meet
+  - **Product URL**: https://kohinoorav.com/product/tenveo-va3000e-conference-system
+- **BETERVA BE-2300 Discussion System**: Chairman Priority Unit (`BE-2300C`), Delegate Unit (`BE-2300D`), Central Control Unit (`BE-2300M / BE-1000`, drives 60–120 units)
+  - **Product URLs**: https://kohinoorav.com/product/beterva-be2300-chairman-unit | https://kohinoorav.com/product/beterva-be2300-delegate-unit | https://kohinoorav.com/product/beterva-be2300-central-control-unit
+- **Category URL**: https://kohinoorav.com/conference-systems
+
+## 6. Teleprompters (Stage Monitor / Floor Captioner Series)
+- **Models**: `TP27` (27"), `TP32` (32"), `TP43` (43"), `TP55` (55"), `TP65` (65"), `TP75` (75"), `TP85` (85"), `TP100` (100")
+- **Resolution**: 1920 × 1080 Full HD across all models
+- **Style**: Stage Monitor / Floor Captioner low-profile wedge cabinet
+- **Controls & Inputs**: Foot Pedal + Wireless Remote Control; HDMI, 3G-SDI & Wireless inputs (English, Urdu & Arabic Unicode compatible)
+- **Category URL**: https://kohinoorav.com/teleprompters
+- **Product URLs**: https://kohinoorav.com/product/stage-teleprompter-tp27-tp32 | https://kohinoorav.com/product/stage-teleprompter-tp43-tp55-tp65 | https://kohinoorav.com/product/stage-teleprompter-tp75-tp85-tp100
+
+## 7. Audio Equipment, Projector Mounting Kits & Smart Classrooms
+- **CMX Audio `EA-120` / `EA-240A`**: https://kohinoorav.com/product/cmx-ea120-ea240a-amplifier
+- **CMX `WM-U200B`**: https://kohinoorav.com/product/cmx-wm-u200b-wireless-mic
+- **Wired Gooseneck & Dynamic Mics (`KAV-MIC-WIRE-PRO`)**: https://kohinoorav.com/product/wired-conference-podium-microphones
+- **Edifier Portable Trolley PA (`KAV-EDIFIER-PA`)**: https://kohinoorav.com/product/edifier-portable-pa-classroom-sound
+- **Projector Mounts (`KAV-PMK-CEIL` & `KAV-PMK-WALL`)**: https://kohinoorav.com/product/universal-ceiling-projector-mount | https://kohinoorav.com/product/short-throw-wall-projector-mount
+- **Turnkey Smart Classroom Solution (`KAV-CLASSROOM-BUNDLE`)**: https://kohinoorav.com/product/turnkey-smart-classroom-bundle
+- **Category URLs**: https://kohinoorav.com/audio-equipment | https://kohinoorav.com/projector-mounting-kits | https://kohinoorav.com/smart-classroom-solutions
+
+## Frequently Asked Questions (Institutional Procurement & Support)
+- **Formal Quotations & Tenders**: Yes, Kohinoor Audio Visual supplies NTN/GST quotations, manufacturer authorization letters, and tender-compliant specs for universities, HEC projects, and government bodies across Pakistan.
+- **After-Sales & Warranty**: Full on-site engineering installation, acoustic calibration, faculty training, preventive maintenance, and official warranty support from Blue Area, Islamabad.

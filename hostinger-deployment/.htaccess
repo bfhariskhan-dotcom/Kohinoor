@@ -1,0 +1,49 @@
+# Kohinoor Audio Visual - Hostinger / Apache Production SEO, Clean URL & Performance Rules
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Enforce HTTPS and non-www canonical host on live domain (kohinoorav.com)
+  RewriteCond %{HTTP_HOST} ^www\.kohinoorav\.com$ [NC]
+  RewriteRule ^(.*)$ https://kohinoorav.com/$1 [R=301,L]
+
+  RewriteCond %{HTTPS} !=on
+  RewriteCond %{HTTP_HOST} ^kohinoorav\.com$ [NC]
+  RewriteRule ^(.*)$ https://kohinoorav.com/$1 [R=301,L]
+
+  # Serve existing files, images, sitemaps, robots.txt, and llms.txt directly
+  RewriteCond %{REQUEST_FILENAME} -f [OR]
+  RewriteCond %{REQUEST_FILENAME} -d
+  RewriteRule ^ - [L]
+
+  # SPA History API fallback for clean category & /product/:id URLs
+  RewriteRule ^ index.html [L]
+</IfModule>
+
+# Ensure AI & SEO metadata files use proper UTF-8 MIME types
+<IfModule mod_mime.c>
+  AddType text/plain;charset=UTF-8 .txt
+  AddType application/xml;charset=UTF-8 .xml
+  AddType application/manifest+json .webmanifest
+  AddType image/webp .webp
+</IfModule>
+
+# Prevent indexing of internal /admin path via HTTP header
+<IfModule mod_headers.c>
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+
+  <FilesMatch "\.(html)$">
+    Header set Cache-Control "no-cache, must-revalidate"
+  </FilesMatch>
+
+  <FilesMatch "\.(js|css|png|jpg|jpeg|webp|svg|ico|woff2)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+</IfModule>
+
+# GZIP Compression for faster Core Web Vitals
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json application/xml application/manifest+json image/svg+xml
+</IfModule>

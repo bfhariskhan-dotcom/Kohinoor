@@ -88,12 +88,16 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal, on
           <ul className="space-y-2 text-xs text-slate-600 font-medium">
             {CATEGORIES.map((cat) => (
               <li key={cat.id}>
-                <button
-                  onClick={() => handleNav(cat.id as PageId)}
+                <a
+                  href={`/${cat.id}`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    handleNav(cat.id as PageId);
+                  }}
                   className="hover:text-emerald-700 transition-colors cursor-pointer text-left block"
                 >
                   {cat.name}
-                </button>
+                </a>
               </li>
             ))}
           </ul>
@@ -106,34 +110,76 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate, onOpenQuoteModal, on
           </h4>
           <ul className="space-y-2 text-xs text-slate-600 font-medium">
             <li>
-              <button onClick={() => handleNav('home')} className="hover:text-emerald-700 transition-colors cursor-pointer">
+              <a
+                href="/"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNav('home');
+                }}
+                className="hover:text-emerald-700 transition-colors cursor-pointer"
+              >
                 Home
-              </button>
+              </a>
             </li>
             <li>
-              <button onClick={() => handleNav('products')} className="hover:text-emerald-700 transition-colors cursor-pointer">
+              <a
+                href="/products"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNav('products');
+                }}
+                className="hover:text-emerald-700 transition-colors cursor-pointer"
+              >
                 All Products
-              </button>
+              </a>
             </li>
             <li>
-              <button onClick={() => handleNav('gallery')} className="hover:text-emerald-700 font-semibold text-emerald-800 transition-colors cursor-pointer">
+              <a
+                href="/gallery"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNav('gallery');
+                }}
+                className="hover:text-emerald-700 font-semibold text-emerald-800 transition-colors cursor-pointer"
+              >
                 Gallery
-              </button>
+              </a>
             </li>
             <li>
-              <button onClick={() => handleNav('projects')} className="hover:text-emerald-700 transition-colors cursor-pointer">
+              <a
+                href="/projects"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNav('projects');
+                }}
+                className="hover:text-emerald-700 transition-colors cursor-pointer"
+              >
                 Projects
-              </button>
+              </a>
             </li>
             <li>
-              <button onClick={() => handleNav('about')} className="hover:text-emerald-700 transition-colors cursor-pointer">
+              <a
+                href="/about"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNav('about');
+                }}
+                className="hover:text-emerald-700 transition-colors cursor-pointer"
+              >
                 About Us
-              </button>
+              </a>
             </li>
             <li>
-              <button onClick={() => handleNav('contact')} className="hover:text-emerald-700 transition-colors cursor-pointer">
+              <a
+                href="/contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  handleNav('contact');
+                }}
+                className="hover:text-emerald-700 transition-colors cursor-pointer"
+              >
                 Contact
-              </button>
+              </a>
             </li>
           </ul>
         </div>

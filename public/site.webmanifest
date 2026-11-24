@@ -1,0 +1,21 @@
+{
+  "name": "Kohinoor Audio Visual",
+  "short_name": "Kohinoor AV",
+  "description": "Authorized supplier of Interactive LED Displays, Mitsubishi & Casio Projectors, Projection Screens, Digital Podiums, Tenveo Video Conferencing, and Stage Teleprompters across Pakistan since 1978.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ecfdf5",
+  "theme_color": "#047857",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

@@ -36,6 +36,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         <img
           src={product.image}
           alt={product.name}
+          loading="lazy"
+          decoding="async"
           referrerPolicy="no-referrer"
           onError={(e) => {
             (e.currentTarget as HTMLImageElement).src = product.fallbackImage;

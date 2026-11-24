@@ -129,6 +129,8 @@ export const GalleryMarquee: React.FC<GalleryMarqueeProps> = ({ onNavigate, onSe
                 <img
                   src={item.src}
                   alt={item.title}
+                  loading="lazy"
+                  decoding="async"
                   referrerPolicy="no-referrer"
                   className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
                 />
